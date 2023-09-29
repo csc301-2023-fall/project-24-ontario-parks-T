@@ -65,9 +65,9 @@
 
 > Short (1-2 min' read max)
  * What is the technology stack? Specify languages, frameworks, libraries, PaaS products or tools to be used or being considered.
-   * REST is our framework and it will take care of the frontend and backend of the website, the database will be implemented by SQL.
+   * REST is our framework, and it will take care of both the frontend and backend of the website. We will be using a relational database, which will be implemented using SQL. Based on a more detailed structure design later on, we will select a suitable and not too complicated database (e.g. mySQL) to meet the client's requirements. 
  * How will you deploy the application?
-   * We are trying to build a website, so we would need to deploy it with a server that stores the data, and a domain name.
+   * We will need to set up a server to host our website, ill configure and set up a relational database system to store and manage our data, and also a domain name that serves as the address
  * Describe the architecture - what are the high-level components or patterns you will use? Diagrams are useful here.
    * We are trying to use MVC, we will talk more about the patterns in the future meeting if MVC needs to be changed
  * Will you be using third-party applications or APIs? If so, what are they?
