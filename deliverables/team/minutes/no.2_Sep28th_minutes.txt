@@ -6,3 +6,14 @@ Attendees:John (partner) and all team members
 Duration:45 min
 
 Detail key points:
+    Prototype Demonstration:
+      The current prototype was demonstrated with partners.
+      Partners had the opportunity to interact with the prototype, exploring its features and functionalities.
+      He commend on the quick and easy-use design of our prototype, and encourage us to keep the final product simple.
+
+    Communicating about how to implement:
+      reconciled expectations of the product
+      doscuss our approach to solve the problem (creating a website) and basic main functions
+
+    
+
