@@ -13,8 +13,8 @@
 
 ## Description about the project
 Keep this section very brief.
- * Provide a high-level description of your application and it's value from an end-user's perspective
- * What is the problem you're trying to solve? Is there any context required to understand **why** the application solves this problem?
+ * Our product is an AudioQR Management Solution - an audio system for park guides and its management system based on QR code distribution.
+ * Our product may replace some physical information boards at the park, which are expensive and manpower-consuming to maintain and update, and are not friendly for people who are visually impaired. Also, sometimes people would need to line up in front of information desks for simple questions. Our product is expected to increase the accessibility of guiding information at parks and to allow more cost-efficient and easier management for administrators. 
 ​
 ## Key Features
  * Describe the key features in the application that the user can access.
