@@ -24,8 +24,8 @@ detail key points:
     Adding the QR code.
 
   Further expectation & next step:
-  Develop scripts and audio recordings for QR code content.
-  Create a system for hosts to edit audio and update images based on seasons.
-  Coordinate with IT and web development teams for webpage integration.
-  Establish a timeline for implementation and testing of the QR code system.
-  Assign responsibilities for content creation, translation, and quality assurance.
+    Develop scripts and audio recordings for QR code content.
+    Create a system for hosts to edit audio and update images based on seasons.
+    Coordinate with IT and web development teams for webpage integration.
+    Establish a timeline for implementation and testing of the QR code system.
+    Assign responsibilities for content creation, translation, and quality assurance.
