@@ -3,8 +3,13 @@
 > _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
 ​
 ## Partner Intro
- * Include the names, emails, titles, primary or secondary point of contact at the partner organization
- * Provide a short description about the partner organization. (2-4 lines)
+ * Partner: Our partner is John Leadston, Resident Business Analyst at the Ontario Cabinet Office 
+ * His email is john.leadston2@ontario.ca.
+ * John is our primary contact.
+ * He has worked with Ontario Park for a long time.
+ * The Cabinet Office is a ministry of the Government of Ontario. Its role is to serve as the Premier's ministry, and as such, its employees are not political appointees, but are permanent members of the Ontario public service.
+
+
 
 ## Description about the project
 Keep this section very brief.
