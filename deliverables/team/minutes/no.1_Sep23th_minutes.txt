@@ -1,0 +1,31 @@
+Date: Sep 23th,2023
+Time: 1 pm
+Location: on zoom
+
+Attendees:John (partner) and all team members
+Duration:80 min
+
+detail key points:
+  Introduction:
+    Members and their partners were introduced, with partners sharing their respective working experiences.
+  
+  Why QR Code Implementation:
+    Partner explained why QR codes in the project is important and how his life experience inspired him
+  
+  Advantages and Project Goals for QR Code Implementation:
+    1,Replacing traditional information boards, reducing maintenance costs.
+    2,Decreasing waiting time in customer centers for maintenance inquiries.
+    3,Providing multilingual support through QR code translations.
+
+  Discussion on Minimum Viable Product (MVP):
+    Replacing the old audio for each QR code.
+    Deleting the old audio and QR code
+    Searching the QR code
+    Adding the QR code.
+
+  Further expectation & next step:
+  Develop scripts and audio recordings for QR code content.
+  Create a system for hosts to edit audio and update images based on seasons.
+  Coordinate with IT and web development teams for webpage integration.
+  Establish a timeline for implementation and testing of the QR code system.
+  Assign responsibilities for content creation, translation, and quality assurance.
