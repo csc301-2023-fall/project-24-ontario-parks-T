@@ -15,6 +15,7 @@
  * Below is the link to our prototype made with Figma:
    * https://www.figma.com/file/SvfwnclDHxdwv8jXEwm8WI/project-24-ontario-parks-T?type=design&node-id=0%3A1&mode=design&t=XkYAJebEukb7CbmU-1
  * Below is a simple diagram that shows the structure of our project:
+![plot](./chart1.png)
  
 
 
@@ -94,8 +95,10 @@ Briefly describe which option you have agreed to.
 #### Q6: Have you met with your team?
 
 We had a meal together at Chinatown and discussed what courses we had this year, what we thought about this course, and what we were expecting from the project we were assigned to. We also talked about our hobbies and some of our daily routines.
+![plot](./meal.png)
 
 This is just a screenshot from a meeting we had. We just finished discussing with John, our partner, about what we have done for D1, and what designs John is expecting to see. We had a great meeting with John XD.
+![plot](./screenshot1.png)
 
 
 * Fun fact about our members?
