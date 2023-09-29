@@ -130,11 +130,19 @@ Overall, we all choose our roles based on our interests and previous experiences
 
 Describe meetings (and other events) you are planning to have. 
  * When and where? Recurring or ad hoc? In-person or online?
+    * Our daily communication within the team is done through group chat, where we can share problems and thoughts promptly. We plan on having recurring in-person meetings every week throughout this term to discuss progress and identify blockers. However, during the week, if we need to work together on a certain part of the project, we usually plan more in-person meetings. Also, we always have ad-hoc online meetings when something urgent needs to be discussed.
  * What's the purpose of each meeting?
- * Other events could be coding sessions, code reviews, quick weekly sync meeting online, etc.
- * You should have 2 meetings with your project partner (if you have one) before D1 is due. Describe them here:
-   * You must keep track of meeting minutes and add them to your repo under "documents/minutes" folder
-   * You must have a regular meeting schedule established for the rest of the term.  
+    * The purpose of each of our meetings includes planning the project, providing updates on progress, discussing problems, gathering feedback, and so on. We will also have regular code review sessions to make sure the project and our teammates are on the right track.
+
+ For the rest of the term, we have planned to have recurring partner meetings every Thursday 9-10 AM. As of Sep.28th, we already had 2 meetings with our partner, and below are the details:
+ * September 23, 2023. (First Meeting)
+    * We are introduced to each member with our partner and the partner illustrates the working experience. Partner introduced ideas about the QR code, and what he wants in while the user scans the QR code. When the partner's son fixes the engine, once he scans the QR code on the engine, there is detailed information on how to do the basic maintenance of the engine. Therefore, He tells us what is the advantage and what he wants of the QR code of the project. Such as replacing the traditional information board which cost a lot of money to do the maintenance and which was located around the park, reducing the waiting time in the customer center, and translating language. 
+    * We are sharing the information of a minimum viable product whose host could do the following thinking: Replacing the old audio for each QR code; Deleting the old audio and QR code; Searching the QR code; and Adding the QR code. Based on the different seasons, the host could edit the audio and update the picture.
+On the user side, scan the QR code with their device to access the webpage which plays the corresponding audio. 
+ * September 28, 2023. (Second Meeting)
+    * We are illustrated and shown our project by Figma with our partner. Which contains only the basic functionalities of the project. We also share the permission with our partner. He can log in to our Figma and leave comments for us to review his requirements. Therefore, we can edit the Figma and future codes directly to fulfill implementation.
+    * He commended the quick and easy-use design of our prototype and encouraged us to keep the final product simple. We also discussed some future features, such as mapping the visitor and showing them where they are.  
+
   
 #### Q9: How will you organize your team?
 
@@ -143,16 +151,25 @@ List/describe the artifacts you will produce in order to organize your team.
  * Artifacts can be To-Do lists, Task boards, schedule(s), meeting minutes, etc.
  * We want to understand:
    * How do you keep track of what needs to get done? (You must grant your TA and partner access to systems you use to manage work)
+      * We will have a task board set up in Discord, tasks on the board will mostly be pre-assigned to team members already, but if there is some work that is not clear which subteam should be responsible for, we might just put it on the task board as well, for anyone who might want to finish it. Also, anyone can help other members with their tasks, if they have free time. 
    * **How do you prioritize tasks?**
+      * We would prioritize tasks that other parts of our project highly depend on. For example, we will consider working on the database and API first, and then the backend.
    * How do tasks get assigned to team members?
+      * Tasks will be assigned directly to the team member(s) that are responsible for them. A frontend task will be assigned to a member that works on the frontend, and so on.
    * How do you determine the status of work from inception to completion?
+      * We just check if that part of work does not have obvious and serious bugs. As long as that part of the work satisfies the requirements, and works fine with other parts of the project, we would consider the work to be done.
+
 
 #### Q10: What are the rules regarding how your team works?
 
 **Communications:**
- * What is the expected frequency? What methods/channels will be used? 
+ * What is the expected frequency? What methods/channels will be used?
+     * We are expected to meet with each other at least three times a week, one together with our partner, one at tutorial, and the other time we work together offline. If some of us cannot work offline, we will open up a Zoom room, or use a Discord server to communicate with each other.
  * If you have a partner project, what is your process for communicating with your partner?
- 
+     * The basic process is that we meet with our partner every Thursday for about 1 hour, talk about our progress, ask about some problems we have, and ask our partner what else he might be looking forward to seeing. Other than that, if we encounter any problems, we will email our partner directly.
+
 **Collaboration: (Share your responses to Q8 & Q9 from A1)**
  * How are people held accountable for attending meetings, completing action items? Is there a moderator or process?
- * How will you address the issue if one person doesn't contribute or is not responsive? 
+     * Basically, our way is very simple, which is to simply message or call the person who is falling behind. Whenever someone is not showing up at a meeting, falling behind on progress, or not completing a requirement, we would call that person directly to check on his situation. If things become really difficult for a member (which we hope does not happen), we will have a careful discussion and offer support that is possible.
+ * How will you address the issue if one person doesn't contribute or is not responsive?
+     * Hopefully, we will never meet this issue, but if this happens, we will discuss such kind of problem seriously. We will encourage our members to get back on track, motivate them to continue on the project and be fairly nice to him. However, in the worst case, if no effects are seen, we might discuss with David or one of the TAs to address this issue and try to find a final solution.
