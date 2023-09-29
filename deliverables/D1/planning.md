@@ -87,8 +87,8 @@
 **Your partner cannot ask you to sign any legal agreements or documents pertaining to non-disclosure, confidentiality, IP ownership, etc.**
 
 Briefly describe which option you have agreed to.
-
 ----
+On the initial project proposal, it has mentioined that students can publish source code (e.g., on GitHub), design, and the software. We have emailed our partner for reconfirmation, but have not yet received a reply as of the day we submit our D1. We will update once we get a response.
 
 ## Teamwork Details
 
