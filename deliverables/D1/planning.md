@@ -114,7 +114,7 @@ Overall, we all choose our roles based on our interests and previous experiences
 
 1. Xinyan Lyu, Communicate/front-end developer
 * I am responsible for communicating and writing emails to partners and other people outside the team, and I will be contributing mostly to the front end of the project. I am currently learning to do web app development.
-2. zha10066, Yifang Zhang, yi1z, enrolled, Project manager/full-stack developer(mainly database)
+2. Yifang Zhang, Project manager/full-stack developer(mainly database)
 * I am responsible for managing the project, and I will be contributing to most parts of the project, including frontend, backend, and database. 
 3. Zihan Wang, UI/UX designer/full-stack developer
 * I am responsible for the user interface and user experience design. Also, I will work on both front and backend development for our website.
