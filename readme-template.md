@@ -17,17 +17,21 @@
 ​
 ## Key Features
  For Administrators:
- * New Location Creation:
-    * Description: Administrators can create new locations within the system.
-    * Details: Admins can input location details such as name, description, historical significance, etc.
+* Login:
+    * Description: Administrators are allowed to login into their account.
+    * Details: using account number and password
  
+ * New Location Creation:
+    * Description: Administrators can create new locations to manage
+    * Details: Admins can add locations to system
+      
  * QR Code Generation:
    * Description: After creating a new location, administrators can generate a QR code for that location.
    * Details: Each location will have a unique QR code associated with it, allowing easy access for tourists.
  
  * Audio Management:
    * Description: Admins can manage audio content within the system.
-   * Details: They can upload new audio files, edit existing ones, or remove outdated content. Each audio file is associated with a specific location.
+   * Details: They can upload new audio files, edit existing ones, or remove outdated content. Each audio file can be associated with a specific location.
  
  * Link Location with Audio:
    * Description: Admins can link specific audio files with corresponding locations.
