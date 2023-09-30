@@ -105,6 +105,8 @@ Describe your Git/GitHub workflow. Essentially, we want to understand how your t
  ## Coding Standards and Guidelines
  Keep this section brief, a maximum of 2-3 lines. You would want to read through this [article](https://www.geeksforgeeks.org/coding-standards-and-guidelines/) to get more context about what this section is for before attempting to answer.
   * These are 2 optional resources that you might want to go through: [article with High level explanation](https://blog.codacy.com/coding-standards-what-are-they-and-why-do-you-need-them/) and [this article with Detailed Explanation](https://google.github.io/styleguide/)
+
+  * Since we have not decided what development tools and languages we will use, we can't decide the coding standards we should follow. We will decide our coding standards timely when we have made those decisions.
 ​
  ## Licenses 
 ​
@@ -112,3 +114,6 @@ Describe your Git/GitHub workflow. Essentially, we want to understand how your t
 ​
  * What type of license will you apply to your codebase? And why?
  * What affect does it have on the development and use of your codebase?
+
+ * We would like to apply the MIT license to our codebase, because we want to make our license clear and simple, and we don't intend to profit from what we created.
+ * It wouldn't affect much of our development, except that we may not hard-code any sensitive information, and we will need to make our code structured and readable to share it with others reasonably.
