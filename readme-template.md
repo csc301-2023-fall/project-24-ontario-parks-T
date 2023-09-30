@@ -96,9 +96,11 @@ Describe your Git/GitHub workflow. Essentially, we want to understand how your t
  * Describe your overall deployment process from writing code to viewing a live application
  * What deployment tool(s) are you using? And how?
  * Don't forget to **briefly justify why** you chose this workflow or particular aspects of it!
-     * First of all, whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments to the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
+
+
+* First of all, whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments to the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
      
-The reason we choose such a workflow is because we want our team to be well managed; it would be a mess if everyone can merge pull requests, for example if some one merged a pull request, while other team members do not know this happened, there will be conflicts for sure. We want to avoid any additional work that are not necessary, and that's why we decided that only project managers can merge pull requests.
+* The reason we choose such a workflow is because we want our team to be well managed; it would be a mess if everyone can merge pull requests, for example if some one merged a pull request, while other team members do not know this happened, there will be conflicts for sure. We want to avoid any additional work that are not necessary, and that's why we decided that only project managers can merge pull requests.
 
  ## Coding Standards and Guidelines
  Keep this section brief, a maximum of 2-3 lines. You would want to read through this [article](https://www.geeksforgeeks.org/coding-standards-and-guidelines/) to get more context about what this section is for before attempting to answer.
