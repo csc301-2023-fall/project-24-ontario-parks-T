@@ -45,16 +45,15 @@
    * Details: Upon scanning the QR code, tourists are presented with an audio introduction detailing the historical or interesting aspects of the location. They can play and listen to this audio content directly from the webpage.
  ​
 ## Instructions
- * Clear instructions for how to use the application from the end-user's perspective
- The instructions will be different for users who are the visitors and who are the administrations. More importantly, the administrator also is the user.
-	* Recently, we are targeting the user who has a smart device that can scan the QR code. If they have a smart device and scan our QR code, they will be able to see the audio that corresponds to certain items or landscapes. They could see related pictures of items and listen to the audio. The picture will be different by four different seasons. The instruction above is the user side.
-	* For the administrator side, they have to get the administrator privilege first. Once they have the privilege, the web page will jump to administrator management which is called the location section, they can search/ add/edit/delete the audio and corresponding picture. If the outside season has been changed, the picture for the current season will be changed automatically. If the administrator does not want to change the picture, they can change it back in the adding section. if the manager does not want to edit the audio, they are considered as users. They could use all features as users.
+ The instructions will be different for users who are the visitors and who are the administrations. Please notice, administrators are also considered as users.
+	* For tourist side, we are targeting tourists who have smart devices that can scan the QR code. If they use their smart device to scan our QR code, they will be able to see the audio that corresponds to certain items or landscapes. They could see related pictures of items and listen to the audio. The picture will be different by four different seasons. 
+	* For the administrator side, they have to get the administrator privilege and login in first. Once they log in, the web page will jump to administrator management page, they can search/ add/edit/delete the audio and corresponding picture there. If the outside season has been changed, the picture for the current season will be changed automatically. If the administrator wants to undo the change, they can undo the change in the "adding section". 
 
- * How do you access it? For example: Are accounts pre-created or does a user register? Where do you start? etc. 
- To access as an administrator:
-	* If you don’t have an account, you have to sign up with some important information such as your email address ect. If anything is correct, you are on the administration side. You can do any operation mentioned above for the video.
+ 
+To access as an administrator:
+	* Go to the administrator managment website or scan the corresponding QR code.To register an account, you have to sign up with information such as email address ect. If the registeration is correctly processed, you are able to access the administration side. With the account you can do any operation mentioned above for the video.
 To access as a user:
-	* You don’t have to worry about too much, grab your smart device, scan the QR code, enjoy the audio.  
+	* No need for account, grab your smart device, scan the QR code, enjoy the audio.  
 
  * Clear steps for using each feature described in the previous section.
  * For the visitors side:
