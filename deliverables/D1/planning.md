@@ -140,7 +140,8 @@ Describe meetings (and other events) you are planning to have.
     * We are sharing the information of a minimum viable product whose host could do the following thinking: Replacing the old audio for each QR code; Deleting the old audio and QR code; Searching the QR code; and Adding the QR code. Based on the different seasons, the host could edit the audio and update the picture.
 On the user side, scan the QR code with their device to access the webpage which plays the corresponding audio. 
  * September 28, 2023. (Second Meeting)
-    * We are illustrated and shown our project by Figma with our partner. Which contains only the basic functionalities of the project. We also share the permission with our partner. He can log in to our Figma and leave comments for us to review his requirements. Therefore, we can edit the Figma and future codes directly to fulfill implementation.
+    * We illustrated and showed our project by Figma with our partner. Which contains only the basic functionalities of the project. We also share the permission with our partner. He can log in to our Figma and leave comments for us to review his requirements. Therefore, we can edit the Figma and future codes directly to fulfill implementation.
+He commended the quick and easy-use design of our prototype and encouraged us to keep the final product simple. We also discussed some future features, such as mapping the visitor and showing them where they are.
     * He commended the quick and easy-use design of our prototype and encouraged us to keep the final product simple. We also discussed some future features, such as mapping the visitor and showing them where they are.  
 
   
