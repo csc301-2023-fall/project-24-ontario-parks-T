@@ -48,9 +48,39 @@
  ​
 ## Instructions
  * Clear instructions for how to use the application from the end-user's perspective
+ The instructions will be different for users who are the visitors and who are the administrations. More importantly, the administrator also is the user.
+	Recently, we are targeting the user who has a smart device that can scan the QR code. If they have a smart device and scan our QR code, they will be able to see the audio that corresponds to certain items or landscapes. They could see related pictures of items and listen to the audio. The picture will be different by four different seasons. The instruction above is the user side.
+	For the administrator side, they have to get the administrator privilege first. Once they have the privilege, the web page will jump to administrator management which is called the location section, they can search/ add/edit/delete the audio and corresponding picture. If the outside season has been changed, the picture for the current season will be changed automatically. If the administrator does not want to change the picture, they can change it back in the adding section. if the manager does not want to edit the audio, they are considered as users. They could use all features as users.
+
  * How do you access it? For example: Are accounts pre-created or does a user register? Where do you start? etc. 
+ As a administrator:
+	If you don’t have an account, you have to sign up with some important information such as your email address ect. If anything is correct, you are on the administration side. You can do any operation mentioned above for the video.
+As a user:
+	You don’t have to worry about too much, grab your smart device, scan the QR code, enjoy the audio.  
+
  * Provide clear steps for using each feature described in the previous section.
+ For the user side:
+	Scan the QR code, and play the audio.
+	
+	For the administrator side:
+	Scan the QR code
+	Switch to administration side
+	Sign in if you don’t have the administrator account with your employee id, email and password. 
+	Now, you are in administration side, you can click any location section
+	Then, you can search for the audio with some text or add some audio from your local device.
+	For Deleting, Editing, Adding the audio, you click management,  there are two
+options
+	Delete this audio, Editing this audio.
+	For deletion, it will ask you if you are sure you want to delete it. If you click Yes, it will be deleted No to save the current audio.
+	For Editing, you can change the audio and replace the picture of the current audio which will be shown on the user side.  Click Save to save the pdate and No for future changes.
+	If the season is changed, then it will automatically change for all audios.
+	Once you finish your update for audios, you have to log out your administrator account.
+	Once you log out, you can scan this QR code and use it as a user. 
+
  * This section is critical to testing your application and must be done carefully and thoughtfully.
+
+  We clearly understand it and we provided a careful guide for users and administrators. If there are any features added in our website, we update this section carefully frequently once we clearly and totally successfully implement it.
+
  
  ## Development requirements
  * What are the technical requirements for a developer to set up on their machine or server (e.g. OS, libraries, etc.)?
@@ -69,6 +99,7 @@ Describe your Git/GitHub workflow. Essentially, we want to understand how your t
  * What deployment tool(s) are you using? And how?
  * Don't forget to **briefly justify why** you chose this workflow or particular aspects of it!
      * First of all, whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments to the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
+     
 The reason we choose such a workflow is because we want our team to be well managed; it would be a mess if everyone can merge pull requests, for example if some one merged a pull request, while other team members do not know this happened, there will be conflicts for sure. We want to avoid any additional work that are not necessary, and that's why we decided that only project managers can merge pull requests.
 
  ## Coding Standards and Guidelines
