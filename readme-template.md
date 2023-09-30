@@ -1,6 +1,6 @@
 # AudioQR Management Solution /Room Three
 ​
-> _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. 
+[]: #(> _Note:_ This document is intended to be relatively short. Be concise and precise. Assume the reader has no prior knowledge of your application and is non-technical. )
 ​
 ## Partner Intro
  * Partner: Our partner is John Leadston, Resident Business Analyst at the Ontario Cabinet Office 
@@ -53,13 +53,13 @@
 	* For the administrator side, they have to get the administrator privilege first. Once they have the privilege, the web page will jump to administrator management which is called the location section, they can search/ add/edit/delete the audio and corresponding picture. If the outside season has been changed, the picture for the current season will be changed automatically. If the administrator does not want to change the picture, they can change it back in the adding section. if the manager does not want to edit the audio, they are considered as users. They could use all features as users.
 
  * How do you access it? For example: Are accounts pre-created or does a user register? Where do you start? etc. 
- As a administrator:
+ To access as an administrator:
 	* If you don’t have an account, you have to sign up with some important information such as your email address ect. If anything is correct, you are on the administration side. You can do any operation mentioned above for the video.
-As a user:
+To access as a user:
 	* You don’t have to worry about too much, grab your smart device, scan the QR code, enjoy the audio.  
 
- * Provide clear steps for using each feature described in the previous section.
- * For the user side:
+ * Clear steps for using each feature described in the previous section.
+ * For the visitors side:
 	* Scan the QR code, and play the audio.
 	
 * For the administrator side:
@@ -85,17 +85,17 @@ As a user:
      * Currently, we have not decided on every technical requirements we might need. For D1, we can only say that we will need some libraries including Django, REACT, and CSS templates like Bulma or Bootstrap. We might also need our members to download and set up Postman, in order to test the applications. But again this is only D1, we have not really started any actual implementations, so this part is expected change as our project goes on.
  * Briefly describe instructions for setting up and running the application. You should address this part like how one would expect a README doc of real-world deployed application would be.
      * This part will also be updated as we continue on our project. For D1, it's really impossible for us to make clear instructions on how our application can be set up and run.
- * You can see this [example](https://github.com/alichtman/shallow-backup#readme) to get started.
+ []: #(* You can see this [example](https://github.com/alichtman/shallow-backup#readme) to get started.)
  
  ## Deployment and Github Workflow
 ​
-Describe your Git/GitHub workflow. Essentially, we want to understand how your team members share codebase, avoid conflicts and deploys the application.
+[]: #(Describe your Git/GitHub workflow. Essentially, we want to understand how your team members share codebase, avoid conflicts and deploys the application.)
 ​
- * Be concise, yet precise. For example, "we use pull-requests" is not a precise statement since it leaves too many open questions - Pull-requests from where to where? Who reviews the pull-requests? Who is responsible for merging them? etc.
+[]: # (* Be concise, yet precise. For example, "we use pull-requests" is not a precise statement since it leaves too many open questions - Pull-requests from where to where? Who reviews the pull-requests? Who is responsible for merging them? etc.
  * If applicable, specify any naming conventions or standards you decide to adopt.
  * Describe your overall deployment process from writing code to viewing a live application
  * What deployment tool(s) are you using? And how?
- * Don't forget to **briefly justify why** you chose this workflow or particular aspects of it!
+ * Don't forget to **briefly justify why** you chose this workflow or particular aspects of it!)
 
 
 * First of all, whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments to the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
@@ -110,7 +110,7 @@ Describe your Git/GitHub workflow. Essentially, we want to understand how your t
 ​
  ## Licenses 
 ​
- Keep this section as brief as possible. You may read this [Github article](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) for a start.
+ []: #(Keep this section as brief as possible. You may read this [Github article](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository) for a start.)
 ​
  * What type of license will you apply to your codebase? And why?
  * What affect does it have on the development and use of your codebase?
