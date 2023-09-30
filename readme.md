@@ -47,7 +47,7 @@
 ## Instructions
 * The instructions will be different for users who are visitors and who are administrators. Please notice, administrators are also considered as users here.
 	* For tourist side, we are targeting tourists who have smart devices that can scan the QR code at locations. If they use their smart device to scan our QR code, they will be able to see the audio that corresponds to certain items or landscapes. They could see related pictures of items and listen to the audio. The picture will be different by four different seasons. 
-	* For administrator side, they have to get the administrator privilege and login in first. Once they log in, the web page will jump to administrator management page, they can search/ add/edit/delete the audio and corresponding picture there. If the outside season has been changed, the picture for the current season will be changed automatically. If the administrator wants to undo the change, they can undo the change in the "adding section". 
+	* For administrator side, they have to get the administrator privilege and login in first. Once they log in, the web page will jump to administrator management page, they can search/ add/edit/delete the audio and corresponding picture there. If the outside season has been changed, the picture for the current season will be changed automatically. 
 
  
 * To access as an administrator:
