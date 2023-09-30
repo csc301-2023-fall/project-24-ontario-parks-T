@@ -12,15 +12,36 @@
 
 
 ## Description about the project
-Keep this section very brief.
  * Our product is an AudioQR Management Solution - an audio system for park guides and its management system based on QR code distribution.
  * Our product may replace some physical information boards at the park, which are expensive and manpower-consuming to maintain and update, and are not friendly for people who are visually impaired. Also, sometimes people would need to line up in front of information desks for simple questions. Our product is expected to increase the accessibility of guiding information at parks and to allow more cost-efficient and easier management for administrators. 
 ​
 ## Key Features
- * Describe the key features in the application that the user can access.
- * Provide a breakdown or detail for each feature.
- * This section will be used to assess the value of the features built
-​
+ For Administrators:
+ * New Location Creation:
+    * Description: Administrators can create new locations within the system.
+    * Details: Admins can input location details such as name, description, historical significance, etc.
+ 
+ * QR Code Generation:
+   * Description: After creating a new location, administrators can generate a QR code for that location.
+   * Details: Each location will have a unique QR code associated with it, allowing easy access for tourists.
+ 
+ * Audio Management:
+   * Description: Admins can manage audio content within the system.
+   * Details: They can upload new audio files, edit existing ones, or remove outdated content. Each audio file is associated with a specific location.
+ 
+ * Link Location with Audio:
+   * Description: Admins can link specific audio files with corresponding locations.
+   * Details: Admins can select an audio file from the system and associate it with a particular location. This linking allows tourists to access relevant audio content when scanning the QR code.
+ 
+ * For Tourists:
+ * Scanning to access:
+   * Description: Tourists can scan the QR code associated with a location.
+   * Details: By scanning the QR code using a mobile device, tourists are redirected to a specific webpage associated with that location.
+ 
+ * Introduction Audio Playback:
+   * Description: Tourists can listen to an introduction audio about the scanned location.
+   * Details: Upon scanning the QR code, tourists are presented with an audio introduction detailing the historical or interesting aspects of the location. They can play and listen to this audio content directly from the webpage.
+ ​
 ## Instructions
  * Clear instructions for how to use the application from the end-user's perspective
  * How do you access it? For example: Are accounts pre-created or does a user register? Where do you start? etc. 
