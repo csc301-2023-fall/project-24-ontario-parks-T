@@ -52,6 +52,7 @@
  * What are the technical requirements for a developer to set up on their machine or server (e.g. OS, libraries, etc.)?
      * Currently, we have not decided on every technical requirements we might need. For D1, we can only say that we will need some libraries including Django, REACT, and CSS templates like Bulma or Bootstrap. We might also need our members to download and set up Postman, in order to test the applications. But again this is only D1, we have not really started any actual implementations, so this part is expected change as our project goes on.
  * Briefly describe instructions for setting up and running the application. You should address this part like how one would expect a README doc of real-world deployed application would be.
+     * This part will also be updated as we continue on our project. For D1, it's really impossible for us to make clear instructions on how our application can be set up and run.
  * You can see this [example](https://github.com/alichtman/shallow-backup#readme) to get started.
  
  ## Deployment and Github Workflow
