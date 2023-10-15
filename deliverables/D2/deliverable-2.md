@@ -4,7 +4,7 @@
 
 Our product is an Audio QR Management Solution - an audio system for park guides and its management system based on QR code distribution. We are partnering with John Leadston, a Resident Business Analyst at the Ontario Cabinet Office who has worked with Ontario Park for a long time.
 
-There was previously another implementation of a similar problem done by Michele Massa and her team, who was taking CSC301, with the same partner, John Leadston. This project is similar to ours, because it is also a system that allows park visitors to access audios by QR code and managers to manage the audio resources. Some parts of our project may reference this previous implementation.
+Although there was previously another implementation of a similar project done by Michele Massa and her team, who was taking CSC301, with the same partner, John Leadston, and some parts of our project may reference this previous implementation, We are rebuilding the project for a more expandable solution, and fits different user stories.
 
 ### How we divide the project
 
@@ -14,10 +14,11 @@ We decided to divide the project in this way because these are the most basic co
 
 ![plot](../D1/chart1.png)
 
+
 ### Responsibility of each subgroup
 
-Frontend: responsible for all the front-end development. Decides the layout of UI, and need to develop two frontends. One to play the audio for the park visitors, and one for the park managers, allowing them to add, delete, edit, and manage the audios and QR code.
+The Frontend Team (Subteam 24.1): specializes in creating user-friendly interfaces, dynamic webpages, and an intuitive admin frontend. Their expertise lies in crafting visually appealing designs and seamless interactions, ensuring an engaging experience for both visitors and administrators using our Audio QR Management Solution. They focus on enhancing user accessibility and system management, making the interface intuitive for all users.
 
-Backend: responsible for all the back-end development. Create server programs that handles the requests from frontends, and retrieve data from the database.
+The Backend Team (Subteam 24.2): specializes in developing a robust API that serves as the bridge between the frontend and the database. They focus on efficient data communication and implement intricate processing logic, ensuring quick and precise handling of user requests. Their work is fundamental to the system's functionality and responsiveness.
 
-Database: responsible for all the database development. Create a database that ensures all data are stored and related correctly and can be retrieved by the backend.
+The Database Team (Subteam 24.3): is responsible for designing and managing a secure and comprehensive database. They organize audio files, user data, and essential resources, ensuring seamless data accessibility. By developing a sophisticated database structure, they provide a reliable foundation for the entire system, enabling efficient storage and retrieval of information.
