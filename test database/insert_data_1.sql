@@ -1,0 +1,94 @@
+INSERT INTO admins VALUES (1,'yilz','123789');
+INSERT INTO admins VALUES (2,'hao','123789');
+
+INSERT INTO locations VALUES (1,'Ontario Science Centre','770 Don Mills Rd','Toronto','ON','M3C 1T3', 43.7161, -79.3393);
+INSERT INTO locations VALUES (2,'Royal Ontario Museum','100 Queen''s Park','Toronto','ON','M5S 2C6', 43.6677, -79.3947);
+INSERT INTO locations VALUES (3,'Vancouver Public Library','350 W Georgia St','Vancouver','BC','V6B 6B1', 49.2799, -123.1151);
+INSERT INTO locations VALUES (4,'Vancouver Art Gallery','750 Hornby St','Vancouver','BC','V6Z 2H7', 49.2827, -123.1207);
+INSERT INTO locations VALUES (5,'Toronto Public Library','789 Yonge St','Toronto','ON','M4W 2G8', 43.6714, -79.3861);
+
+INSERT INTO medias VALUES (
+    1, 
+    'Ontario Science Centre Audio 1',
+    'video',
+    'Left blank',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ontario_Science_Centre.jpg/220px-Ontario_Science_Centre.jpg',
+    'https://www.youtube.com/watch?v=H3EhLZf9VlU',
+    'winter',
+    NULL,
+    NULL,
+    NULL,
+    43.7161, -79.3393
+);
+INSERT INTO medias VALUES (
+    2, 
+    'Royal Ontario Museum Audio 1',
+    'video',
+    'Left blank',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ontario_Science_Centre.jpg/220px-Ontario_Science_Centre.jpg',
+    'https://www.youtube.com/watch?v=H3EhLZf9VlU',
+    NULL,
+    NULL,
+    NULL,
+    NULL,
+    43.6677, -79.3947
+);
+INSERT INTO medias VALUES (
+    3, 
+    'Vancouver Public Library Audio 1',
+    'video',
+    'Left blank',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ontario_Science_Centre.jpg/220px-Ontario_Science_Centre.jpg',
+    'https://www.youtube.com/watch?v=H3EhLZf9VlU',
+    'spring',
+    NULL,
+    NULL,
+    NULL,
+    49.2799, -123.1151
+);
+INSERT INTO medias VALUES (
+    4, 
+    'Vancouver Art Gallery Audio 1',
+    'video',
+    'Left blank',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ontario_Science_Centre.jpg/220px-Ontario_Science_Centre.jpg',
+    'https://www.youtube.com/watch?v=H3EhLZf9VlU',
+    'summer',
+    NULL,
+    NULL,
+    NULL,
+    49.2827, -123.1207
+);
+INSERT INTO medias VALUES (
+    5, 
+    'Toronto Public Library Audio 1',
+    'video',
+    'Left blank',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ontario_Science_Centre.jpg/220px-Ontario_Science_Centre.jpg',
+    'https://www.youtube.com/watch?v=H3EhLZf9VlU',
+    'fall',
+    NULL,
+    NULL,
+    NULL,
+    43.6714, -79.3861
+);
+INSERT INTO medias VALUES (
+    6, 
+    'Vancouver Public Library Audio 2',
+    'video',
+    'Left blank',
+    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Ontario_Science_Centre.jpg/220px-Ontario_Science_Centre.jpg',
+    'https://www.youtube.com/watch?v=H3EhLZf9VlU',
+    'fall',
+    NULL,
+    NULL,
+    NULL,
+    49.2799, -123.1151
+);
+
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (1,1);
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (2,2);
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (3,3);
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (4,4);
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (5,5);
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (3,6);

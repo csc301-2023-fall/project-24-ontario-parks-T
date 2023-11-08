@@ -1,18 +1,42 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import UserPageMainFrame from "./UserMain";
 
 
 const AudioPlay = () => {
+    const host = "http://localhost:8000"
+
     // get the audio id from scanned
-    var audio_id = useParams()["audio_id"];
+    var location_id = useParams()["location_id"];
 
-    console.log("audioID: " + audio_id);
+    const [audioPath, setAudioPath] = useState("");
+    const [audioName, setAudioName] = useState("");
+    const [audioImage, setAudioImage] = useState("");
 
-    // set the audio source
-    const audioPath = "http://localhost:8000/api/audio/" + audio_id + "/";
+    console.log("audioID: " + location_id);
+
+    // get the audio data
+    fetch(host + "/location/get/" + location_id, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }
+    ).then((response) => {
+        if (response.ok) {
+            return response.json();
+        }
+        else {
+            throw new Error("Failed to get audio data");
+        }
+    }
+    ).then((data) => {
+        setAudioPath(data["path"]);
+        setAudioName(data["name"]);
+        setAudioImage(data["image"]);
+    })
 
     // return the audio player
     return (
@@ -20,12 +44,8 @@ const AudioPlay = () => {
             <UserPageMainFrame />
             <div className="row">
                 <div className="col-3"></div>
-                <div className="col-3"></div>
-                <div className="col-3"></div>
-            </div>
-            <div className="row">
-                <div className="col-3"></div>
                 <div className="container text-center col-md-auto">
+                    <img src="" alt="" />
                     <audio id="dynamicAudio" controls>
                         <source src={audioPath} type="audio/mpeg"/>
                     </audio>
