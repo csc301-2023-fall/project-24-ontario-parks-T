@@ -1,0 +1,21 @@
+{% block content %}
+<!--<h1>{{audio_name}}</h1>-->
+    <div>
+        <h2>Edit audio: {{audio_name}}</h2>
+        <br>
+            <audio controls src={{audio_url}}></audio>
+        <br>
+        <h3>{{ notification }}</h3>
+    </div>
+    <div>
+    <form class="audio-upload" action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            <label for="input-audiofile"> Update Audio File </label>
+            <input id="input-audiofile" type="file" name="audiofile"  accept=".mp3, .wav, .aac, .flac" required>
+            <button type="submit">update</button>
+    </form>
+    </div>
+    <div>
+        <a href="{% url 'AdminControl:manageaudio'%}">Back To Audio Management</a>
+    </div>
+{% endblock %}

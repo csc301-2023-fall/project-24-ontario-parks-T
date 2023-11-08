@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Ontario Audio Tour</title>
+  <link href="/static/reuse.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <header>
+  </header>
+
+  <ul class="navigation">
+    {% if user.is_authenticated %}
+      <li><a class="active" href="{% url 'AdminControl:profile' %}">Profile</a></li>
+      <li><a href="{% url 'AdminControl:uploadaudio' %}">Add</a></li>
+      <li><a href="">Location Repo</a></li>
+      <li><a href="{% url 'AdminControl:manageaudio' %}">Audio Repo</a></li>
+      <li><a href="{% url 'AdminControl:password_change' %}">Change password</a></li>
+      <li><a href="{% url 'AdminControl:logout' %}">Logout</a></li>
+    {% else %}
+      <li><a href="{% url 'AdminControl:login' %}">Login</a></li>
+    {% endif %}
+  </ul>
+
+  {% block content %}
+  {% endblock %}
+
+  <footer>
+    <p> Designed by:<br>Room Three Sub-team2
+    </p>
+  </footer>
+
+  <!-- <script src="script.js"></script> -->
+</body>
+

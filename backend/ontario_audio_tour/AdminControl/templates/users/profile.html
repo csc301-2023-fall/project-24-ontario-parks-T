@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    {% extends 'index.html' %}
+
+    {% block content %}
+    <div class='header'>
+
+        <h3>
+        User Name: {{ user.username|default:'Guest' }}<br>
+        Welcome!
+        </h3>
+    </div>
+    {% endblock %}
+</html>

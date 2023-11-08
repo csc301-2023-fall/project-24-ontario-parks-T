@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class='header'>
+    <form class="audio-upload" action="#" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div>
+            <h2>upload your audio</h2>
+            <br>
+            <h3>{{ notification }}</h3>
+        </div>
+            <label for="input-audioname"> Audio Name </label>
+            <input id="input-audioname" type="text" name="audioname" required><br>
+            <label for="input-audiofile"> Audio File </label>
+            <input id="input-audiofile" type="file" name="audiofile"  accept=".mp3, .wav, .aac, .flac" required><br>
+            <button type="submit">upload</button>
+    </form>
+    <a href="{% url 'AdminControl:manageaudio'%}">Back To Audio Management</a>
+    </div>
+{% endblock %}

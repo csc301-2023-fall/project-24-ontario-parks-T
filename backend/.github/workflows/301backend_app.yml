@@ -1,0 +1,30 @@
+name: 301backend_app
+on: 
+    push:
+        branches:
+            - "main"
+
+jobs:
+  build:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    steps:
+      - # checkout to the repository on the build machine
+        name: Checkout
+        uses: actions/checkout@v3
+      - # login to Docker Hub using the secrets provided
+        name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Compose Docker Image
+        run: |
+            cd ontario_audio_tour
+            docker-compose up --build -d
+      -
+        name: push Image to Docker Repo
+        run: |
+          docker tag docker.io/library/deliverable-2-24-2-wang2431-hejingy4_web:latest jach29/csc301backend:latest
+          docker push jach29/csc301backend:latest

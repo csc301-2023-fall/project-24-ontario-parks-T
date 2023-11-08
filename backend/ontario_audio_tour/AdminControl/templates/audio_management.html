@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+    <div class='header'>
+        <div>
+            <h2>There is {{audio_count}} Audios Stored Currently</h2>
+        </div>
+
+        <table>
+            {% for audio in audio_list%}
+                <tr>
+                    <td><h3>{{audio.name}}</h3></td>
+                    <td>
+                        <a href="{%url 'AdminControl:editaudio' audio.name%}">edit</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{% url 'AdminControl:deleteaudio' audio.name%}">
+                            {% csrf_token %}
+                            <button type="submit"> delete </button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        <a href="{% url 'AdminControl:uploadaudio'%}">Upload New Audio</a>
+    </div>
+{% endblock %}
