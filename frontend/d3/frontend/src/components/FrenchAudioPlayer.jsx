@@ -12,8 +12,9 @@ const FrenchAudioPlayer = () => {
     var location_id = useParams()["location_id"];
 
     const [audioPath, setAudioPath] = useState("");
-    const [audioName, setAudioName] = useState("");
-    const [audioImage, setAudioImage] = useState("");
+    const [audioName, setAudioName] = useState("Default Name");
+    const [audioDescription, setAudioDescription] = useState("This is a default example description.");
+    const [audioImage, setAudioImage] = useState("Ontario-Parks-Title.jpg");
     const [currSeason, setCurrSeason] = useState("Spring");
 
     console.log("audioID: " + location_id);
@@ -30,7 +31,7 @@ const FrenchAudioPlayer = () => {
                 <div className="col-3"></div>
                 <div className="container col-md-auto">
                     <div className="card" style={{width: 24 + "rem"}}>
-                        <img className="mx-auto d-block img-fluid" src="" alt="" style={{width: 20 + "rem", height: 20 + "rem"}}/>
+                        <img className="mx-auto d-block img-fluid" src={audioImage} alt="" style={{width: 400 + "px", height: 400 + "px"}}/>
                         <div className="card-body">
                             <h5 className="card-title"> {audioName} </h5>
                             <p className="card-text">
