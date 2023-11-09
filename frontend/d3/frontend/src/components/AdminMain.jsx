@@ -20,15 +20,17 @@ const AdminPageMainFrame = () => {
                             <li className="nav-item me-3">
                                 <Link className="nav-link active" aria-current="page" href="#">Home</Link>
                             </li>
-                            <li className="nav-item dropdown me-3">
-                                <Link className="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Functions
-                                </Link>
-                                <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                    <li><Link className="dropdown-item" href="#">Add Location</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Add Audio</Link></li>
-                                    <li><Link className="dropdown-item" href="#">Edit Location</Link></li>
-                                </ul>
+                            <li className="nav-item me-3">
+                                <Link className="nav-link" aria-current="page" href="#">Add Location</Link>
+                            </li>
+                            <li className="nav-item me-3">
+                                <Link className="nav-link" aria-current="page" href="#">Add Audio</Link>
+                            </li>
+                            <li className="nav-item me-3">
+                                <Link className="nav-link" aria-current="page" href="#">Edit Location</Link>
+                            </li>
+                             <li className="nav-item me-3">
+                                <Link className="nav-link" aria-current="page" href="#">Location List</Link>
                             </li>
                             
                         </ul>
