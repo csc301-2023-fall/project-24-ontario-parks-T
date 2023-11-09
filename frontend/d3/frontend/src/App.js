@@ -15,8 +15,8 @@ function App() {
           <Route path="play/:location_id" element={<EngAudioPlayer />} />
         </Route>
 
-        <Route path="/french" element={<></>} >
-          <Route path="play/:location_id" element={<></>} />
+        <Route path="/french">
+          <Route path="play/:location_id" element={<>french</>} />
         </Route>
       </Routes>
     </BrowserRouter>
