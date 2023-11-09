@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import FrenchUserPageMainFrame from "./FrenchUserMain";
 
 
-const FrenchAudioPlay = () => {
+const FrenchAudioPlayer = () => {
     const host = "http://localhost:8000"
 
     // get the audio id from scanned
@@ -20,14 +20,30 @@ const FrenchAudioPlay = () => {
 
     return (
         <>
-            <FrenchUserPageMainFrame season={currSeason} />
+            <FrenchUserPageMainFrame season={currSeason} location_id={location_id} />
+
+            <div className="mx-5" style={{height: 5 + "rem"}}>
+
+            </div>
+            
             <div className="row">
                 <div className="col-3"></div>
-                <div className="container text-center col-md-auto">
-                    <img src="" alt="" />
-                    <audio id="dynamicAudio" controls>
-                        <source src={audioPath} type="audio/mpeg"/>
-                    </audio>
+                <div className="container col-md-auto">
+                    <div className="card" style={{width: 24 + "rem"}}>
+                        <img className="mx-auto d-block img-fluid" src="" alt="" style={{width: 20 + "rem", height: 20 + "rem"}}/>
+                        <div className="card-body">
+                            <h5 className="card-title"> {audioName} </h5>
+                            <p className="card-text">
+                                {audioDescription}
+                            </p>
+                            <div className="text-center">
+                                <audio id="dynamicAudio" controls>
+                                    <source src={audioPath} type="audio/mpeg"/>
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
                 <div className="col-3"></div>
             </div>
@@ -35,4 +51,4 @@ const FrenchAudioPlay = () => {
     );
 }
 
-export default FrenchAudioPlay;
+export default FrenchAudioPlayer;
