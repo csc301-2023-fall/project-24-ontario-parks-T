@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import EngUserPageMainFrame from "./EngUserMain";
+import oneImage from "./Image";
 
 
 const EngAudioPlay = () => {
@@ -14,10 +15,11 @@ const EngAudioPlay = () => {
     const [audioPath, setAudioPath] = useState("");
     const [audioName, setAudioName] = useState("Default Name");
     const [audioDescription, setAudioDescription] = useState("This is a default example description.");
-    const [audioImagePath, setAudioImagePath] = useState("C:\Users\v2-Za\Desktop\= =\University\grade 4\CSC301\project-24-ontario-parks-T\frontend\d3\frontend\src\Ontario-Parks-Title.jpg");
+    const [audioImage, setAudioImage] = useState("Ontario-Parks-Title.jpg");
     const [currSeason, setCurrSeason] = useState("Spring");
 
     console.log("audioID: " + location_id);
+    console.log("audioPath: " + audioPath);
 
     // get the audio data
     // fetch(host + "/location/get/" + location_id, {
@@ -53,7 +55,7 @@ const EngAudioPlay = () => {
                 <div className="col-3"></div>
                 <div className="container col-md-auto">
                     <div className="card" style={{width: 24 + "rem"}}>
-                        <img className="mx-auto d-block img-fluid" src="" alt="" style={{width: 20 + "rem", height: 20 + "rem"}}/>
+                        <img className="mx-auto d-block img-fluid" src={audioImage} alt="" style={{width: 400 + "px", height: 400 + "px"}}/>
                         <div className="card-body">
                             <h5 className="card-title"> {audioName} </h5>
                             <p className="card-text">
