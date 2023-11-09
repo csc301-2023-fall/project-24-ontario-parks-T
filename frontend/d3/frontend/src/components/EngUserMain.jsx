@@ -56,7 +56,7 @@ const EngUserPageMainFrame = (props) => {
                 </div>
             </nav>
 
-            <footer className="text-center py-1 bg-dark text-white">
+            <footer className="text-center bg-dark text-white">
                 <div className="container">
                     <p>&copy; 2023 csc301 G24 All rights reserved.</p>
                 </div>

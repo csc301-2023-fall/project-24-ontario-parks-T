@@ -47,30 +47,33 @@ const EngAudioPlay = () => {
         <>
             <EngUserPageMainFrame season={currSeason} location_id={location_id} />
 
-            <div className="mx-5" style={{height: 5 + "rem"}}>
+            <div className="container-fluid">
 
-            </div>
-            
-            <div className="row">
-                <div className="col-3"></div>
-                <div className="container col-md-auto">
-                    <div className="card" style={{width: 24 + "rem"}}>
-                        <img className="mx-auto d-block img-fluid" src={audioImage} alt="" style={{width: 400 + "px", height: 400 + "px"}}/>
-                        <div className="card-body">
-                            <h5 className="card-title"> {audioName} </h5>
-                            <p className="card-text">
-                                {audioDescription}
-                            </p>
-                            <div className="text-center">
-                                <audio id="dynamicAudio" controls>
-                                    <source src={audioPath} type="audio/mpeg"/>
-                                </audio>
-                            </div>
-                        </div>
+                <div className="mx-5" style={{height: 5 + "rem"}}>
 
-                    </div>
                 </div>
-                <div className="col-3"></div>
+
+                <div className="row">
+                    <div className="col-3"></div>
+                    <div className="container col-md-auto">
+                        <div className="card" style={{width: 24 + "rem"}}>
+                            <img className="mx-auto d-block img-fluid" src={audioImage} alt="Audio Image" style={{width: 400 + "px", height: 400 + "px"}}/>
+                            <div className="card-body">
+                                <h5 className="card-title"> {audioName} </h5>
+                                <p className="card-text">
+                                    {audioDescription}
+                                </p>
+                                <div className="text-center">
+                                    <audio id="dynamicAudio" controls>
+                                        <source src={audioPath} type="audio/mpeg"/>
+                                    </audio>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div className="col-3"></div>
+                </div>
             </div>
         </>
     );
