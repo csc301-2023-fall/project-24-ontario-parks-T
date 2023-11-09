@@ -25,6 +25,7 @@ const UserPageMainFrame = () => {
                                     Check Other Season
                                 </Link>
                                 <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                    <li><Link className="dropdown-item" href="#">Spring</Link></li>
                                     <li><Link className="dropdown-item" href="#">Summer</Link></li>
                                     <li><Link className="dropdown-item" href="#">autumn</Link></li>
                                     <li><Link className="dropdown-item" href="#">Winter</Link></li>
