@@ -12,8 +12,9 @@ const EngAudioPlay = () => {
     const location_id = useParams()["location_id"];
 
     const [audioPath, setAudioPath] = useState("");
-    const [audioName, setAudioName] = useState("");
-    const [audioImage, setAudioImage] = useState("");
+    const [audioName, setAudioName] = useState("Default Name");
+    const [audioDescription, setAudioDescription] = useState("This is a default example description.");
+    const [audioImagePath, setAudioImagePath] = useState("C:\Users\v2-Za\Desktop\= =\University\grade 4\CSC301\project-24-ontario-parks-T\frontend\d3\frontend\src\Ontario-Parks-Title.jpg");
     const [currSeason, setCurrSeason] = useState("Spring");
 
     console.log("audioID: " + location_id);
@@ -43,13 +44,29 @@ const EngAudioPlay = () => {
     return (
         <>
             <EngUserPageMainFrame season={currSeason} location_id={location_id} />
+
+            <div className="mx-5" style={{height: 5 + "rem"}}>
+
+            </div>
+            
             <div className="row">
                 <div className="col-3"></div>
-                <div className="container text-center col-md-auto">
-                    <img src="" alt="" />
-                    <audio id="dynamicAudio" controls>
-                        <source src={audioPath} type="audio/mpeg"/>
-                    </audio>
+                <div className="container col-md-auto">
+                    <div className="card" style={{width: 24 + "rem"}}>
+                        <img className="mx-auto d-block img-fluid" src="" alt="" style={{width: 20 + "rem", height: 20 + "rem"}}/>
+                        <div className="card-body">
+                            <h5 className="card-title"> {audioName} </h5>
+                            <p className="card-text">
+                                {audioDescription}
+                            </p>
+                            <div className="text-center">
+                                <audio id="dynamicAudio" controls>
+                                    <source src={audioPath} type="audio/mpeg"/>
+                                </audio>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
                 <div className="col-3"></div>
             </div>
