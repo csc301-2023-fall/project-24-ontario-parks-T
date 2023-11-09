@@ -23,6 +23,14 @@ const FrenchUserPageMainFrame = (props) => {
                                 <Link className="nav-link active" aria-current="page" href="#">maison</Link>
                             </li>
 
+                            <li className="nav-item me-3">
+                                <button className='btn'>
+                                    <Link to={"/french/play/" + location_id} style={{ textDecoration: 'none', color: 'white' }}>
+                                        English
+                                    </Link>
+                                </button>
+                            </li>
+
                             <li className='nav-item'>
                                 <Dropdown>
                                 <Dropdown.Toggle variant='secondary' id="dropdown-basic">
