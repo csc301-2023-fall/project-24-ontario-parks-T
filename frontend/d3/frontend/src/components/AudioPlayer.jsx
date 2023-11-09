@@ -14,34 +14,35 @@ const AudioPlay = () => {
     const [audioPath, setAudioPath] = useState("");
     const [audioName, setAudioName] = useState("");
     const [audioImage, setAudioImage] = useState("");
+    const [currSeason, setCurrSeason] = useState("Spring");
 
     console.log("audioID: " + location_id);
 
     // get the audio data
-    fetch(host + "/location/get/" + location_id, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    }
-    ).then((response) => {
-        if (response.ok) {
-            return response.json();
-        }
-        else {
-            throw new Error("Failed to get audio data");
-        }
-    }
-    ).then((data) => {
-        setAudioPath(data["path"]);
-        setAudioName(data["name"]);
-        setAudioImage(data["image"]);
-    })
+    // fetch(host + "/location/get/" + location_id, {
+    //     method: "GET",
+    //     headers: {
+    //         "Content-Type": "application/json",
+    //     },
+    // }
+    // ).then((response) => {
+    //     if (response.ok) {
+    //         return response.json();
+    //     }
+    //     else {
+    //         throw new Error("Failed to get audio data");
+    //     }
+    // }
+    // ).then((data) => {
+    //     setAudioPath(data["path"]);
+    //     setAudioName(data["name"]);
+    //     setAudioImage(data["image"]);
+    // })
 
     // return the audio player
     return (
         <>
-            <UserPageMainFrame />
+            <UserPageMainFrame season={currSeason} />
             <div className="row">
                 <div className="col-3"></div>
                 <div className="container text-center col-md-auto">

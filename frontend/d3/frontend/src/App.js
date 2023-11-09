@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           <Route path="/components/Card/" element={<AudioPlayer />}/>
-          <Route path="/play/:audio_id" element={<AudioPlayer />} />
+          <Route path="/play/:location_id" element={<AudioPlayer />} />
 
       </Routes>
     </BrowserRouter>
