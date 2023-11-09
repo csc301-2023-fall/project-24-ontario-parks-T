@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
 
 import EngUserPageMainFrame from './components/EngUserMain';
 import EngAudioPlayer from './components/EngAudioPlayer';
+import FrenchUserPageMainFrame  from './components/FrenchUserMain';
+import FrenchAudioPlayer from './components/FrenchAudioPlayer';
 
 function App() {
   return (
@@ -16,7 +18,7 @@ function App() {
         </Route>
 
         <Route path="/french">
-          <Route path="play/:location_id" element={<>french</>} />
+          <Route path="play/:location_id" element={<FrenchAudioPlayer/>} />
         </Route>
       </Routes>
     </BrowserRouter>
