@@ -9,7 +9,7 @@ const EngAudioPlay = () => {
     const host = "http://localhost:8000"
 
     // get the audio id from scanned
-    var location_id = useParams()["location_id"];
+    const location_id = useParams()["location_id"];
 
     const [audioPath, setAudioPath] = useState("");
     const [audioName, setAudioName] = useState("");
@@ -42,7 +42,7 @@ const EngAudioPlay = () => {
     // return the audio player
     return (
         <>
-            <EngUserPageMainFrame season={currSeason} />
+            <EngUserPageMainFrame season={currSeason} location_id={location_id} />
             <div className="row">
                 <div className="col-3"></div>
                 <div className="container text-center col-md-auto">
