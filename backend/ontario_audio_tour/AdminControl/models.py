@@ -5,6 +5,8 @@ from django.db import models
 
 class Audio(models.Model):
     media_id = models.AutoField(primary_key=True, unique=True, default=0)
+    location = models.OneToOneField(
+        "Location", on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=100, unique=True)
     link = models.FileField(upload_to="audio/", default="")
     type = models.CharField(max_length=100, default="audio")
@@ -57,14 +59,5 @@ class Location(models.Model):
         db_table = "locations"
 
     def __str__(self):
-        return self.name
+        return self.location_name
     
-
-class locations_have_medias(models.Model):
-    pair_id = models.AutoField(primary_key=True, unique=True)
-    Location_id = models.ForeignKey(Location, on_delete=models.CASCADE)
-    media_id = models.ForeignKey(Audio, on_delete=models.CASCADE)
-
-    class Meta:
-        db_table = "locations_have_medias"
-        unique_together = (("Location_id", "media_id"),)
