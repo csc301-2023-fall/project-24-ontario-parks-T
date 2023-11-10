@@ -4,8 +4,18 @@ from django.db import models
 
 
 class Audio(models.Model):
+    media_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100, unique=True)
     audio = models.FileField(upload_to="music/")
+    type = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)
+    image = models.ImageField(upload_to="images/")
+    season = models.CharField(max_length=100)
+    year = models.IntegerField()
+    month = models.IntegerField()
+    day = models.IntegerField()
+    longitude = models.FloatField()
+    latitude = models.FloatField()
     # uploader = models.CharField(max_length=100)
     # last_modified_time = models.DateTimeField()
 

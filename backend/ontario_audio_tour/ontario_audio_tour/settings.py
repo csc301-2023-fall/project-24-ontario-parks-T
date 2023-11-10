@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'ontario_audio_tour.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_database',
         'USER': 'yilz',
         'PASSWORD': 'csc301P24!',
