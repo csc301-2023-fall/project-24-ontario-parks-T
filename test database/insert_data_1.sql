@@ -8,7 +8,8 @@ INSERT INTO locations VALUES (4,'Vancouver Art Gallery','750 Hornby St','Vancouv
 INSERT INTO locations VALUES (5,'Toronto Public Library','789 Yonge St','Toronto','ON','M4W 2G8', 43.6714, -79.3861);
 
 INSERT INTO medias VALUES (
-    1, 
+    1,
+    1,
     'Ontario Science Centre Audio 1',
     'video',
     'Left blank',
@@ -21,7 +22,8 @@ INSERT INTO medias VALUES (
     43.7161, -79.3393
 );
 INSERT INTO medias VALUES (
-    2, 
+    2,
+    2,
     'Royal Ontario Museum Audio 1',
     'video',
     'Left blank',
@@ -34,7 +36,8 @@ INSERT INTO medias VALUES (
     43.6677, -79.3947
 );
 INSERT INTO medias VALUES (
-    3, 
+    3,
+    3,
     'Vancouver Public Library Audio 1',
     'video',
     'Left blank',
@@ -47,7 +50,8 @@ INSERT INTO medias VALUES (
     49.2799, -123.1151
 );
 INSERT INTO medias VALUES (
-    4, 
+    4,
+    4,
     'Vancouver Art Gallery Audio 1',
     'video',
     'Left blank',
@@ -60,7 +64,8 @@ INSERT INTO medias VALUES (
     49.2827, -123.1207
 );
 INSERT INTO medias VALUES (
-    5, 
+    5,
+    5,
     'Toronto Public Library Audio 1',
     'video',
     'Left blank',
@@ -73,7 +78,8 @@ INSERT INTO medias VALUES (
     43.6714, -79.3861
 );
 INSERT INTO medias VALUES (
-    6, 
+    6,
+    3,
     'Vancouver Public Library Audio 2',
     'video',
     'Left blank',
@@ -86,9 +92,9 @@ INSERT INTO medias VALUES (
     49.2799, -123.1151
 );
 
-INSERT INTO locations_have_medias (location_id, media_id) VALUES (1,1);
+/* INSERT INTO locations_have_medias (location_id, media_id) VALUES (1,1);
 INSERT INTO locations_have_medias (location_id, media_id) VALUES (2,2);
 INSERT INTO locations_have_medias (location_id, media_id) VALUES (3,3);
 INSERT INTO locations_have_medias (location_id, media_id) VALUES (4,4);
 INSERT INTO locations_have_medias (location_id, media_id) VALUES (5,5);
-INSERT INTO locations_have_medias (location_id, media_id) VALUES (3,6);
+INSERT INTO locations_have_medias (location_id, media_id) VALUES (3,6); */

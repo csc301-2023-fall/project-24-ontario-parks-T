@@ -10,7 +10,7 @@ set DB_NAME=test_database
 set DB_PORT=3306
 
 :: the sql files to execute
-set SQL_FILES=create_database_1.sql create_view_1.sql insert_data_1.sql
+set SQL_FILES=create_database_2.sql create_view_1.sql insert_data_1.sql
 
 :: loop through the list of SQL files and execute them
 for %%f in (%SQL_FILES%) do (
