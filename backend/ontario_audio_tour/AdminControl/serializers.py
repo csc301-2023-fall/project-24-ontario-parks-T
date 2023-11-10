@@ -4,4 +4,4 @@ from .models import *
 class AudioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Audio
-        fields = ["name", "audio"]
+        fields = "__all__"
