@@ -9,9 +9,14 @@ from django.urls import reverse
 from AdminControl.forms import CustomUserCreationForm
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 from django.contrib import messages
 from django.views import View
 from django.http import JsonResponse
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.views import APIView
+from .serializers import *
 
 # Create your views here.
 
@@ -79,6 +84,68 @@ class get_location(View):
             'image_paths': list(location.images.values('name', 'image')),
         }
         return JsonResponse(data)
+
+@method_decorator(login_required, name='dispatch')
+class AudioListApiView(APIView):
+    def get(self, request, *args, **kwargs):
+        audios = Audio.objects.all()
+        serializer = AudioSerializer(audios, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, *args, **kwargs):
+        if Audio.objects.filter(name=request.name).exists():
+            return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
+
+        serializer = AudioSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # try:
+        #     serializer = AudioSerializer(data=request.data)
+        #     if serializer.is_valid():
+        #         serializer.save()
+        #         return Response(serializer.data, status=status.HTTP_201_CREATED)
+        #     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        # except IntegrityError:
+        #     #redirect to edit?
+        #     return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
+
+class AudioDetaiApilView(APIView):
+    def not_exist_error(self):
+        return Response(
+                {"res": "Audio does not exist"},
+                status=status.HTTP_400_BAD_REQUEST
+        )
+
+    def get(self, request,audio_name, *args, **kwargs):
+        audio = Audio.objects.filter(name = audio_name)
+        if not audio:
+            return self.not_exist_error()
+        serializer = AudioSerializer(audio, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @login_required
+    def put(self, request, audio_name, *args, **kwargs):
+        audio = Audio.objects.get(name = audio_name)
+        if not audio:
+            return self.not_exist_error()
+        serializer = AudioSerializer(instance = audio, data=request.data, partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @login_required
+    def delete(self, request, audio_name, *args, **kwargs):
+        audio = Audio.objects.get(name = audio_name)
+        if not audio:
+            return self.not_exist_error()
+        audio.delete()
+        return Response(
+            {"res": "Audio deleted"},
+            status=status.HTTP_200_OK
+        )
 
 def profile(request):
     return render(request, "users/profile.html")
