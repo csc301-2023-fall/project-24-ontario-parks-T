@@ -2,7 +2,7 @@ import os
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
-from AdminControl.models import Audio
+from AdminControl.models import Audio, Location
 from django.contrib.auth import login
 from django.shortcuts import redirect, render
 from django.urls import reverse
@@ -10,6 +10,8 @@ from AdminControl.forms import CustomUserCreationForm
 from django.db import IntegrityError
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.views import View
+from django.http import JsonResponse
 
 # Create your views here.
 
@@ -67,6 +69,16 @@ def delete_audio(request, audio_name):
     elif request.method=='GET':
         raise Http404('GET Method is not allowed')
     return redirect(reverse("AdminControl:manageaudio"))
+
+class get_location(View):
+    def get(self, request, *args, **kwargs):
+        location = Location.objects.get(pk=kwargs['pk'])
+        data = {
+            'name': location.name,
+            'audios': list(location.audios.values('name', 'audio')),
+            'image_paths': list(location.images.values('name', 'image')),
+        }
+        return JsonResponse(data)
 
 def profile(request):
     return render(request, "users/profile.html")

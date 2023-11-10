@@ -6,10 +6,11 @@ from django.urls import reverse_lazy
 app_name="AdminControl"
 
 urlpatterns = [
-    path("uploadaudio/", views.upload_audio, name="uploadaudio"),
-    path("editaudio/<audio_name>/", views.edit_audio, name="editaudio"),
-    path("manageaudio/", views.manage_audio, name="manageaudio"),
-    path("deleteaudio/<audio_name>/", views.delete_audio, name="deleteaudio"),
+    path("audio/upload/", views.upload_audio, name="uploadaudio"),
+    path("audio/edit/<audio_name>/", views.edit_audio, name="editaudio"),
+    path("audio/manage/", views.manage_audio, name="manageaudio"),
+    path("audio/delete/<audio_name>/", views.delete_audio, name="deleteaudio"),
+    path("location/get/<int:pk>/", views.get_location.as_view(), name="getlocation"),
     path('accounts/', include('django.contrib.auth.urls')),
     path("profile/", views.profile, name="profile"),
     path("register/", views.register, name="register"),
