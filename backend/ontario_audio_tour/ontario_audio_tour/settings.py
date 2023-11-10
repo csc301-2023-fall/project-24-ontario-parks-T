@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'ontario_audio_tour.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'test_database',
+        'USER': 'yilz',
+        'PASSWORD': 'csc301P24!',
+        'HOST': 'yilz-1.mysql.database.azure.com',
+        'PORT': '3306',
     }
 }
 
