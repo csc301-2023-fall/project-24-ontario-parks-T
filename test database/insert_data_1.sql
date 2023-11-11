@@ -1,3 +1,5 @@
+/* INSERT INTO auth_user VALUES (1,'yilz','123789', null, 1, "Yifang", "Zhang", "yilz.zhang@mail.utoronto.ca", '1', '1', null);
+INSERT INTO auth_user VALUES (2,'hao','123789', null, 1, "Hao", "Yin", "", '1', '1', null); */
 INSERT INTO admins VALUES (1,'yilz','123789');
 INSERT INTO admins VALUES (2,'hao','123789');
 
