@@ -1,18 +1,17 @@
-DROP DATABASE IF EXISTS test_database;
-CREATE DATABASE test_database;
 USE test_database;
 
 DROP TABLE IF EXISTS locations_have_medias;
 
 DROP TABLE IF EXISTS admins;
+DROP TABLE IF EXISTS medias;
+DROP TABLE IF EXISTS locations;
+
 CREATE TABLE admins (
     admin_id int(10) NOT NULL AUTO_INCREMENT,
     username varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     PRIMARY KEY (admin_id)
 );
-
-DROP TABLE IF EXISTS locations;
 CREATE TABLE locations (
     location_id int(15) NOT NULL AUTO_INCREMENT,
     location_name varchar(255) NOT NULL,
@@ -27,8 +26,6 @@ CREATE TABLE locations (
     
     PRIMARY KEY (location_id)
 );
-
-DROP TABLE IF EXISTS medias;
 CREATE TABLE medias (
     media_id int(15) NOT NULL AUTO_INCREMENT,
     location int(15) NOT NULL,

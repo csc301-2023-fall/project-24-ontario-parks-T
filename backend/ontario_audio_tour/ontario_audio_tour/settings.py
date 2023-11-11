@@ -91,13 +91,13 @@ DATABASES = {
         'HOST': 'yilz-1.mysql.database.azure.com',
         'PORT': '3306',
     },
-    'sqllite': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
-DATABASES_ROUTERS = ['AuthRouter.py']
+# DATABASES_ROUTERS = ['AuthRouter.py']
 
 
 # Password validation

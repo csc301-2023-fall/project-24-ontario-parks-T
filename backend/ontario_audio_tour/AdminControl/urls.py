@@ -22,9 +22,9 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 
-    # path('accounts/', include('django.contrib.auth.urls')),
-    # path("profile/", views.profile, name="profile"),
-    # path("register/", views.register, name="register"),
-    # path('password_change/', auth_views.PasswordChangeView.as_view(success_url=reverse_lazy('AdminControl:password_change_done')), name='password_change'),
-    # path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path("profile/", views.profile, name="profile"),
+    path("register/", views.register, name="register"),
+    path('password_change/', auth_views.PasswordChangeView.as_view(success_url=reverse_lazy('AdminControl:password_change_done')), name='password_change'),
+    path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
 ]
