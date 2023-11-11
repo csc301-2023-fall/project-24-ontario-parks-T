@@ -20,6 +20,7 @@ urlpatterns = [
     
     path('api/location/', views.LocationListApiView.as_view(), name='location-api-list'),
     path('api/location/<str:location_name>/', views.LocationDetaiApilView.as_view(), name='location-api-detail'),
+    path('api/location/<str:location_name>/audio_list/', views.LocationAudioListApilView.as_view(), name='location-api-detail'),
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

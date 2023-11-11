@@ -16,6 +16,7 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
+from rest_framework.generics import ListAPIView
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
 
@@ -201,6 +202,19 @@ class LocationDetaiApilView(APIView):
             {"res": "Audio deleted"},
             status=status.HTTP_200_OK
         )
+    
+class LocationAudioListApilView(ListAPIView):
+    model = Audio
+    serializer_class = AudioSerializer
+    def get_queryset(self):
+        location_name = self.kwargs.get('location_name')
+        location = Location.objects.filter(name = location_name)
+        if not location:
+            return self.not_exist_error()
+        location = Location.objects.get(name = location_name)
+        queryset = Audio.objects.filter(location=location)
+        return queryset
+
 
 # Create your views here.
 def profile(request):
