@@ -82,8 +82,14 @@ DATABASES = {
         'PASSWORD': 'csc301P24!',
         'HOST': 'yilz-1.mysql.database.azure.com',
         'PORT': '3306',
+    },
+    'sqllite': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DATABASES_ROUTERS = ['AuthRouter.py']
 
 
 # Password validation
