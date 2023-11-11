@@ -149,22 +149,3 @@ class AudioDetaiApilView(APIView):
             {"res": "Audio deleted"},
             status=status.HTTP_200_OK
         )
-
-def profile(request):
-    return render(request, "users/profile.html")
-
-def register(request):
-    if request.method == "GET":
-        return render(
-            request, "users/register.html",
-            {"form": CustomUserCreationForm}
-        )
-    elif request.method == "POST":
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request, user)
-            return redirect(reverse("AdminControl:profile"))
-        else:
-            messages.info(request, 'invalid registration details')
-            return render(request, "users/register.html", {"form": form})
