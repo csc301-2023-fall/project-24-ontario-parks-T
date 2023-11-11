@@ -203,7 +203,7 @@ class LocationDetaiApilView(APIView):
             status=status.HTTP_200_OK
         )
     
-class LocationAudioListApilView(ListAPIView):
+class LocationAudioListApiView(ListAPIView):
     model = Audio
     serializer_class = AudioSerializer
     def get_queryset(self):
