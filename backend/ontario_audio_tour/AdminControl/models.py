@@ -52,8 +52,8 @@ class Location(models.Model):
     location_city = models.CharField(max_length=100, unique=True)
     location_province = models.CharField(max_length=100, unique=True)
     location_postal_code = models.CharField(max_length=100, unique=True)
-    location_longitude = models.FloatField(null=True)
-    location_latitude = models.FloatField(null=True)
+    longitude = models.FloatField(null=True)
+    latitude = models.FloatField(null=True)
 
     class Meta:
         db_table = "locations"

@@ -96,12 +96,19 @@ class AudioListApiView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        if Audio.objects.filter(name=request.name).exists():
+        if "name" not in request.data.keys():
+            return Response({'notification': 'No name in input'}, status=status.HTTP_400_BAD_REQUEST)
+        if Audio.objects.filter(name=request.data['name']).exists():
             return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
 
         serializer = AudioSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            audio = serializer.save()
+            if 'link' in request.FILES:
+                audio.link = request.FILES['link']
+            if 'image' in request.FILES:
+                audio.image = request.FILES['image']
+            audio.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         # try:
@@ -129,20 +136,23 @@ class AudioDetaiApilView(APIView):
         serializer = AudioSerializer(audio, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    # @login_required
     def put(self, request, audio_name, *args, **kwargs):
-        audio = Audio.objects.get(name = audio_name)
+        audio = Audio.objects.filter(name = audio_name).first()
         if not audio:
             return self.not_exist_error()
         serializer = AudioSerializer(instance = audio, data=request.data, partial = True)
         if serializer.is_valid():
-            serializer.save()
+            audio = serializer.save()
+            if 'link' in request.FILES:
+                audio.link = request.FILES['link']
+            if 'image' in request.FILES:
+                audio.image = request.FILES['image']
+            audio.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    # @login_required
     def delete(self, request, audio_name, *args, **kwargs):
-        audio = Audio.objects.get(name = audio_name)
+        audio = Audio.objects.filter(name = audio_name).first()
         if not audio:
             return self.not_exist_error()
         audio.delete()
@@ -159,7 +169,7 @@ class LocationListApiView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        if Location.objects.filter(name=request.name).exists():
+        if Location.objects.filter(name=request.data['location_name']).exists():
             return Response({'notification': 'Duplicated Location name'}, status=status.HTTP_409_CONFLICT)
 
         serializer = LocationSerializer(data=request.data)
@@ -184,7 +194,7 @@ class LocationDetaiApilView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, location_name, *args, **kwargs):
-        location = Location.objects.get(name = location_name)
+        location = Location.objects.filter(name = location_name).first()
         if not location:
             return self.not_exist_error()
         serializer = LocationSerializer(instance = location, data=request.data, partial = True)
@@ -194,7 +204,7 @@ class LocationDetaiApilView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, location_name, *args, **kwargs):
-        location = Location.objects.get(name = location_name)
+        location = Location.objects.filter(name = location_name).first()
         if not location:
             return self.not_exist_error()
         location.delete()
