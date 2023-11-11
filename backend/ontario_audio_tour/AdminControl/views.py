@@ -17,6 +17,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
 from .serializers import *
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 
@@ -85,8 +86,9 @@ class get_location(View):
         }
         return JsonResponse(data)
 
-@method_decorator(login_required, name='dispatch')
+# @method_decorator(login_required, name='dispatch')
 class AudioListApiView(APIView):
+    permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         audios = Audio.objects.all()
         serializer = AudioSerializer(audios, many=True)
@@ -112,6 +114,7 @@ class AudioListApiView(APIView):
         #     return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
 
 class AudioDetaiApilView(APIView):
+    permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(
                 {"res": "Audio does not exist"},
@@ -125,7 +128,7 @@ class AudioDetaiApilView(APIView):
         serializer = AudioSerializer(audio, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-    @login_required
+    # @login_required
     def put(self, request, audio_name, *args, **kwargs):
         audio = Audio.objects.get(name = audio_name)
         if not audio:
@@ -136,7 +139,7 @@ class AudioDetaiApilView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    @login_required
+    # @login_required
     def delete(self, request, audio_name, *args, **kwargs):
         audio = Audio.objects.get(name = audio_name)
         if not audio:
