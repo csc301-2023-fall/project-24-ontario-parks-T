@@ -32,7 +32,6 @@ CSRF_TRUSTED_ORIGINS = ["https://ontario-tour-guide-backend.onrender.com"]
 
 INSTALLED_APPS = [
     "AdminControl",
-    "accounts",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

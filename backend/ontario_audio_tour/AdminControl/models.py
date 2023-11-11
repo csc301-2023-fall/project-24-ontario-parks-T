@@ -5,8 +5,8 @@ from django.db import models
 
 class Audio(models.Model):
     media_id = models.AutoField(primary_key=True, unique=True, default=0)
-    location = models.OneToOneField(
-        "Location", on_delete=models.CASCADE, null=True)
+    location = models.ManyToManyField(
+        "Location", related_name='audios')
     name = models.CharField(max_length=100, unique=True)
     link = models.FileField(upload_to="audio/", default="")
     type = models.CharField(max_length=100, default="audio")

@@ -149,6 +149,58 @@ class AudioDetaiApilView(APIView):
             {"res": "Audio deleted"},
             status=status.HTTP_200_OK
         )
+    
+class LocationListApiView(APIView):
+    permission_classes = [IsAuthenticated]
+    def get(self, request, *args, **kwargs):
+        locations = Location.objects.all()
+        serializer = LocationSerializer(locations, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def post(self, request, *args, **kwargs):
+        if Location.objects.filter(name=request.name).exists():
+            return Response({'notification': 'Duplicated Location name'}, status=status.HTTP_409_CONFLICT)
+
+        serializer = LocationSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class LocationDetaiApilView(APIView):
+    permission_classes = [IsAuthenticated]
+    def not_exist_error(self):
+        return Response(
+                {"res": "Location does not exist"},
+                status=status.HTTP_400_BAD_REQUEST
+        )
+
+    def get(self, request, location_name, *args, **kwargs):
+        location = Location.objects.filter(name = location_name)
+        if not location:
+            return self.not_exist_error()
+        serializer = LocationSerializer(location)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def put(self, request, location_name, *args, **kwargs):
+        location = Location.objects.get(name = location_name)
+        if not location:
+            return self.not_exist_error()
+        serializer = LocationSerializer(instance = location, data=request.data, partial = True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, location_name, *args, **kwargs):
+        location = Location.objects.get(name = location_name)
+        if not location:
+            return self.not_exist_error()
+        location.delete()
+        return Response(
+            {"res": "Audio deleted"},
+            status=status.HTTP_200_OK
+        )
 
 # Create your views here.
 def profile(request):
