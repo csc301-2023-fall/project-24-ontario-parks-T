@@ -131,9 +131,11 @@ class AudioDetaiApilView(APIView):
 
     def get(self, request,audio_name, *args, **kwargs):
         audio = Audio.objects.filter(name = audio_name)
-        if not audio:
+        try:
+            audio =  Audio.objects.filter(name = audio_name)
+        except Audio.DoesNotExist:
             return self.not_exist_error()
-        serializer = AudioSerializer(audio, many=True)
+        serializer = AudioSerializer(audio)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, audio_name, *args, **kwargs):
@@ -169,7 +171,7 @@ class LocationListApiView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
-        if Location.objects.filter(name=request.data['location_name']).exists():
+        if Location.objects.filter(location_name=request.data['location_name']).exists():
             return Response({'notification': 'Duplicated Location name'}, status=status.HTTP_409_CONFLICT)
 
         serializer = LocationSerializer(data=request.data)
@@ -187,14 +189,15 @@ class LocationDetaiApilView(APIView):
         )
 
     def get(self, request, location_name, *args, **kwargs):
-        location = Location.objects.filter(name = location_name)
-        if not location:
+        try:
+            location = Location.objects.get(location_name=location_name)
+        except Location.DoesNotExist:
             return self.not_exist_error()
         serializer = LocationSerializer(location)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def put(self, request, location_name, *args, **kwargs):
-        location = Location.objects.filter(name = location_name).first()
+        location = Location.objects.filter(location_name = location_name).first()
         if not location:
             return self.not_exist_error()
         serializer = LocationSerializer(instance = location, data=request.data, partial = True)
@@ -204,7 +207,7 @@ class LocationDetaiApilView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, location_name, *args, **kwargs):
-        location = Location.objects.filter(name = location_name).first()
+        location = Location.objects.filter(location_name = location_name).first()
         if not location:
             return self.not_exist_error()
         location.delete()
