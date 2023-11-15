@@ -14,11 +14,11 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/english" >
-          <Route path="play/:location_id" element={<EngAudioPlayer />} />
+          <Route path="play/:location_name" element={<EngAudioPlayer />} />
         </Route>
 
         <Route path="/french">
-          <Route path="play/:location_id" element={<FrenchAudioPlayer/>} />
+          <Route path="play/:location_name" element={<FrenchAudioPlayer/>} />
         </Route>
       </Routes>
     </BrowserRouter>

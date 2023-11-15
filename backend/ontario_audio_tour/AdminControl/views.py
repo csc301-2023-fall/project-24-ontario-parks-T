@@ -89,7 +89,7 @@ class get_location(View):
 
 # @method_decorator(login_required, name='dispatch')
 class AudioListApiView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         audios = Audio.objects.all()
         serializer = AudioSerializer(audios, many=True)
@@ -122,7 +122,7 @@ class AudioListApiView(APIView):
         #     return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
 
 class AudioDetaiApilView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(
                 {"res": "Audio does not exist"},
@@ -164,7 +164,7 @@ class AudioDetaiApilView(APIView):
         )
     
 class LocationListApiView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         locations = Location.objects.all()
         serializer = LocationSerializer(locations, many=True)
@@ -181,7 +181,7 @@ class LocationListApiView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LocationDetaiApilView(APIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(
                 {"res": "Location does not exist"},
@@ -221,10 +221,10 @@ class LocationAudioListApiView(ListAPIView):
     serializer_class = AudioSerializer
     def get_queryset(self):
         location_name = self.kwargs.get('location_name')
-        location = Location.objects.filter(name = location_name)
+        location = Location.objects.filter(location_name = location_name)
         if not location:
             return self.not_exist_error()
-        location = Location.objects.get(name = location_name)
+        location = Location.objects.get(location_name = location_name)
         queryset = Audio.objects.filter(location=location)
         return queryset
 

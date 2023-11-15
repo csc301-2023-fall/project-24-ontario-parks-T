@@ -5,13 +5,13 @@ from django.db import models
 
 class Audio(models.Model):
     media_id = models.AutoField(primary_key=True, unique=True, default=0)
-    location = models.ManyToManyField(
-        "Location", related_name='audios')
+    location = models.ForeignKey(
+        "Location", on_delete=models.CASCADE, db_column="location")
     name = models.CharField(max_length=100, unique=True)
-    link = models.FileField(upload_to="audio/", default="")
+    link = models.CharField(max_length=100, unique=True)
     type = models.CharField(max_length=100, default="audio")
     description = models.CharField(max_length=500, default="")
-    image = models.ImageField(upload_to="images/", default="")
+    image = models.CharField(max_length=100, default="default.jpg")
     season = models.CharField(max_length=100, default="Spring")
     year = models.IntegerField(null=True)
     month = models.IntegerField(null=True)
@@ -46,7 +46,7 @@ class Image(models.Model):
 
 
 class Location(models.Model):
-    Location_id = models.AutoField(primary_key=True, unique=True)
+    location_id = models.AutoField(primary_key=True, unique=True)
     location_name = models.CharField(max_length=100, unique=True)
     location_address = models.CharField(max_length=100, unique=True)
     location_city = models.CharField(max_length=100, unique=True)

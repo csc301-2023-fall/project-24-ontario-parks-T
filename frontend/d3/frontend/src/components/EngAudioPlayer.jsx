@@ -6,11 +6,31 @@ import EngUserPageMainFrame from "./EngUserMain";
 import oneImage from "./Image";
 
 
+function getSeason() {
+    let currentTime = new Date();
+    let month = currentTime.getMonth();
+    month += 1;
+
+    if (month >= 2 && month <= 4) {
+        return "spring";
+    }
+    else if (month >= 5 && month <= 7) {
+        return "summer";
+    }
+    else if (month >= 8 && month <= 10) {
+        return "fall";
+    }
+    else {
+        return "winter";
+    }
+}
+
+
 const EngAudioPlay = () => {
-    const host = "http://localhost:8000"
+    const host = "http://localhost:8000/AdminControl"
 
     // get the audio id from scanned
-    const location_id = useParams()["location_id"];
+    const location_name = useParams()["location_name"];
 
     const [audioPath, setAudioPath] = useState("");
     const [audioName, setAudioName] = useState("Default Name");
@@ -18,34 +38,43 @@ const EngAudioPlay = () => {
     const [audioImage, setAudioImage] = useState("Ontario-Parks-Title.jpg");
     const [currSeason, setCurrSeason] = useState("Spring");
 
-    console.log("audioID: " + location_id);
-    console.log("audioPath: " + audioPath);
-
     // get the audio data
-    // fetch(host + "/location/get/" + location_id, {
-    //     method: "GET",
-    //     headers: {
-    //         "Content-Type": "application/json",
-    //     },
-    // }
-    // ).then((response) => {
-    //     if (response.ok) {
-    //         return response.json();
-    //     }
-    //     else {
-    //         throw new Error("Failed to get audio data");
-    //     }
-    // }
-    // ).then((data) => {
-    //     setAudioPath(data["path"]);
-    //     setAudioName(data["name"]);
-    //     setAudioImage(data["image"]);
-    // })
+    fetch(host + "/api/location/" + location_name + "/audio_list/", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }
+    ).then((response) => {
+        if (response.ok) {
+            return response.json();
+        }
+        else {
+            console.log("Error: " + response.status);
+        }
+    }
+    ).then((data) => {
+        console.log(data);
+        const season = getSeason();
+
+        // get the audio at the current season
+        for (let i = 0; i < data.length; i++) {
+            if (data[i]["season"] == season) {
+                setAudioPath(data[i]["path"]);
+                setAudioName(data[i]["name"]);
+                setAudioDescription(data[i]["description"]);
+                setAudioImage(data[i]["image"]);
+                setCurrSeason(season);
+                console.log(audioImage);
+                break;
+            }
+        }
+    })
 
     // return the audio player
     return (
         <>
-            <EngUserPageMainFrame season={currSeason} location_id={location_id} />
+            <EngUserPageMainFrame season={currSeason} location_name={location_name} />
 
             <div className="container-fluid">
 

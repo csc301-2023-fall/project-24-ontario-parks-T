@@ -10,7 +10,7 @@ const EngUserPageMainFrame = (props) => {
     const [season, setSeason] = useState(props.season);
     const seasons = ["Spring", "Summer", "Fall", "Winter"];
 
-    const location_id = props.location_id;
+    const location_name = props.location_name;
 
     return (
         <>
@@ -26,7 +26,7 @@ const EngUserPageMainFrame = (props) => {
 
                             <li className="nav-item me-3">
                                 <button className='btn'>
-                                    <Link to={"/french/play/" + location_id} style={{ textDecoration: 'none', color: 'white' }}>
+                                    <Link to={"/french/play/" + location_name} style={{ textDecoration: 'none', color: 'white' }}>
                                         Français
                                     </Link>
                                 </button>
