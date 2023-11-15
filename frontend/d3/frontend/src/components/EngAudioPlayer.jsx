@@ -60,12 +60,13 @@ const EngAudioPlay = () => {
         // get the audio at the current season
         for (let i = 0; i < data.length; i++) {
             if (data[i]["season"] == season) {
-                setAudioPath(data[i]["path"]);
+                setAudioPath(data[i]["link"]);
                 setAudioName(data[i]["name"]);
                 setAudioDescription(data[i]["description"]);
                 setAudioImage(data[i]["image"]);
                 setCurrSeason(season);
-                console.log(audioImage);
+                console.log("A");
+                console.log(audioPath);
                 break;
             }
         }
@@ -85,18 +86,26 @@ const EngAudioPlay = () => {
                 <div className="row">
                     <div className="col-3"></div>
                     <div className="container col-md-auto">
-                        <div className="card" style={{width: 24 + "rem"}}>
-                            <img className="mx-auto d-block img-fluid" src={audioImage} alt="Audio Image" style={{width: 400 + "px", height: 400 + "px"}}/>
+                        <div className="card" style={{width: 36 + "rem"}}>
+                            <img className="mx-auto d-block img-fluid rounded" src={audioImage} alt="Audio Image"/>
                             <div className="card-body">
                                 <h5 className="card-title"> {audioName} </h5>
                                 <p className="card-text">
                                     {audioDescription}
                                 </p>
+                                
                                 <div className="text-center">
-                                    <audio id="dynamicAudio" controls>
-                                        <source src={audioPath} type="audio/mpeg"/>
+                                    <audio id="dynamicAudio" style={{width: 90 + "%"}} src={audioPath} controls>
+                                    Your browser does not support the audio element.
                                     </audio>
                                 </div>
+
+                                {/* <div className="text-center">
+                                    <audio id="dynamicAudio" style={{width: 90 + "%"}} controls>
+                                        <source src={audioPath} type="audio/mpeg"/>
+                                    </audio>
+                                </div> */}
+
                             </div>
 
                         </div>

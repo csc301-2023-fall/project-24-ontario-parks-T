@@ -11,6 +11,7 @@ import FrenchAudioPlayer from './components/FrenchAudioPlayer';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <Routes>
         <Route path="/english" >
@@ -22,6 +23,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 

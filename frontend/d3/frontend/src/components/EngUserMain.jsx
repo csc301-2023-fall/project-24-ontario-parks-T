@@ -20,9 +20,9 @@ const EngUserPageMainFrame = (props) => {
 
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item me-3">
+                            {/* <li className="nav-item me-3">
                                 <Link className="nav-link active" aria-current="page" href="#">Home</Link>
-                            </li>
+                            </li> */}
 
                             <li className="nav-item me-3">
                                 <button className='btn'>
@@ -32,15 +32,15 @@ const EngUserPageMainFrame = (props) => {
                                 </button>
                             </li>
 
-                            <li className='nav-item'>
+                            {/* <li className='nav-item'>
                                 <Dropdown>
                                 <Dropdown.Toggle variant='secondary' id="dropdown-basic">
                                     Check other seasons
                                 </Dropdown.Toggle>
 
-                                <Dropdown.Menu>
+                                <Dropdown.Menu> */}
                                     {/* Display all seasons except the current one */}
-                                    {seasons.map((season) => (
+                                    {/* {seasons.map((season) => (
                                         season != props.season
                                         ? 
                                         <Dropdown.Item href="#">{season}</Dropdown.Item>
@@ -49,13 +49,12 @@ const EngUserPageMainFrame = (props) => {
                                     ))}
                                 </Dropdown.Menu>
                                 </Dropdown>
-                            </li>
+                            </li> */}
 
                         </ul>
                     </div>
                 </div>
             </nav>
-
             <footer className="text-center bg-dark text-white">
                 <div className="container">
                     <p>&copy; 2023 csc301 G24 All rights reserved.</p>
