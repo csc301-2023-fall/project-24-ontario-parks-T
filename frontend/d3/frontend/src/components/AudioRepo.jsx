@@ -14,33 +14,27 @@ const Audios = () => {
   
     return (
         audios.map((audio) => (
-            <>
-            <li
-                key={audio.name}
-                className="list-group-item d-flex justify-content-between align-items-center"
-            >
-                <span
-                className={`todo-title mr-2`}
-                name={audio.name}
-                >
-                {audio.name}
-                </span>
-                <span>
-                <button
-                    className="btn btn-secondary"
-                >
-                    Edit
-                </button>
-                <button
-                    className="btn btn-danger"
-                >
-                    Delete
-                </button>
-                </span>
-            </li>
-            </>
+            <div key={audio.name} className="card mb-3">
+                <div className="card-body">
+                    <h5 className="card-title">{audio.name}</h5>
+                    <div className="d-flex justify-content-between align-items-center">
+                        <span className={`todo-title mr-2`} name={audio.name}>
+                            {audio.name}
+                        </span>
+                        <div>
+                            <button className="btn btn-secondary mr-2">
+                                Edit
+                            </button>
+                            <button className="btn btn-danger">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         ))
     );
+    
   };
   
   const AudioRepo = () => {
