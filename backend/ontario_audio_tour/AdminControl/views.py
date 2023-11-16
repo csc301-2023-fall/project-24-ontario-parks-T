@@ -16,7 +16,7 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, UpdateAPIView
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
 
@@ -81,7 +81,7 @@ class get_location(View):
     def get(self, request, *args, **kwargs):
         location = Location.objects.get(pk=kwargs['pk'])
         data = {
-            'name': location.name,
+            'name': location.location_name,
             'audios': list(location.audios.values('name', 'audio')),
             'image_paths': list(location.images.values('name', 'image')),
         }
@@ -142,6 +142,12 @@ class AudioDetaiApilView(APIView):
         audio = Audio.objects.filter(name = audio_name).first()
         if not audio:
             return self.not_exist_error()
+        if 'location' in request.data:
+            location_name = request.data['location']
+            location = Location.objects.filter(location_name=location_name).first()
+            if location:
+                request.data['location'] = location.location_id
+
         serializer = AudioSerializer(instance = audio, data=request.data, partial = True)
         if serializer.is_valid():
             audio = serializer.save()
@@ -149,6 +155,11 @@ class AudioDetaiApilView(APIView):
                 audio.link = request.FILES['link']
             if 'image' in request.FILES:
                 audio.image = request.FILES['image']
+            # if 'location' in request.data:
+            #     location_name = request.data['location']
+            #     location = Location.objects.filter(location_name=location_name).first()
+            #     if location:
+            #         audio.location = location
             audio.save()
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
@@ -253,6 +264,20 @@ class LocationAudioListApiView(ListAPIView):
         queryset = Audio.objects.filter(location=location)
         return queryset
 
+# class AudioAssignLocationApiView(UpdateAPIView):
+#     queryset = Audio.objects.all()
+#     serializer_class = AudioSerializer
+#     lookup_url_kwarg = 'name'
+
+#     def perform_update(self, serializer):
+#         location_name = self.request.data.get('location_name')
+#         try:
+#             location = Location.objects.get(location_name=location_name)
+#         except Location.DoesNotExist:
+#              return Response(
+#             {"res": "No loc"},
+#         )
+#         serializer.save(location=location)
 
 # Create your views here.
 def profile(request):
