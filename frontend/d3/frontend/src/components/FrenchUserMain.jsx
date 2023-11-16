@@ -15,23 +15,22 @@ const FreUserPageMainFrame = (props) => {
 
     return (
         <>
+            
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container">
-                    <a href="#" className="navbar-brand">Gestion AudioQR</a>
+                    <div className='navbar-brand'>
+                        <button className='btn'>
+                            <Link to={"/english/play/" + location_name} style={{ textDecoration: 'none', color: 'white' }}>
+                                English
+                            </Link>
+                        </button>
+                    </div>
 
-                    <div className="collapse navbar-collapse" id="navbarResponsive">
+                    <div className="navbar">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             {/* <li className="nav-item me-3">
                                 <Link className="nav-link active" aria-current="page" href="#">Home</Link>
                             </li> */}
-
-                            <li className="nav-item me-3">
-                                <button className='btn'>
-                                    <Link to={"/english/play/" + location_name} style={{ textDecoration: 'none', color: 'white' }}>
-                                        English
-                                    </Link>
-                                </button>
-                            </li>
 
                             <li className='nav-item'>
                                 <Dropdown>
