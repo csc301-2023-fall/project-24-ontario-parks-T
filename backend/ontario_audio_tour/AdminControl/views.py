@@ -177,7 +177,7 @@ class LocationListApiView(APIView):
         serializer = LocationSerializer(data=request.data)
         if serializer.is_valid():
             location=serializer.save()
-            location_name = location.name
+            location_name = location.location_name
             model_link = f"http://localhost:3000/english/play/{location_name.replace(' ', '%20')}/"
 
             # Generate QR code
@@ -194,7 +194,7 @@ class LocationListApiView(APIView):
             qr_image = qr.make_image(fill_color="black", back_color="white")
 
             # Save the QR code image (you might want to adjust the path)
-            qr_image.save(f"qrcodes/location_{location_name.replace(' ', '%20')}.png")
+            qr_image.save(f"qrcode/location_{location_name.replace(' ', '%20')}.png")
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
             
