@@ -5,12 +5,13 @@ import { useParams } from 'react-router-dom';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 
-const FrenchUserPageMainFrame = (props) => {
+const FreUserPageMainFrame = (props) => {
 
     const [season, setSeason] = useState(props.season);
-    const seasons = ["Printemps", "Été", "Automne", "Hiver"];
+    const fre_seasons = ["printemps", "été", "automne", "hiver"];
+    const seasons = ["spring", "summer", "fall", "winter"];
 
-    const location_id = props.location_id;
+    const location_name = props.location_name;
 
     return (
         <>
@@ -20,13 +21,13 @@ const FrenchUserPageMainFrame = (props) => {
 
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li className="nav-item me-3">
-                                <Link className="nav-link active" aria-current="page" href="#">maison</Link>
-                            </li>
+                            {/* <li className="nav-item me-3">
+                                <Link className="nav-link active" aria-current="page" href="#">Home</Link>
+                            </li> */}
 
                             <li className="nav-item me-3">
                                 <button className='btn'>
-                                    <Link to={"/english/play/" + location_id} style={{ textDecoration: 'none', color: 'white' }}>
+                                    <Link to={"/english/play/" + location_name} style={{ textDecoration: 'none', color: 'white' }}>
                                         English
                                     </Link>
                                 </button>
@@ -35,7 +36,7 @@ const FrenchUserPageMainFrame = (props) => {
                             <li className='nav-item'>
                                 <Dropdown>
                                 <Dropdown.Toggle variant='secondary' id="dropdown-basic">
-                                Vérifiez les autres saisons
+                                    Vérifiez les autres saisons
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
@@ -43,7 +44,7 @@ const FrenchUserPageMainFrame = (props) => {
                                     {seasons.map((season) => (
                                         season != props.season
                                         ? 
-                                        <Dropdown.Item href="#">{season}</Dropdown.Item>
+                                        <Dropdown.Item href={"/french/play/" + location_name + "/" + season + "/"}>{fre_seasons[seasons.indexOf(season)]}</Dropdown.Item>
                                         :
                                         null
                                     ))}
@@ -55,8 +56,7 @@ const FrenchUserPageMainFrame = (props) => {
                     </div>
                 </div>
             </nav>
-
-            <footer className="text-center py-1 bg-dark text-white">
+            <footer className="text-center bg-dark text-white">
                 <div className="container">
                     <p>&copy; 2023 csc301 G24 Tous droits réservés.</p>
                 </div>
@@ -65,4 +65,4 @@ const FrenchUserPageMainFrame = (props) => {
     )
 }
 
-export default FrenchUserPageMainFrame;
+export default FreUserPageMainFrame;

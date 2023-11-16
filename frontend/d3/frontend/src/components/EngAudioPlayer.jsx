@@ -54,8 +54,6 @@ const EngAudioPlay = () => {
         }
     }
     ).then((data) => {
-        console.log(data);
-
         const season = getSeason();
 
         // get the audio at the current season
@@ -66,8 +64,6 @@ const EngAudioPlay = () => {
                 setAudioDescription(data[i]["description"]);
                 setAudioImage(data[i]["image"]);
                 setCurrSeason(season);
-                console.log("A");
-                console.log(audioPath);
                 break;
             }
         }

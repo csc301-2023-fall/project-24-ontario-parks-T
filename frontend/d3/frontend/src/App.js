@@ -9,6 +9,7 @@ import EngAudioPlayer from './components/EngAudioPlayer';
 import EngAudioPlaySeason from './components/EngAudioPlayerSeason';
 import FrenchUserPageMainFrame  from './components/FrenchUserMain';
 import FrenchAudioPlayer from './components/FrenchAudioPlayer';
+import FreAudioPlaySeason from './components/FreAudioPlayerSeason';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 
         <Route path="/french">
           <Route path="play/:location_name" element={<FrenchAudioPlayer/>} />
+          <Route path="play/:location_name/:season" element={<FreAudioPlaySeason />} />
         </Route>
       </Routes>
     </BrowserRouter>

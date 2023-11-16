@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import EngUserPageMainFrame from "./EngUserMain";
+import FreUserPageMainFrame from "./FrenchUserMain";
 import oneImage from "./Image";
 
 
-const EngAudioPlaySeason = () => {
+const FreAudioPlaySeason = () => {
 
     const host = "http://localhost:8000/AdminControl"
 
@@ -40,8 +40,8 @@ const EngAudioPlaySeason = () => {
         for (let i = 0; i < data.length; i++) {
             if (data[i]["season"] == season) {
                 setAudioPath(data[i]["link"]);
-                setAudioName(data[i]["name"]);
-                setAudioDescription(data[i]["description"]);
+                setAudioName(data[i]["name_french"]);
+                setAudioDescription(data[i]["description_french"]);
                 setAudioImage(data[i]["image"]);
                 setCurrSeason(season);
                 break;
@@ -52,7 +52,7 @@ const EngAudioPlaySeason = () => {
     // return the audio player
     return (
         <>
-            <EngUserPageMainFrame season={currSeason} location_name={location_name} />
+            <FreUserPageMainFrame season={currSeason} location_name={location_name} />
 
             <div className="container-fluid">
 
@@ -73,7 +73,7 @@ const EngAudioPlaySeason = () => {
                                 
                                 <div className="text-center">
                                     <audio id="dynamicAudio" style={{width: 90 + "%"}} src={audioPath} controls>
-                                    Your browser does not support the audio element.
+                                    Votre navigateur ne supporte pas l'élément audio.
                                     </audio>
                                 </div>
 
@@ -94,4 +94,4 @@ const EngAudioPlaySeason = () => {
     );
 }
 
-export default EngAudioPlaySeason;
+export default FreAudioPlaySeason;

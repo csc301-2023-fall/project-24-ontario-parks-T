@@ -2,14 +2,35 @@ import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import FrenchUserPageMainFrame from "./FrenchUserMain";
+import FreUserPageMainFrame from "./FrenchUserMain";
+import oneImage from "./Image";
 
 
-const FrenchAudioPlayer = () => {
-    const host = "http://localhost:8000"
+function getSeason() {
+    let currentTime = new Date();
+    let month = currentTime.getMonth();
+    month += 1;
+
+    if (month >= 2 && month <= 4) {
+        return "spring";
+    }
+    else if (month >= 5 && month <= 7) {
+        return "summer";
+    }
+    else if (month >= 8 && month <= 10) {
+        return "fall";
+    }
+    else {
+        return "winter";
+    }
+}
+
+
+const FreAudioPlay = () => {
+    const host = "http://localhost:8000/AdminControl"
 
     // get the audio id from scanned
-    var location_id = useParams()["location_id"];
+    const location_name = useParams()["location_name"];
 
     const [audioPath, setAudioPath] = useState("");
     const [audioName, setAudioName] = useState("Default Name");
@@ -17,11 +38,41 @@ const FrenchAudioPlayer = () => {
     const [audioImage, setAudioImage] = useState("Ontario-Parks-Title.jpg");
     const [currSeason, setCurrSeason] = useState("Spring");
 
-    console.log("audioID: " + location_id);
+    // get the audio data
+    fetch(host + "/api/location/" + location_name + "/audio_list/", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    }
+    ).then((response) => {
+        if (response.ok) {
+            return response.json();
+        }
+        else {
+            console.log("Error: " + response.status);
+        }
+    }
+    ).then((data) => {
+        const season = getSeason();
 
+        // get the audio at the current season
+        for (let i = 0; i < data.length; i++) {
+            if (data[i]["season"] == season) {
+                setAudioPath(data[i]["link"]);
+                setAudioName(data[i]["name_french"]);
+                setAudioDescription(data[i]["description_french"]);
+                setAudioImage(data[i]["image"]);
+                setCurrSeason(season);
+                break;
+            }
+        }
+    })
+
+    // return the audio player
     return (
         <>
-            <FrenchUserPageMainFrame season={currSeason} location_id={location_id} />
+            <FreUserPageMainFrame season={currSeason} location_name={location_name} />
 
             <div className="container-fluid">
 
@@ -32,18 +83,26 @@ const FrenchAudioPlayer = () => {
                 <div className="row">
                     <div className="col-3"></div>
                     <div className="container col-md-auto">
-                        <div className="card" style={{width: 24 + "rem"}}>
-                            <img className="mx-auto d-block img-fluid" src={audioImage} alt="Image Audio" style={{width: 400 + "px", height: 400 + "px"}}/>
+                        <div className="card" style={{width: 36 + "rem"}}>
+                            <img className="mx-auto d-block img-fluid rounded" src={audioImage} alt="Image audio"/>
                             <div className="card-body">
                                 <h5 className="card-title"> {audioName} </h5>
                                 <p className="card-text">
                                     {audioDescription}
                                 </p>
+                                
                                 <div className="text-center">
-                                    <audio id="dynamicAudio" controls>
-                                        <source src={audioPath} type="audio/mpeg"/>
+                                    <audio id="dynamicAudio" style={{width: 90 + "%"}} src={audioPath} controls>
+                                    Votre navigateur ne supporte pas l'élément audio.
                                     </audio>
                                 </div>
+
+                                {/* <div className="text-center">
+                                    <audio id="dynamicAudio" style={{width: 90 + "%"}} controls>
+                                        <source src={audioPath} type="audio/mpeg"/>
+                                    </audio>
+                                </div> */}
+
                             </div>
 
                         </div>
@@ -55,4 +114,4 @@ const FrenchAudioPlayer = () => {
     );
 }
 
-export default FrenchAudioPlayer;
+export default FreAudioPlay;

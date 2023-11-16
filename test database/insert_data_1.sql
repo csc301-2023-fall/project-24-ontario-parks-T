@@ -21,7 +21,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.7161, -79.3393
+    43.7161, -79.3393,
+    "Version hivernale audio du Centre des sciences de l’Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     2,
@@ -35,7 +37,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6677, -79.3947
+    43.6677, -79.3947,
+    "Version hivernale audio du Musée royal de l’Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     3,
@@ -49,7 +53,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2799, -123.1151
+    49.2799, -123.1151,
+    "Version hivernale audio de la Bibliothèque publique de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     4,
@@ -63,7 +69,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2827, -123.1207
+    49.2827, -123.1207,
+    "Version hivernale audio de la Galerie d'art de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     5,
@@ -77,7 +85,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6714, -79.3861
+    43.6714, -79.3861,
+    "Version hivernale audio de la Bibliothèque publique de Toronto",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     6,
@@ -91,7 +101,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2799, -123.1151
+    49.2799, -123.1151,
+    "Version printanière audio de la Bibliothèque publique de Vancouver",
+    "Laissé vide"
 );
 
 INSERT INTO medias VALUES (
@@ -106,7 +118,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.7161, -79.3393
+    43.7161, -79.3393,
+    "Version printanière audio du Centre des sciences de l'Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     8,
@@ -120,7 +134,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6677, -79.3947
+    43.6677, -79.3947,
+    "Version printanière audio du Musée royal de l'Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     9,
@@ -134,7 +150,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2827, -123.1207
+    49.2827, -123.1207,
+    "Version printanière audio de la Galerie d'art de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     10,
@@ -148,7 +166,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6714, -79.3861
+    43.6714, -79.3861,
+    "Version printanière audio de la Bibliothèque publique de Toronto",
+    "Laissé vide"
 );
 
 INSERT INTO medias VALUES (
@@ -163,7 +183,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.7161, -79.3393
+    43.7161, -79.3393,
+    "Version estivale audio du Centre des sciences de l'Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     12,
@@ -177,7 +199,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6677, -79.3947
+    43.6677, -79.3947,
+    "Version estivale audio du Musée royal de l'Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     13,
@@ -191,7 +215,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2799, -123.1151
+    49.2799, -123.1151,
+    "Version estivale audio de la Bibliothèque publique de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     14,
@@ -205,7 +231,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2827, -123.1207
+    49.2827, -123.1207,
+    "Version estivale audio de la Galerie d'art de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     15,
@@ -219,7 +247,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6714, -79.3861
+    43.6714, -79.3861,
+    "Version estivale audio de la Bibliothèque publique de Toronto",
+    "Laissé vide"
 );
 
 INSERT INTO medias VALUES (
@@ -234,7 +264,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.7161, -79.3393
+    43.7161, -79.3393,
+    "Version automnale audio du Centre des sciences de l'Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     17,
@@ -248,7 +280,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6677, -79.3947
+    43.6677, -79.3947,
+    "Version automnale audio du Musée royal de l'Ontario",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     18,
@@ -262,7 +296,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2799, -123.1151
+    49.2799, -123.1151,
+    "Version automnale audio de la Bibliothèque publique de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     19,
@@ -276,7 +312,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    49.2827, -123.1207
+    49.2827, -123.1207,
+    "Version automnale audio de la Galerie d'art de Vancouver",
+    "Laissé vide"
 );
 INSERT INTO medias VALUES (
     20,
@@ -290,7 +328,9 @@ INSERT INTO medias VALUES (
     NULL,
     NULL,
     NULL,
-    43.6714, -79.3861
+    43.6714, -79.3861,
+    "Version automnale audio de la Bibliothèque publique de Toronto",
+    "Laissé vide"
 );
 
 

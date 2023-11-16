@@ -21,6 +21,9 @@ class Audio(models.Model):
     # uploader = models.CharField(max_length=100)
     # last_modified_time = models.DateTimeField()
 
+    name_french = models.CharField(max_length=100, unique=True)
+    description_french = models.CharField(max_length=500, default="")
+
     class Meta:
         db_table = "medias"
 
