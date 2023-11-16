@@ -28,7 +28,7 @@ CREATE TABLE locations (
 );
 CREATE TABLE medias (
     media_id int(15) NOT NULL AUTO_INCREMENT,
-    location int(15) NOT NULL,
+    location int(15),
     
     name varchar(255) NOT NULL,
     type varchar(255) DEFAULT 'audio',
@@ -44,6 +44,9 @@ CREATE TABLE medias (
     
     longitude FLOAT NOT NULL,
     latitude FLOAT NOT NULL,
+    
+    name_french varchar(255) NOT NULL,
+    description_french varchar(255) DEFAULT NULL,
 
     FOREIGN KEY (location) REFERENCES locations(location_id),
 
