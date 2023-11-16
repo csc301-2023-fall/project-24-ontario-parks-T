@@ -177,7 +177,7 @@ class LocationListApiView(APIView):
         serializer = LocationSerializer(data=request.data)
         if serializer.is_valid():
             location=serializer.save()
-            location_name = location.name
+            location_name = location.location_name
             model_link = f"http://localhost:3000/english/play/{location_name.replace(' ', '%20')}/"
 
             # Generate QR code
