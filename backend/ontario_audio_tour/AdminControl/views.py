@@ -1,5 +1,5 @@
 import os
-
+import qrcode
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
 from AdminControl.models import Audio, Location
@@ -176,8 +176,28 @@ class LocationListApiView(APIView):
 
         serializer = LocationSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
+            location=serializer.save()
+            location_name = location.name
+            model_link = f"http://localhost:3000/english/play/{location_name.replace(' ', '%20')}/"
+
+            # Generate QR code
+            qr = qrcode.QRCode(
+                version=1,
+                error_correction=qrcode.constants.ERROR_CORRECT_L,
+                box_size=10,
+                border=4,
+            )
+            qr.add_data(request.build_absolute_uri(model_link))
+            qr.make(fit=True)
+
+            # Create an image from the QR Code instance
+            qr_image = qr.make_image(fill_color="black", back_color="white")
+
+            # Save the QR code image (you might want to adjust the path)
+            qr_image.save(f"qrcodes/location_{location_name.replace(' ', '%20')}.png")
+
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+            
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LocationDetaiApilView(APIView):
