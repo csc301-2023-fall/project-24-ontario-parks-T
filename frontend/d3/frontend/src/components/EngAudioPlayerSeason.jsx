@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import EngUserPageMainFrame from "./EngUserMain";
-import oneImage from "./Image";
 
 
 const EngAudioPlaySeason = () => {
@@ -61,9 +60,9 @@ const EngAudioPlaySeason = () => {
                 </div>
 
                 <div className="row">
-                    <div className="col-3"></div>
+                    <div className="col-3 d-sm-none"></div>
                     <div className="container col-md-auto">
-                        <div className="card" style={{width: 36 + "rem"}}>
+                        <div className="card mx-auto" style={{width: 24 + "rem"}}>
                             <img className="mx-auto d-block img-fluid rounded" src={audioImage} alt="Audio Image"/>
                             <div className="card-body">
                                 <h5 className="card-title"> {audioName} </h5>
@@ -87,7 +86,7 @@ const EngAudioPlaySeason = () => {
 
                         </div>
                     </div>
-                    <div className="col-3"></div>
+                    <div className="col-3 d-sm-none"></div>
                 </div>
             </div>
         </>
