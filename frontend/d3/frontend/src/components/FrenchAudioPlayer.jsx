@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import FreUserPageMainFrame from "./FrenchUserMain";
-import oneImage from "./Image";
 
 
 function getSeason() {
