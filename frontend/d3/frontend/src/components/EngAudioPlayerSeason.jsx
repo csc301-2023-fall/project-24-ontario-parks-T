@@ -6,31 +6,13 @@ import EngUserPageMainFrame from "./EngUserMain";
 import oneImage from "./Image";
 
 
-function getSeason() {
-    let currentTime = new Date();
-    let month = currentTime.getMonth();
-    month += 1;
+const EngAudioPlaySeason = () => {
 
-    if (month >= 2 && month <= 4) {
-        return "spring";
-    }
-    else if (month >= 5 && month <= 7) {
-        return "summer";
-    }
-    else if (month >= 8 && month <= 10) {
-        return "fall";
-    }
-    else {
-        return "winter";
-    }
-}
-
-
-const EngAudioPlay = () => {
     const host = "http://localhost:8000/AdminControl"
 
     // get the audio id from scanned
     const location_name = useParams()["location_name"];
+    const season = useParams()["season"];
 
     const [audioPath, setAudioPath] = useState("");
     const [audioName, setAudioName] = useState("Default Name");
@@ -56,8 +38,6 @@ const EngAudioPlay = () => {
     ).then((data) => {
         console.log(data);
 
-        const season = getSeason();
-
         // get the audio at the current season
         for (let i = 0; i < data.length; i++) {
             if (data[i]["season"] == season) {
@@ -67,7 +47,7 @@ const EngAudioPlay = () => {
                 setAudioImage(data[i]["image"]);
                 setCurrSeason(season);
                 console.log("A");
-                console.log(audioPath);
+                console.log(currSeason);
                 break;
             }
         }
@@ -118,4 +98,4 @@ const EngAudioPlay = () => {
     );
 }
 
-export default EngAudioPlay;
+export default EngAudioPlaySeason;

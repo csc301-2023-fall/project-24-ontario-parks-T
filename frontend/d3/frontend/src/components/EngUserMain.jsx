@@ -8,7 +8,7 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 const EngUserPageMainFrame = (props) => {
 
     const [season, setSeason] = useState(props.season);
-    const seasons = ["Spring", "Summer", "Fall", "Winter"];
+    const seasons = ["spring", "summer", "fall", "winter"];
 
     const location_name = props.location_name;
 
@@ -32,24 +32,24 @@ const EngUserPageMainFrame = (props) => {
                                 </button>
                             </li>
 
-                            {/* <li className='nav-item'>
+                            <li className='nav-item'>
                                 <Dropdown>
                                 <Dropdown.Toggle variant='secondary' id="dropdown-basic">
                                     Check other seasons
                                 </Dropdown.Toggle>
 
-                                <Dropdown.Menu> */}
+                                <Dropdown.Menu>
                                     {/* Display all seasons except the current one */}
-                                    {/* {seasons.map((season) => (
+                                    {seasons.map((season) => (
                                         season != props.season
                                         ? 
-                                        <Dropdown.Item href="#">{season}</Dropdown.Item>
+                                        <Dropdown.Item href={"/english/play/" + location_name + "/" + season + "/"}>{season}</Dropdown.Item>
                                         :
                                         null
                                     ))}
                                 </Dropdown.Menu>
                                 </Dropdown>
-                            </li> */}
+                            </li>
 
                         </ul>
                     </div>
