@@ -194,10 +194,15 @@ class LocationListApiView(APIView):
             qr_image = qr.make_image(fill_color="black", back_color="white")
 
             # Save the QR code image (you might want to adjust the path)
-            qr_image.save(f"qrcodes/location_{location_name.replace(' ', '%20')}.png")
+            directory = "qrcodes"
+            if not os.path.exists(directory):
+                os.makedirs(directory)
+
+            # Save the QR code image
+            qr_image.save(os.path.join(directory, "location_{}.png".format(location_name.replace(' ', '%20'))))
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
-            
+                        
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LocationDetaiApilView(APIView):
