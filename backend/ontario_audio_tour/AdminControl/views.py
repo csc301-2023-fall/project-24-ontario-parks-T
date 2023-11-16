@@ -121,7 +121,7 @@ class AudioListApiView(APIView):
         #     #redirect to edit?
         #     return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
 
-class AudioDetaiApilView(APIView):
+class AudioDetailApiView(APIView):
     # permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(
@@ -216,7 +216,7 @@ class LocationListApiView(APIView):
                         
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-class LocationDetaiApilView(APIView):
+class LocationDetailApiView(APIView):
     # permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(

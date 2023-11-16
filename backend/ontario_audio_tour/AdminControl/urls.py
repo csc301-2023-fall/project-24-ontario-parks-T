@@ -16,12 +16,12 @@ urlpatterns = [
     path("audio/delete/<audio_name>/", views.delete_audio, name="deleteaudio"),
 
     path('api/audio/', views.AudioListApiView.as_view(), name='audio-api-list'),
-    path('api/audio/<str:audio_name>/', views.AudioDetaiApilView.as_view(), name='audio-api-detail'),
+    path('api/audio/<str:audio_name>/', views.AudioDetailApiView.as_view(), name='audio-api-detail'),
     # Name here is audio name
     # path('api/audio/assign_location/<str:name>/', views.AudioAssignLocationApiView.as_view(), name='audio-api-assign-location'),
     
     path('api/location/', views.LocationListApiView.as_view(), name='location-api-list'),
-    path('api/location/<str:location_name>/', views.LocationDetaiApilView.as_view(), name='location-api-detail'),
+    path('api/location/<str:location_name>/', views.LocationDetailApiView.as_view(), name='location-api-detail'),
     path('api/location/<str:location_name>/audio_list/', views.LocationAudioListApiView.as_view(), name='location-api-audiolist'),
 
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
