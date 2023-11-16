@@ -48,12 +48,12 @@ class Image(models.Model):
 class Location(models.Model):
     location_id = models.AutoField(primary_key=True, unique=True)
     location_name = models.CharField(max_length=100, unique=True)
-    location_address = models.CharField(max_length=100, unique=True)
-    location_city = models.CharField(max_length=100, unique=True)
-    location_province = models.CharField(max_length=100, unique=True)
-    location_postal_code = models.CharField(max_length=100, unique=True)
-    longitude = models.FloatField(null=True)
-    latitude = models.FloatField(null=True)
+    location_address = models.CharField(max_length=100, unique=False)
+    location_city = models.CharField(max_length=100, unique=False)
+    location_province = models.CharField(max_length=100, unique=False)
+    location_postal_code = models.CharField(max_length=100, unique=False)
+    longitude = models.FloatField(null=False)
+    latitude = models.FloatField(null=False)
 
     class Meta:
         db_table = "locations"
