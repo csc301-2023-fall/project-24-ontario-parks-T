@@ -130,9 +130,9 @@ class AudioDetaiApilView(APIView):
         )
 
     def get(self, request,audio_name, *args, **kwargs):
-        audio = Audio.objects.filter(name = audio_name)
+        # audio = Audio.objects.filter(name = audio_name)
         try:
-            audio =  Audio.objects.filter(name = audio_name)
+            audio =  Audio.objects.get(name = audio_name)
         except Audio.DoesNotExist:
             return self.not_exist_error()
         serializer = AudioSerializer(audio)
