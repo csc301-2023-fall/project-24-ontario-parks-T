@@ -20,4 +20,4 @@ Decisions Made:
 -	Prioritize implementation of linguistic accessibility features and use different audio sources for different languages. (instead of auto translation)
 
 Next Meeting Date and Time:
-- 2023 Nov 15th, 9 a.m.
+- 2023 Nov 16th, 9 a.m.
