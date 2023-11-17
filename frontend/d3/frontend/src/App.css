@@ -37,6 +37,11 @@
     transform: rotate(360deg);
   }
 }
+.btn {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
 
 .bg-grey {
     background-color: #767373;
@@ -84,6 +89,7 @@ main{
     bottom: 0;
     width: 100%;
     height:50px;
+    z-index: 9999;
 }
 #mobile-box {
   width: 360px;
