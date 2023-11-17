@@ -14,12 +14,12 @@ const Locations = () => {
 
     return (
         locations.map((location) => (
-            <div key={location.name} className="card mb-3">
+            <div key={location.location_name} className="card mb-3">
                 <div className="card-body">
-                    <h5 className="card-title">{location.name}</h5>
+                    <h5 className="card-title">{location.location_name}</h5>
                     <div className="d-flex justify-content-between align-items-center">
-                        <span className={`todo-title mr-2`} name={location.name}>
-                            {location.name}
+                        <span className={`todo-title mr-2`} name={location.location_address}>
+                            {location.location_address}
                         </span>
                         <div>
                             <button className="btn btn-secondary ml-1 mr-2">
