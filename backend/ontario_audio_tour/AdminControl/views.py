@@ -168,6 +168,7 @@ class AudioDetailApiView(APIView):
         audio = Audio.objects.filter(name = audio_name).first()
         if not audio:
             return self.not_exist_error()
+        # audio.image.delete()
         audio.delete()
         return Response(
             {"res": "Audio deleted"},
@@ -242,13 +243,13 @@ class LocationDetailApiView(APIView):
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def delete(self, request, location_name, *args, **kwargs):
-        location = Location.objects.filter(location_name = location_name).first()
+    def delete(self, request, location_id, *args, **kwargs):
+        location = Location.objects.filter(location_id = location_id).first()
         if not location:
             return self.not_exist_error()
         location.delete()
         return Response(
-            {"res": "Audio deleted"},
+            {"res": "Location deleted"},
             status=status.HTTP_200_OK
         )
     

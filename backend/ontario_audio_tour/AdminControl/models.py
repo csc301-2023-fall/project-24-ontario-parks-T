@@ -20,7 +20,6 @@ class Audio(models.Model):
     latitude = models.FloatField(null=True)
     # uploader = models.CharField(max_length=100)
     # last_modified_time = models.DateTimeField()
-
     name_french = models.CharField(max_length=100, unique=True)
     description_french = models.CharField(max_length=500, default="")
 
@@ -29,11 +28,6 @@ class Audio(models.Model):
 
     def __str__(self):
         return self.name
-
-    def delete(self, *args, **kwargs):
-        self.audio.delete()
-        super().delete(*args, **kwargs)
-
 
 class Image(models.Model):
     name = models.CharField(max_length=100, unique=True)

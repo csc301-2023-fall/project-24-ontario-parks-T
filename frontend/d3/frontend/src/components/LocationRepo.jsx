@@ -5,27 +5,42 @@ import axios from "axios";
 const Locations = () => {
     const [locations, setLocations] = useState([]);
 
-    useEffect(() => {
+    const refreshList = () => {
         axios
-            .get("http://localhost:8000/AdminControl/api/location/")
-            .then((res) => setLocations(res.data))
-            .catch((err) => console.log(err));
-    }, []);
+          .get("/AdminControl/api/location/")
+          .then((res) => setLocations(res.data))
+          .catch((err) => console.log(err));
+    };
+    
+    const handleDelete = (location_id) => {
+        axios
+          .delete(`/AdminControl/api/location/${location_id}/`)
+          .then((res) => {
+            console.log("Delete response:", res.data);
+            refreshList();
+          })
+          .catch((err) => console.log(err));
+    };
+
+    useEffect(() => {
+        refreshList();
+      }, []);
 
     return (
         locations.map((location) => (
-            <div key={location.location_name} className="card mb-3">
+            <div key={location.location_id} className="card mb-3">
                 <div className="card-body">
                     <h5 className="card-title">{location.location_name}</h5>
                     <div className="d-flex justify-content-between align-items-center">
-                        <span className={`todo-title mr-2`} name={location.location_address}>
+                        <span className={`mr-2`}>
                             {location.location_address}
                         </span>
                         <div>
                             <button className="btn btn-secondary ml-1 mr-2">
                                 Edit
                             </button>
-                            <button className="btn btn-danger ml-1 mr-2">
+                            <button className="btn btn-danger ml-1 mr-2"
+                            onClick={() => handleDelete(location.location_id)}>
                                 Delete
                             </button>
                         </div>
