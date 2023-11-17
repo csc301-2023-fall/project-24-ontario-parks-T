@@ -11,6 +11,7 @@ import FrenchUserPageMainFrame  from './components/FrenchUserMain';
 import FrenchAudioPlayer from './components/FrenchAudioPlayer';
 import FreAudioPlaySeason from './components/FreAudioPlayerSeason';
 import AudioRepo from './components/AudioRepo';
+import LocationRepo from './components/LocationRepo';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
 
         <Route path="/admin">
           <Route path="audios" element={<AudioRepo/>} />
+          <Route path="locations" element={<LocationRepo/>} />
         </Route>
       </Routes>
     </BrowserRouter>
