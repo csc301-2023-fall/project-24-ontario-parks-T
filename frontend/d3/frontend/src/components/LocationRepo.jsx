@@ -42,8 +42,7 @@ const Locations = () => {
         <div>
             <AdminMain />
             <div style={containerStyle}>
-                <Locations />
-                <div key={location.name} className="card mb-3">
+                <div className="card mb-3">
             <div className="card-body">
                 <h5 className="card-title">Add new location</h5>
                 <div className="d-flex justify-content-between align-items-center">
@@ -58,6 +57,7 @@ const Locations = () => {
                 </div>
             </div>
         </div>
+        <Locations />
 
             </div>
         </div>
