@@ -168,7 +168,6 @@ class AudioDetailApiView(APIView):
         audio = Audio.objects.filter(name = audio_name).first()
         if not audio:
             return self.not_exist_error()
-        # audio.image.delete()
         audio.delete()
         return Response(
             {"res": "Audio deleted"},

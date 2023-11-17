@@ -8,14 +8,14 @@ const Audios = () => {
 
     const refreshList = () => {
         axios
-          .get("/AdminControl/api/audio/")
+          .get("http://localhost:8000/AdminControl/api/audio/")
           .then((res) => setAudios(res.data))
           .catch((err) => console.log(err));
     };
     
     const handleDelete = (name) => {
         axios
-          .delete(`/AdminControl/api/audio/${name}/`)
+          .delete(`http://localhost:8000/AdminControl/api/audio/${name}/`)
           .then((res) => {
             console.log("Delete response:", res.data);
             refreshList();

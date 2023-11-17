@@ -17,28 +17,28 @@ const AdminPageMainFrame = () => {
                         id="navbarResponsive">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item me-3">
-                                <NavLink activeClassName="navbar__link--active" 
+                                <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/">Home</NavLink>
+                                to="/admin/home">Home</NavLink>
                             </li>
                             <li className="nav-item me-3">
-                                <NavLink activeClassName="navbar__link--active" 
+                                <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
                                 to="/admin/add_location">Add Location</NavLink>
                             </li>
                             <li className="nav-item me-3">
-                                <NavLink activeClassName="navbar__link--active" 
+                                <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
                                 to="/admin/add_audio">Add Audio</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink
-                                    activeClassName="navbar__link--active" 
+                                    activeclassname="navbar__link--active" 
                                     className="nav-link" aria-current="page" 
                                     to="/admin/audios">Audio List</NavLink>
                             </li>
                             <li className="nav-item me-3">
-                                <NavLink activeClassName="navbar__link--active" 
+                                <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
                                 to="/admin/locations">Location List</NavLink>
                             </li>

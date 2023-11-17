@@ -7,14 +7,14 @@ const Locations = () => {
 
     const refreshList = () => {
         axios
-          .get("/AdminControl/api/location/")
+          .get("http://localhost:8000/AdminControl/api/location/")
           .then((res) => setLocations(res.data))
           .catch((err) => console.log(err));
     };
     
     const handleDelete = (location_id) => {
         axios
-          .delete(`/AdminControl/api/location/${location_id}/`)
+          .delete(`http://localhost:8000/AdminControl/api/location/${location_id}/`)
           .then((res) => {
             console.log("Delete response:", res.data);
             refreshList();
