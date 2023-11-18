@@ -1,0 +1,23 @@
+Group 24 Room Three Meeting Minutes with John Leadston on Nov 9th
+
+Date: 2023 November 9th
+Time: 9:00 a.m.
+Location: Online (Zoom)
+Meeting attendees: Hao Yin, Jingyu He, Yuhan Fu, Zihan Wang, Yifang Zhang, Xinyan Lyu, John Leadston
+
+Discussion Points:
+-	The team went through the timeline since the last meeting.
+-	Mr. Leadston shared more information about Ontario Digital Service meeting.
+-	Confirmed making a demo next week.
+-	Received Mr. Leadston’s opinion on admin user interface. Mr. Leadston reassured his concern for safety.
+-	Mr. Leadston emphasized again on the features he expects for the visitors UI.
+-	Mr. Leadston emphasized on the accessibility feature of the product.
+-	Mr. Leadston emphasized on the different levels of admin access to the system.
+-	Attendees exchanged opinions on the implementation of linguistic accessibility features.
+
+Decisions Made: 
+-	Continue developing the admin UI as planned.
+-	Prioritize implementation of linguistic accessibility features and use different audio sources for different languages. (instead of auto translation)
+
+Next Meeting Date and Time:
+- 2023 Nov 16th, 9 a.m.
