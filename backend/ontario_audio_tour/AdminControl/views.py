@@ -182,6 +182,7 @@ class LocationListApiView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
     def post(self, request, *args, **kwargs):
+
         if Location.objects.filter(location_name=request.data['location_name']).exists():
             return Response({'notification': 'Duplicated Location name'}, status=status.HTTP_409_CONFLICT)
 
