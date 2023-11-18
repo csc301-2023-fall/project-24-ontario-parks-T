@@ -24,12 +24,12 @@ const AdminPageMainFrame = () => {
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/add_location">Add Location</NavLink>
+                                to="/admin/location/create">Add Location</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/add_audio">Add Audio</NavLink>
+                                to="/admin/audios/create">Add Audio</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink
