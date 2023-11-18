@@ -119,8 +119,7 @@ const Addail = () => {
     </div>
 </div>
 </>
-    export default Addvil;
-
-
 
 }
+
+export default Addail;
