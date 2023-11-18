@@ -13,7 +13,8 @@ import FreAudioPlaySeason from './components/FreAudioPlayerSeason';
 import AudioRepo from './components/AudioRepo';
 import LocationRepo from './components/LocationRepo';
 import AudioCreateForm from './components/AudioCreateForm';
-import CreateLocation from './components/CreateLocation';
+import CreateLocation from './components/LocationCreateForm';
+import LocationCreationForm from './components/LocationCreateForm';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Route path="audios" element={<AudioRepo/>} />
           <Route path="audios/create" element={<AudioCreateForm/>} />
           <Route path="locations" element={<LocationRepo/>} />
+          <Route path="locations" element={<LocationCreationForm/>} />
         </Route>
       </Routes>
     </BrowserRouter>
