@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react'
 
 const avail_info = (location_name, location_id) => {
     var avaliData = new FormData();
@@ -23,7 +24,7 @@ var request = fetch('http://localhost:8000/AdminControl/api/location/&{location_
         body: avaliData,
         headers:{
             // need to finish the admit login for reducing the red line 
-            'Authorizatio': 'Bearer' & {localStorage.getItem('token')}',
+            'Authorizatio': `Bearer ${localStorage.getItem('token')}`,
         }
 
     }).then(response => response.json()).catch(error => { console.log(error)})
@@ -35,7 +36,16 @@ var request = fetch('http://localhost:8000/AdminControl/api/location/&{location_
 const Addail = () => {
     const [location, setLocation] = useState({
         // there is a set to hold the property, modify if it is needed
+        "location id": "",
         "location name": "",
+        "location address": "",
+        "location city":"",
+        "location province":"",
+        "location post code" : "",
+        "longitude" : "",
+        "latitude": "",
+
+
 
     });
 
@@ -110,6 +120,6 @@ const Addail = () => {
 </div>
 </>
 
-
-
 }
+
+export default Addail;
