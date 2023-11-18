@@ -3,8 +3,8 @@
 
 ## Iteration 01 - Review & Retrospect
 
- * When: 2023 Nov 16, 9:00 a.m.
- * Where: online (Zoom)
+ * When: 2023 Nov 18, 14:00 
+ * Where: University of Toronto, BA2230
 
 ## Process - Reflection
 
@@ -47,3 +47,5 @@ We integraed the previously developed individual components as one product by pu
 >  * Did your partner accept the features? And were there change requests?
 >  * What were your learnings through this process? This can be either from a process and/or product perspective.
 >  * *This section will be marked very leniently so keep it brief and just make sure the points are addressed*
+
+We prepared our demo by setting up the running environment in the developer's device, and made a demo to our partner through our zoom meeting. Our partner, Mr. Leadston, accepted most of the features. He mainly asked us to increase the usability of the admin UI. Also, we are requested to increase the usability and accessibility of our visitor's interface. We learned that there are a great amount of details that we need to improve for the accessibility of people with various difficulties.
