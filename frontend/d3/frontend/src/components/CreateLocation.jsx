@@ -35,7 +35,16 @@ var request = fetch('http://localhost:8000/AdminControl/api/location/&{location_
 const Addail = () => {
     const [location, setLocation] = useState({
         // there is a set to hold the property, modify if it is needed
+        "lodation id": "",
         "location name": "",
+        "location address": "",
+        "location city":"",
+        "location province":"",
+        "location post code" : "",
+        "longitude" : "",
+        "latitude": "",
+
+
 
     });
 
