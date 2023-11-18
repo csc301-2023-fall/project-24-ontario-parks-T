@@ -37,11 +37,6 @@
     transform: rotate(360deg);
   }
 }
-.btn {
-  margin-bottom: 20px;
-  margin-top: 20px;
-  margin-left: 20px;
-}
 
 .bg-grey {
     background-color: #767373;
@@ -57,7 +52,7 @@
     background-color: #f9f9f9;
 }
 main{
-    background-image: url("https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?cs=srgb&dl=pexels-pixabay-147411.jpg&fm=jpg");
+    background-image: url("Ontario-Parks-Title.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -89,7 +84,6 @@ main{
     bottom: 0;
     width: 100%;
     height:50px;
-    z-index: 9999;
 }
 #mobile-box {
   width: 360px;
@@ -112,13 +106,6 @@ main{
   border-top-right-radius: 10px;
 }
 
-.list-container {
-  background-color: rgba(255, 255, 255, 0.5);
-  margin-left: 5cm;
-  margin-right: 5cm;
-  padding: 1cm;
-}
-
 @media screen and (max-width: 768px) {
 .card {
     margin-bottom: 50px;
@@ -127,12 +114,4 @@ main{
     margin-bottom: 20px;
     margin-top: 20px;
 }
-}
-
-body{
-  background-image: url("https://images.pexels.com/photos/147411/italy-mountains-dawn-daybreak-147411.jpeg?cs=srgb&dl=pexels-pixabay-147411.jpg&fm=jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 100%;
 }

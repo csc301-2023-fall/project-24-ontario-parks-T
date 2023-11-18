@@ -25,7 +25,6 @@ urlpatterns = [
     path('', RedirectView.as_view(url='/AdminControl/profile')),
     path('admin/', admin.site.urls),
     path('AdminControl/', include("AdminControl.urls", namespace='AdminControl')),
-    # path('Accounts/', include("accounts.urls", namespace='Accounts')),
 ]
 
 if settings.DEBUG:
