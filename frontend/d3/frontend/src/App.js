@@ -13,6 +13,7 @@ import FreAudioPlaySeason from './components/FreAudioPlayerSeason';
 import AudioRepo from './components/AudioRepo';
 import LocationRepo from './components/LocationRepo';
 import AudioCreateForm from './components/AudioCreateForm';
+import CreateLocation from './components/CreateLocation';
 
 function App() {
   return (
