@@ -242,7 +242,30 @@ class LocationDetailApiView(APIView):
             return self.not_exist_error()
         serializer = LocationSerializer(instance = location, data=request.data, partial = True)
         if serializer.is_valid():
-            serializer.save()
+            new=serializer.save()
+            # if location_name != new.location_name :
+            #     location_name =new.location_name
+            #     model_link = f"http://localhost:3000/english/play/{location_name.replace(' ', '%20')}/"
+
+            #     # Generate QR code
+            #     qr = qrcode.QRCode(
+            #         version=1,
+            #         error_correction=qrcode.constants.ERROR_CORRECT_L,
+            #         box_size=10,
+            #         border=4,
+            #     )
+            #     qr.add_data(request.build_absolute_uri(model_link))
+            #     qr.make(fit=True)
+            #     # Create an image from the QR Code instance
+            #     qr_image = qr.make_image(fill_color="black", back_color="white")
+
+            #     # Save the QR code image (you might want to adjust the path)
+            #     directory = "qrcodes"
+            #     if not os.path.exists(directory):
+            #         os.makedirs(directory)
+            #     # Save the QR code image
+            #     qr_image.save(os.path.join(directory, "location_{}.png".format(location_name.replace(' ', '%20'))))
+
             return Response(serializer.data, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
