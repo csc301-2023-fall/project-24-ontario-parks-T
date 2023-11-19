@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const AdminPageMainFrame = () => {
-    console.log("AdminPageMainFrame");
     return (
         <div className="d-flex flex-column flex-grow-1">
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

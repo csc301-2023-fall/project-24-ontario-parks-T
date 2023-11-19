@@ -15,6 +15,7 @@ import LocationRepo from './components/LocationRepo';
 import AudioCreateForm from './components/AudioCreateForm';
 import CreateLocation from './components/LocationCreateForm';
 import LocationCreationForm from './components/LocationCreateForm';
+import AdminLoginPage from './components/AdminLoginPage';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         </Route>
 
         <Route path="/admin">
+          <Route path="login" element={<AdminLoginPage/>} />
           <Route path="audios" element={<AudioRepo/>} />
           <Route path="audios/create" element={<AudioCreateForm/>} />
           <Route path="locations" element={<LocationRepo/>} />
