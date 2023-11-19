@@ -1,6 +1,6 @@
 
-import { useParams } from "react-router-dom";
-import React, { useState, useEffect } from 'react'
+// This is a test file
+// The create location is in Create location form file
 
 const avail_info = (location_name, location_id) => {
     var avaliData = new FormData();
