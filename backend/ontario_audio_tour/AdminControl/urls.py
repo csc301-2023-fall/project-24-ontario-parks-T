@@ -32,4 +32,5 @@ urlpatterns = [
     path("register/", views.register, name="register"),
     path('password_change/', auth_views.PasswordChangeView.as_view(success_url=reverse_lazy('AdminControl:password_change_done')), name='password_change'),
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
+    path('api/image/<str:location_name>/', views.QRImageView.as_view(), name='image-view'),
 ]
