@@ -73,10 +73,18 @@ const Locations = () => {
       <div key={location.location_id} className="card mb-3">
         <div className="card-body">
           <h5 className="card-title">{location.location_name}</h5>
+
           <div className="d-flex justify-content-between align-items-center">
             <span className={`mr-2`}>
               {location.location_address}
             </span>
+            <div>
+              <img
+            src={`http://localhost:8000/AdminControl/api/image/${encodeURIComponent(location.location_name.replace(' ', '%20'))}`}
+            alt={`${location.location_name} Image`}
+            style={{ maxWidth: "100%", maxHeight: "200px" }}
+          />
+            </div>
             <div>
               <button className="btn btn-secondary ml-1 mr-2">
                 Edit
