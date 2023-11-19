@@ -41,28 +41,28 @@ const AudioCreationForm = () =>{
     return(
         <div>
             <AdminMain />
-            <form class="card" onSubmit={handleSubmit}>
-                <div class="form-group">
+            <form className="card" onSubmit={handleSubmit}>
+                <div className="form-group">
                     <label>Audio Name</label>
                     <input name="name" onChange={handleChange} placeholder="Name" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Audio Description</label>
                     <input name="description" onChange={handleChange} placeholder="description" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Audio Name French</label>
                     <input name="name_french" onChange={handleChange} placeholder="Name" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Audio Description French</label>
                     <input name="description_french" onChange={handleChange} placeholder="description french" />
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label>Link To Audio</label>
                     <input name="link" onChange={handleChange} placeholder="Link" />
                 </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
+                <button className="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
     )
