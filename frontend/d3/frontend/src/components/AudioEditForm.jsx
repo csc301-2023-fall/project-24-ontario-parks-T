@@ -9,6 +9,8 @@ const AudioEditForm = ({}) =>{
     const audio_name = useParams()["audio_name"];
     const [audioData, setAudioData] = useState(null);
     const [locations, setLocations] = useState([]);
+    const [message, setMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
         const fetchAudioData = async () => {
@@ -46,8 +48,13 @@ const AudioEditForm = ({}) =>{
         try {
           const response = await axios.put(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`, audioData);
           console.log(response.data);
+          setMessage('Audio update was successful!');
+          setErrorMessage('');
         } catch (error) {
           console.error(error);
+          setMessage('Audio update was not successful.' || error.message);
+          const errorMessage = error.response && error.response.statusText ? error.response.statusText : error.message;
+          setErrorMessage(errorMessage);
         }
       };
     
@@ -97,8 +104,11 @@ const AudioEditForm = ({}) =>{
                         ))}
                     </select>
                 </div>
-                <button className="btn btn-primary" type="submit">Submit</button>
+                <button className="btn btn-primary m-2" type="submit">Submit</button>
+                {message && <p className='text-center'>{message}</p>}
+                {errorMessage && <p className='text-center text-danger'>{errorMessage}</p>}
             </form>
+
         </div>
         </div>
     )
