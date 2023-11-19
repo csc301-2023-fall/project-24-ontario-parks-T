@@ -19,6 +19,9 @@ from rest_framework.views import APIView
 from rest_framework.generics import ListAPIView, UpdateAPIView
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
+from django.conf import settings
+from PIL import Image
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -299,3 +302,19 @@ def register(request):
         else:
             messages.info(request, 'invalid registration details')
             return render(request, "users/register.html", {"form": form})
+
+
+class QRImageView(APIView):
+    def get(self, request, location_name, *args, **kwargs):
+        # Replace spaces with '%20' in the location name
+        location_name_encoded = location_name.replace(' ', '%20')
+
+        # Construct the image path
+        image_path = os.path.join(settings.BASE_DIR, 'qrcodes', f"location_{location_name_encoded}.png")
+
+        if os.path.exists(image_path):
+            # Open the image file and return its content
+            with open(image_path, 'rb') as image_file:
+                return HttpResponse(image_file.read(), content_type='image/png')
+        else:
+            return Response({'detail': 'Image not found'}, status=status.HTTP_404_NOT_FOUND)

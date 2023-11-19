@@ -10,3 +10,6 @@ class LocationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Location
         fields = "__all__"
+
+class MyImageSerializer(serializers.Serializer):
+    image = serializers.ImageField()
