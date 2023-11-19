@@ -39,7 +39,7 @@ function App() {
           <Route path="audios/create" element={<AudioCreateForm/>} />
           <Route path="audios/edit/:audio_name" element={<AudioEditForm/>} />
           <Route path="locations" element={<LocationRepo/>} />
-          <Route path="locations" element={<LocationCreationForm/>} />
+          <Route path="locations/create" element={<LocationCreationForm/>} />
         </Route>
       </Routes>
     </BrowserRouter>
