@@ -17,6 +17,7 @@ import AudioEditForm from './components/AudioEditForm';
 import CreateLocation from './components/LocationCreateForm';
 import LocationCreationForm from './components/LocationCreateForm';
 import AdminLoginPage from './components/AdminLoginPage';
+import LocationEditForm from '/components/LocationEditForm';
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
           <Route path="audios/edit/:audio_name" element={<AudioEditForm/>} />
           <Route path="locations" element={<LocationRepo/>} />
           <Route path="locations/create" element={<LocationCreationForm/>} />
+          <Route path="locations/edit/:location_name" element={<LocationEditForm/>} />
         </Route>
       </Routes>
     </BrowserRouter>
