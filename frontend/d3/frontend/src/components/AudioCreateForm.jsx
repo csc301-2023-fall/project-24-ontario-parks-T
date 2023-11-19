@@ -41,6 +41,7 @@ const AudioCreationForm = () =>{
     return(
         <div>
             <AdminMain />
+            <div style={containerStyle}>
             <form className="card" onSubmit={handleSubmit}>
                 <div className="form-group">
                     <label>Audio Name</label>
@@ -65,7 +66,16 @@ const AudioCreationForm = () =>{
                 <button className="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
+      </div>
     )
 }
-
+const containerStyle = {
+  backgroundColor: "rgba(255, 255, 255, 0.5)",
+  marginLeft: "5cm",
+  marginRight: "5cm",
+  padding: "1cm",
+  alignItems: "center",
+  justifyContent: "space-evenly",
+  overflowY: "auto",
+};
 export default AudioCreationForm;
