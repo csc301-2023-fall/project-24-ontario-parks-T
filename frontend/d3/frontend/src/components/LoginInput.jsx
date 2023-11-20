@@ -4,7 +4,6 @@ const LoginInput = (props) => {
 
         const {id, input_lable_value, type_value, input_value, update, placeholder_value, is_required} = props
 
-
         var notification = input_lable_value + "_notification"
         if (is_required){
             return (<label className="mb-4 row" htmlFor={input_lable_value}>

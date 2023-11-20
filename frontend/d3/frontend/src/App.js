@@ -20,6 +20,7 @@ import CreateLocation from './components/LocationCreateForm';
 import LocationCreationForm from './components/LocationCreateForm';
 import AdminLoginPage from './components/AdminLoginPage';
 import LocationEditForm from './components/LocationEditForm';
+import LogoutPage from "./components/Logout";
 
 function App() {
   useEffect(() => {
@@ -38,7 +39,7 @@ function App() {
         console.log('token refresh failed')
         // Handle token refresh failure, e.g. redirect to login page
       }
-    }, 5 * 60 * 1000);
+    }, 3 * 60 * 1000);
     return () => clearInterval(intervalId); // Clear interval on component unmount
   }, []);
 
@@ -64,6 +65,7 @@ function App() {
           <Route path="locations" element={<LocationRepo/>} />
           <Route path="locations/create" element={<LocationCreationForm/>} />
           <Route path="locations/edit/:location_name" element={<LocationEditForm/>} />
+          <Route path="/admin/logout" element={<LogoutPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

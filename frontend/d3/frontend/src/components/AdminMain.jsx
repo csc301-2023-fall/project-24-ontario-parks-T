@@ -8,36 +8,34 @@ const AdminPageMainFrame = () => {
                 <div className="container">
                     <NavLink to="#" className="navbar-brand">AudioQR Management Admin</NavLink>
 
-                    
-
                     <div className="collapse navbar-collapse"
                         id="navbarResponsive">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/home">Home</NavLink>
+                                to="/admin/locations/create/">Add Location</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/locations/create">Add Location</NavLink>
-                            </li>
-                            <li className="nav-item me-3">
-                                <NavLink activeclassname="navbar__link--active" 
-                                className="nav-link" aria-current="page" 
-                                to="/admin/audios/create">Add Audio</NavLink>
+                                to="/admin/audios/create/">Add Audio</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink
-                                    activeclassname="navbar__link--active" 
+                                    end activeclassname="navbar__link--active" 
                                     className="nav-link" aria-current="page" 
                                     to="/admin/audios">Audio List</NavLink>
                             </li>
                             <li className="nav-item me-3">
-                                <NavLink activeclassname="navbar__link--active" 
+                                <NavLink end activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
                                 to="/admin/locations">Location List</NavLink>
+                            </li>
+                            <li className="nav-item me-3">
+                                <NavLink activeclassname="navbar__link--active" 
+                                className="nav-link" aria-current="page" 
+                                to="/admin/logout">Logout</NavLink>
                             </li>
 
                         </ul>
