@@ -3,6 +3,8 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { BrowserRouter, Route, Routes, Switch } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import axios from 'axios';
 
 import EngUserPageMainFrame from './components/EngUserMain';
 import EngAudioPlayer from './components/EngAudioPlayer';
@@ -20,6 +22,26 @@ import AdminLoginPage from './components/AdminLoginPage';
 import LocationEditForm from './components/LocationEditForm';
 
 function App() {
+  useEffect(() => {
+    const intervalId = setInterval(async () => {
+      try {
+        const data = {
+          refresh: localStorage.getItem('refresh'),
+        };
+        const response = await axios.post('http://localhost:8000/AdminControl/api/token/refresh/', data);
+
+        localStorage.setItem('token', response.data.access);
+
+        console.log('token refreshed')
+      } catch (error) {
+        console.error(error);
+        console.log('token refresh failed')
+        // Handle token refresh failure, e.g. redirect to login page
+      }
+    }, 5 * 60 * 1000);
+    return () => clearInterval(intervalId); // Clear interval on component unmount
+  }, []);
+
   return (
     <>
     <BrowserRouter>
