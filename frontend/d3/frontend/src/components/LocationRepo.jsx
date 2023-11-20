@@ -54,9 +54,9 @@ const Locations = () => {
       .catch((err) => console.error(err));
   };
 
-  const handleDelete = (location_id) => {
+  const handleDelete = (location_name) => {
     axios
-      .delete(`http://localhost:8000/AdminControl/api/location/${location_id}/`)
+      .delete(`http://localhost:8000/AdminControl/api/location/${location_name}/`)
       .then((res) => {
         console.log("Delete response:", res.data);
         refreshList();
@@ -90,7 +90,7 @@ const Locations = () => {
                 Edit
               </button>
               <button className="btn btn-danger ml-1 mr-2"
-                onClick={() => handleDelete(location.location_id)}>
+                onClick={() => handleDelete(location.location_name)}>
                 Delete
               </button>
             </div>
