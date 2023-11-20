@@ -20,7 +20,7 @@ const location_info = async (location_name) => {
         method: 'POST',
         body: locationData,
         headers: {
-
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
         },
       });
   
@@ -49,14 +49,22 @@ const Locations = () => {
 
   const refreshList = () => {
     axios
-      .get("http://localhost:8000/AdminControl/api/location/")
+      .get("http://localhost:8000/AdminControl/api/location/", {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        }
+      })
       .then((res) => setLocations(res.data))
       .catch((err) => console.error(err));
   };
 
   const handleDelete = (location_name) => {
     axios
-      .delete(`http://localhost:8000/AdminControl/api/location/${location_name}/`)
+      .delete(`http://localhost:8000/AdminControl/api/location/${location_name}/`, {
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+        }
+      })
       .then((res) => {
         console.log("Delete response:", res.data);
         refreshList();

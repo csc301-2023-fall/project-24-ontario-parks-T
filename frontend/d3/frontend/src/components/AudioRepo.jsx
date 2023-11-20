@@ -8,14 +8,22 @@ const Audios = () => {
 
     const refreshList = () => {
         axios
-          .get("http://localhost:8000/AdminControl/api/audio/")
+          .get("http://localhost:8000/AdminControl/api/audio/", {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+          })
           .then((res) => setAudios(res.data))
           .catch((err) => console.log(err));
     };
     
     const handleDelete = (name) => {
         axios
-          .delete(`http://localhost:8000/AdminControl/api/audio/${name}/`)
+          .delete(`http://localhost:8000/AdminControl/api/audio/${name}/`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+          })
           .then((res) => {
             console.log("Delete response:", res.data);
             refreshList();

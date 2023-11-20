@@ -27,7 +27,11 @@ const AudioCreationForm = () =>{
     useEffect(() => {
       const fetchLocations = async () => {
           try {
-            const response = await axios.get('http://localhost:8000/AdminControl/api/location/');
+            const response = await axios.get('http://localhost:8000/AdminControl/api/location/', {
+              headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              }
+            });
             setLocations(response.data);
           } catch (error) {
             console.error(error);

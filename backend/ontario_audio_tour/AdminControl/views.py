@@ -92,7 +92,7 @@ class get_location(View):
 
 # @method_decorator(login_required, name='dispatch')
 class AudioListApiView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         audios = Audio.objects.all()
         serializer = AudioSerializer(audios, many=True)
@@ -125,7 +125,7 @@ class AudioListApiView(APIView):
         #     return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
 
 class AudioDetailApiView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(
                 {"res": "Audio does not exist"},
@@ -178,7 +178,7 @@ class AudioDetailApiView(APIView):
         )
     
 class LocationListApiView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     def get(self, request, *args, **kwargs):
         locations = Location.objects.all()
         serializer = LocationSerializer(locations, many=True)
@@ -221,7 +221,7 @@ class LocationListApiView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LocationDetailApiView(APIView):
-    # permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
     def not_exist_error(self):
         return Response(
                 {"res": "Location does not exist"},

@@ -15,7 +15,11 @@ const AudioEditForm = ({}) =>{
     useEffect(() => {
         const fetchAudioData = async () => {
           try {
-            const response = await axios.get(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`);
+            const response = await axios.get(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`, {
+              headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              }
+            });
             setAudioData(response.data);
           } catch (error) {
             console.error(error);
@@ -24,7 +28,11 @@ const AudioEditForm = ({}) =>{
 
         const fetchLocations = async () => {
             try {
-              const response = await axios.get('http://localhost:8000/AdminControl/api/location/');
+              const response = await axios.get('http://localhost:8000/AdminControl/api/location/', {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                }
+              });
               setLocations(response.data);
             } catch (error) {
               console.error(error);
