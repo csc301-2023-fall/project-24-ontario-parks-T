@@ -1,9 +1,0 @@
-version: '3'
-services:
-   web:
-      platform: linux/amd64
-      build: ./ontario_audio_tour
-      container_name: backend-team-web
-      tty: true               
-      ports:
-        - 8000:8000

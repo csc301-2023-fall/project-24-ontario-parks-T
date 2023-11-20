@@ -1,0 +1,17 @@
+version: '3'
+services:
+   api:
+      # platform: linux/amd64
+      build: ./backend/ontario_audio_tour
+      container_name: ontario-park-audio-api
+      tty: true               
+      ports:
+        - 8000:8000
+      
+   web:
+      build: ./frontend/d3/frontend
+      container_name: ontario-park-audio-frontend
+      ports:
+      - 3000:3000
+      # volumes:
+      # - ./frontend/d3/frontend:/frontend/d3/frontend

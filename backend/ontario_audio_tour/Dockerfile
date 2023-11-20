@@ -1,7 +1,7 @@
 # base image  
 FROM python:3.8  
 # setup environment variable  
-ENV DockerHOME=/ontario_audio_tour
+ENV DockerHOME=/backend/ontario_audio_tour
 
 # set work directory  
 RUN mkdir -p $DockerHOME
@@ -16,8 +16,13 @@ ENV PYTHONUNBUFFERED 1
 # install dependencies  
 RUN pip install --upgrade pip  
 
-# copy whole project to your docker home directory. 
-COPY . $DockerHOME  
+# copy folders needed to docker home directory. 
+# COPY . $DockerHOME
+COPY AdminControl/ $DockerHOME/AdminControl
+COPY ontario_audio_tour/ $DockerHOME/ontario_audio_tour
+COPY requirements.txt $DockerHOME
+COPY manage.py $DockerHOME
+
 # run this command to install all dependencies  
 RUN pip install -r requirements.txt  
 # port where the Django app runs  
