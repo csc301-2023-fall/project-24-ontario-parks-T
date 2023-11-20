@@ -124,7 +124,7 @@ const LocationRepo = () => {
                 <div className="mr-2">new location name:</div>
                 <input name='Location Name' id='locationName' value={locationName} type='text' onChange={(e) => setLocationName(e.target.value)} />
                 <div>
-                  <text className="is-block mb-2 ml-2" style={{ fontSize: "15px" }} id="notification"> </text>
+                  <label className="is-block mb-2 ml-2" style={{ fontSize: "15px" }} id="notification"> </label>
                 </div>
               </span>
 
