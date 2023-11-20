@@ -25,7 +25,12 @@ const LocationCreationForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/AdminControl/api/location/', locationData);
+            const response = await axios.post('http://localhost:8000/AdminControl/api/location/', locationData,
+            {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                }
+            });
             console.log(response.data);
             setSubmissionStatus('success'); // Set status to success on successful submission
         } catch (error) {

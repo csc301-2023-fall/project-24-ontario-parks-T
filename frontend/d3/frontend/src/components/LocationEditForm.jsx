@@ -31,7 +31,12 @@ const LocationEditForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:8000/AdminControl/api/location/${location_name}/`, locationData);
+            const response = await axios.put(`http://localhost:8000/AdminControl/api/location/${location_name}/`, locationData, 
+            {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                }
+            });
             console.log(response.data);
             setSubmissionStatus('success'); // Set status to success on successful submission
         } catch (error) {

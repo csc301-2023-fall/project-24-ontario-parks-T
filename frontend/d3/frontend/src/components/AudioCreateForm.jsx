@@ -48,7 +48,12 @@ const AudioCreationForm = () =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post('http://localhost:8000/AdminControl/api/audio/', audioData);
+          const response = await axios.post('http://localhost:8000/AdminControl/api/audio/', audioData, 
+          {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+          });
           console.log(response.data);
           setMessage('Audio created successfully!');
           setErrorMessage('');

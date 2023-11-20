@@ -22,9 +22,8 @@ var request = fetch('http://localhost:8000/AdminControl/api/location/&{location_
     { 
         method: 'POST',
         body: avaliData,
-        headers:{
-            // need to finish the admit login for reducing the red line 
-            'Authorizatio': `Bearer ${localStorage.getItem('token')}`,
+        headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
         }
 
     }).then(response => response.json()).catch(error => { console.log(error)})
@@ -55,7 +54,12 @@ const Addail = () => {
     const location_id = useParams()['locationID'];
 
     useEffect(()=>{
-        fetch('http://localhost:8000/location/detail/${location_id}/').then((res) => res.json())
+        fetch('http://localhost:8000/location/detail/${location_id}/', 
+        {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            }
+        }).then((res) => res.json())
         .then(data => {
             setLocation(data.result[0]);
         });

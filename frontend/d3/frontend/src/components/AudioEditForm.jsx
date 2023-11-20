@@ -46,7 +46,12 @@ const AudioEditForm = ({}) =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.put(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`, audioData);
+          const response = await axios.put(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`, audioData, 
+          {
+              headers: {
+                  'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              }
+          });
           console.log(response.data);
           setMessage('Audio update was successful!');
           setErrorMessage('');
