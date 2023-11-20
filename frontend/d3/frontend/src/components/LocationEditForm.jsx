@@ -49,14 +49,43 @@ const LocationEditForm = () => {
             <AdminMain />
             <div style={containerStyle}>
                 <form className="card" onSubmit={handleSubmit}>
-                    <div className="form-group">
-                        <label>Location Name</label>
-                        <input name="location_name" type="text" onChange={handleChange} value={locationData.location_name} />
-                    </div>
+
                     <div className="form-group">
                         <label>Location Address</label>
                         <input name="location_address" type="text" onChange={handleChange} value={locationData.location_address} />
                     </div>
+
+                    <div className="form-group">
+                        <label>Location Name</label>
+                        <input name="location_name" type="text" onChange={handleChange} value={locationData.location_name} />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Location City</label>
+                        <input name="location_city" type="text" onChange={handleChange} value={locationData.location_city} />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Location Province</label>
+                        <input name="location_province" type="text" onChange={handleChange} value={locationData.location_province} />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Location Postal Code</label>
+                        <input name="location_postal_code" type="text" onChange={handleChange} value={locationData.location_postal_code} />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Longitude</label>
+                        <input name="longitude" type="text" onChange={handleChange} value={locationData.longtitude} />
+                    </div>
+
+                    <div className="form-group">
+                        <label>Latitude</label>
+                        <input name="latitude" type="text" onChange={handleChange} value={locationData.latitude} />
+                    </div>
+
+
                     {/* Add more input fields as needed for other location attributes */}
                     <button className="btn btn-primary" type="submit">Submit</button>
                 </form>
