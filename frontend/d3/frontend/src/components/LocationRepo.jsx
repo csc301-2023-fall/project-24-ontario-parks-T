@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AdminMain from "./AdminMain";
 import axios from "axios";
+import { NavLink } from 'react-router-dom';
 
 const location_info = async (location_name) => {
   var locationData = new FormData();
@@ -108,7 +109,9 @@ const Locations = () => {
                 </div>
                 <div>
                   <button className="btn btn-secondary ml-1 mr-2">
-                    Edit
+                    <NavLink className="nav-link" to={`edit/${location.name}`}>
+                      Edit
+                    </NavLink>
                   </button>
                   <button className="btn btn-danger ml-1 mr-2"
                     onClick={() => handleDelete(location.location_name)}>

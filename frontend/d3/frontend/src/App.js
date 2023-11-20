@@ -39,7 +39,7 @@ function App() {
         console.log('token refresh failed')
         // Handle token refresh failure, e.g. redirect to login page
       }
-    }, 3 * 60 * 1000);
+    }, 1 * 60 * 1000);
     return () => clearInterval(intervalId); // Clear interval on component unmount
   }, []);
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AdminMain from "./AdminMain";
 import axios from "axios";
+import { NavLink } from 'react-router-dom';
 
 const Audios = () => {
     const [audios, setAudios] = useState([]);
@@ -60,7 +61,9 @@ const Audios = () => {
                             </h6>
                             <div>
                                 <button className="btn btn-secondary ml-1 mr-2">
-                                    Edit
+                                    <NavLink className="nav-link" to={`edit/${audio.name}`}>
+                                        Edit
+                                    </NavLink>
                                 </button>
                                 <button className="btn btn-danger ml-1 mr-2"
                                     onClick={() => handleDelete(audio.name)}>
