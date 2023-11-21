@@ -1,5 +1,5 @@
 
-import { backendAPI } from "./API";
+import { BACKENDHOST } from "./config";
 // This is a test file
 // The create location is in Create location form file
 
@@ -19,7 +19,7 @@ const avail_info = (location_name, location_id) => {
 
 avaliData.append("Location Name" , location_name)
 
-var request = fetch(`${backendAPI}AdminControl/api/location/&{location_id}/avail/add`, 
+var request = fetch(`${BACKENDHOST}AdminControl/api/location/&{location_id}/avail/add`, 
     { 
         method: 'POST',
         body: avaliData,
@@ -55,7 +55,7 @@ const Addail = () => {
     const location_id = useParams()['locationID'];
 
     useEffect(()=>{
-        fetch(`${backendAPI}location/detail/${location_id}/`, 
+        fetch(`${BACKENDHOST}location/detail/${location_id}/`, 
         {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,

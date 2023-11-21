@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { backendAPI } from "./API";
+import { BACKENDHOST } from "./config";
 
 import EngUserPageMainFrame from "./EngUserMain";
 
@@ -27,7 +27,7 @@ function getSeason() {
 
 
 const EngAudioPlay = () => {
-    const host = `${backendAPI}AdminControl`
+    const host = `${BACKENDHOST}AdminControl`
 
     // get the audio id from scanned
     const location_name = useParams()["location_name"];

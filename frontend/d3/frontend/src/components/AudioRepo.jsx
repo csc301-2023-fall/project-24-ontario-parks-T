@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AdminMain from "./AdminMain";
 import axios from "axios";
 import { NavLink } from 'react-router-dom';
-import { backendAPI } from "./API";
+import { BACKENDHOST } from "./config";
 
 const Audios = () => {
     const [audios, setAudios] = useState([]);
@@ -10,7 +10,7 @@ const Audios = () => {
 
     const refreshList = () => {
         axios
-            .get(`${backendAPI}AdminControl/api/audio/`, {
+            .get(`${BACKENDHOST}AdminControl/api/audio/`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 }
@@ -33,7 +33,7 @@ const Audios = () => {
 
     const handleDelete = (name) => {
         axios
-            .delete(`${backendAPI}AdminControl/api/audio/${name}/`, {
+            .delete(`${BACKENDHOST}AdminControl/api/audio/${name}/`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 }

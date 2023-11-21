@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import AdminMain from "./AdminMain";
-import { backendAPI } from "./API";
+import { BACKENDHOST } from "./config";
 
 
 const AudioEditForm = ({}) =>{
@@ -16,7 +16,7 @@ const AudioEditForm = ({}) =>{
     useEffect(() => {
         const fetchAudioData = async () => {
           try {
-            const response = await axios.get(`${backendAPI}AdminControl/api/audio/${audio_name}/`, {
+            const response = await axios.get(`${BACKENDHOST}AdminControl/api/audio/${audio_name}/`, {
               headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,
               }
@@ -29,7 +29,7 @@ const AudioEditForm = ({}) =>{
 
         const fetchLocations = async () => {
             try {
-              const response = await axios.get(`${backendAPI}AdminControl/api/location/`, {
+              const response = await axios.get(`${BACKENDHOST}AdminControl/api/location/`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 }
@@ -55,7 +55,7 @@ const AudioEditForm = ({}) =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.put(`${backendAPI}AdminControl/api/audio/${audio_name}/`, audioData, 
+          const response = await axios.put(`${BACKENDHOST}AdminControl/api/audio/${audio_name}/`, audioData, 
           {
               headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AdminMain from "./AdminMain";
 import axios from "axios";
 import { NavLink } from 'react-router-dom';
-import { backendAPI } from "./API";
+import { BACKENDHOST } from "./config";
 
 const location_info = async (location_name) => {
   var locationData = new FormData();
@@ -18,7 +18,7 @@ const location_info = async (location_name) => {
 
   locationData.append('location_name', location_name);
   try {
-    const response = await fetch(`${backendAPI}AdminControl/api/location/`, {
+    const response = await fetch(`${BACKENDHOST}AdminControl/api/location/`, {
       method: 'POST',
       body: locationData,
       headers: {
@@ -49,7 +49,7 @@ const Locations = () => {
 
   const refreshList = () => {
     axios
-      .get(`${backendAPI}AdminControl/api/location/`, {
+      .get(`${BACKENDHOST}AdminControl/api/location/`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         }
@@ -72,7 +72,7 @@ const Locations = () => {
 
   const handleDelete = (location_name) => {
     axios
-      .delete(`${backendAPI}AdminControl/api/location/${location_name}/`, {
+      .delete(`${BACKENDHOST}AdminControl/api/location/${location_name}/`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
         }
@@ -103,7 +103,7 @@ const Locations = () => {
                 </span>
                 <div>
                   <img
-                    src={`${backendAPI}AdminControl/api/image/${encodeURIComponent(location.location_name.replace(' ', '%20'))}`}
+                    src={`${BACKENDHOST}AdminControl/api/image/${encodeURIComponent(location.location_name.replace(' ', '%20'))}`}
                     alt={`${location.location_name} Image`}
                     style={{ maxWidth: "100%", maxHeight: "200px" }}
                   />

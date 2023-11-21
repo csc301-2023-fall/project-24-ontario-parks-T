@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { backendAPI } from "./API";
+import { BACKENDHOST } from "./config";
 
 import AdminPageMainFrame from "./AdminMain";
 import LoginInput from "./LoginInput";
@@ -46,7 +46,7 @@ const AdminLoginPage = () => {
         data.append("username", username);
         data.append("password", password);
     
-        fetch(`${backendAPI}AdminControl/api/token/`, {
+        fetch(`${BACKENDHOST}AdminControl/api/token/`, {
             method: "POST",
             body: data,
         })

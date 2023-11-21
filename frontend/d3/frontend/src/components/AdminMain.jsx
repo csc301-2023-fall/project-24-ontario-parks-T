@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FRONTENDHOST } from "./config";
 
 const AdminPageMainFrame = () => {
     return (
@@ -14,36 +15,34 @@ const AdminPageMainFrame = () => {
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/locations/create/">Add Location</NavLink>
+                                to={`${FRONTENDHOST}admin/locations/create/`}>Add Location</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/audios/create/">Add Audio</NavLink>
+                                to={`${FRONTENDHOST}admin/audios/create/`}>Add Audio</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink
                                     end activeclassname="navbar__link--active" 
                                     className="nav-link" aria-current="page" 
-                                    to="/admin/audios">Audio List</NavLink>
+                                    to={`${FRONTENDHOST}admin/audios`}>Audio List</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink end activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/locations">Location List</NavLink>
+                                to={`${FRONTENDHOST}admin/locations`}>Location List</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/register">Create new account</NavLink>
+                                to={`${FRONTENDHOST}admin/register`}>Register</NavLink>
                             </li>
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
-                                to="/admin/logout">Logout</NavLink>
-                            </li>
-                            
-
+                                to={`${FRONTENDHOST}admin/logout`}>Logout</NavLink>
+                            </li>                          
                         </ul>
                     </div>
 
