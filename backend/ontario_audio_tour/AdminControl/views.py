@@ -16,7 +16,7 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
-from rest_framework.generics import ListAPIView, UpdateAPIView
+from rest_framework.generics import ListAPIView, UpdateAPIView,CreateAPIView
 from .serializers import *
 from rest_framework.permissions import IsAuthenticated
 from django.conf import settings
@@ -340,3 +340,24 @@ class QRImageView(APIView):
                 return HttpResponse(image_file.read(), content_type='image/png')
         else:
             return Response({'detail': 'Image not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+class UserCreateAPIView(CreateAPIView):
+    permission_classes = [IsAuthenticated]
+    queryset = User.objects.all()
+    serializer_class = CreateUserSerializer
+
+    def create(self, request, *args, **kwargs):
+        user_data = request.data
+        user_serializer = self.get_serializer(data=user_data)
+        user_serializer.is_valid(raise_exception=True)
+
+        # Check whether the user type is valid before creation of user to maintain database integrity
+        
+        self.perform_create(user_serializer)
+
+        user = User.objects.get(username=user_data['username'])
+        user.set_password(user_data['password'])
+        user.save()
+        headers = self.get_success_headers(user_serializer.data)
+
+        return Response(user_serializer.data, status=status.HTTP_201_CREATED, headers=headers)
