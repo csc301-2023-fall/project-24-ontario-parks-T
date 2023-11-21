@@ -1,12 +1,23 @@
 # AudioQR Management Solution /Room Three
 ​
+<!---
+Update the Readme file you created as part of the D1 deliverable to also include the following information:
+
+  ○ Very concise high-level description of your application with the context and value behind the application.
+  ○ Basic instructions for use e.g. how to access a deployed version of the application
+  ○ A non-technical user should be able to use readme.md to test your first version
+  ○ Breakdown and description of the key features
+  ○ Describe your Git/GitHub workflow
+  ○ Very short description of the license chosen and reason.
+-->
+
+
 ## Partner Intro
  * Partner: Our partner is John Leadston, Resident Business Analyst at the Ontario Cabinet Office 
  * His email is john.leadston2@ontario.ca.
  * John is our primary contact.
  * He has worked with Ontario Park for a long time.
  * The Cabinet Office is a ministry of the Government of Ontario. Its role is to serve as the Premier's ministry, and as such, its employees are not political appointees but are permanent members of the Ontario public service.
-
 
 
 ## Description of the project
@@ -86,7 +97,9 @@
  
  ## Deployment and Github Workflow
 
- * First of all, whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments on the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
+ * For every new feature added to the product, a new branch should be opened up. The great changes should be made in the new feature branch. Later, when the feature is complete, the one who made the feature should make a pull request to merge the new branch to the main branch. In this way, we prevented the possibility in which a big, careless change break the whole repository.
+
+ * Whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments on the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
      
  * The reason we choose such a workflow is that we want our team to be well managed; it would be a mess if everyone could merge pull requests, for example, if someone merged a pull request, while other team members do not know this happened, there will be conflicts for sure. We want to avoid any additional work that is not necessary, and that's why we decided that only project managers can merge pull requests.
 
