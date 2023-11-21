@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-xm#&dh5r&ga5m$hu$r*ubqyge!g9-(=dh@l!g6176$65jrj-x%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','ontario-tour-guide-backend.onrender.com']
-CSRF_TRUSTED_ORIGINS = ["https://ontario-tour-guide-backend.onrender.com"]
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','3.99.190.60','172.26.3.110']
+# CSRF_TRUSTED_ORIGINS = ["https://ontario-tour-guide-backend.onrender.com"]
 # Application definition
 
 INSTALLED_APPS = [
