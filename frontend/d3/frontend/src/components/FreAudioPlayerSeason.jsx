@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { backendAPI } from "./API";
 
 import FreUserPageMainFrame from "./FrenchUserMain";
 
 
 const FreAudioPlaySeason = () => {
 
-    const host = "http://localhost:8000/AdminControl"
+    const host = `${backendAPI}AdminControl`
 
     // get the audio id from scanned
     const location_name = useParams()["location_name"];

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import AdminMain from "./AdminMain";
+import { backendAPI } from "./API";
 
 const LocationCreationForm = () => {
     const [locationData, setLocationData] = useState({
@@ -25,7 +26,7 @@ const LocationCreationForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/AdminControl/api/location/', locationData,
+            const response = await axios.post(`${backendAPI}AdminControl/api/location/`, locationData,
             {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,

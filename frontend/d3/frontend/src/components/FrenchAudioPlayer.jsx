@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { backendAPI } from "./API";
 
 import FreUserPageMainFrame from "./FrenchUserMain";
 
@@ -26,7 +27,7 @@ function getSeason() {
 
 
 const FreAudioPlay = () => {
-    const host = "http://localhost:8000/AdminControl"
+    const host = `${backendAPI}AdminControl`
 
     // get the audio id from scanned
     const location_name = useParams()["location_name"];
@@ -57,7 +58,7 @@ const FreAudioPlay = () => {
 
         // get the audio at the current season
         for (let i = 0; i < data.length; i++) {
-            if (data[i]["season"] == season) {
+            if (data[i]["season"] === season) {
                 setAudioPath(data[i]["link"]);
                 setAudioName(data[i]["name_french"]);
                 setAudioDescription(data[i]["description_french"]);
