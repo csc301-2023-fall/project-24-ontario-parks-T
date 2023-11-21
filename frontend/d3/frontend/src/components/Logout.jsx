@@ -5,7 +5,6 @@ const LogoutPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Perform logout logic here (e.g., clear tokens, user data, etc.)
     localStorage.removeItem("token");
     localStorage.removeItem("refresh");
 

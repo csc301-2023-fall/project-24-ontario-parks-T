@@ -65,7 +65,7 @@ function App() {
           <Route path="locations" element={<LocationRepo/>} />
           <Route path="locations/create" element={<LocationCreationForm/>} />
           <Route path="locations/edit/:location_name" element={<LocationEditForm/>} />
-          <Route path="/admin/logout" element={<LogoutPage />} />
+          <Route path="logout" element={<LogoutPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
