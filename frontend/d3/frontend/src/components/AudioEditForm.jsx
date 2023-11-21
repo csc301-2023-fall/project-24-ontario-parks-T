@@ -76,10 +76,12 @@ const AudioEditForm = ({}) =>{
     }
 
     const handleLocationChange = (e) => {
+      if (e.target.value !== null) {
         setAudioData({
           ...audioData,
           location: e.target.value
         });
+      }
       };
 
     return(
@@ -110,6 +112,7 @@ const AudioEditForm = ({}) =>{
                 <div className="form-group row m-2">
                     <label className="col-4 col-form-label">Location</label>
                     <select className="form-control col-8" name="location_name" value={audioData.location.location_name} onChange={handleLocationChange}>
+                        <option></option>
                         {locations.map((location) => (
                         <option key={location.location_name} value={location.location_name}>
                             {location.location_name}
