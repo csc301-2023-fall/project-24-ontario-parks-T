@@ -11,7 +11,12 @@ const LocationEditForm = () => {
     useEffect(() => {
         const fetchLocationData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/AdminControl/api/location/${location_name}/`);
+                const response = await axios.get(`http://localhost:8000/AdminControl/api/location/${location_name}/`,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                    }
+                });
                 setLocationData(response.data);
             } catch (error) {
                 console.error(error);
