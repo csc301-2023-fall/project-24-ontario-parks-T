@@ -10,6 +10,7 @@ const AdminRegisterPage = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
+    const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
     const Register = (username, password, email,navigate) => {
@@ -56,20 +57,40 @@ const AdminRegisterPage = () => {
         data.append("password", password);
         data.append("email", email);
     
-        fetch("http://localhost:8000/AdminControl/register/", {
+        fetch("http://localhost:8000/AdminControl/create/", {
             method: "POST",
             body: data,
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              },
             
         })
-        .then(respones => respones.json())
-        .then(data => {
-            if (data.success) {
+        .then(response => {
+            if (response.status === 201) {
+
                 navigate("/admin/login");
-            } else {
-                console.error("Registration failed:", data.error);
+            } 
+            else if(response.status === 400){
+                    setErrorMessage('You are not inputting valid input');
+
+            }
+            else {
+
+                console.error("Registration failed. Status code:", response.status);
             }
         })
-        .catch(error => console.error("Error:", error))
+        .catch((err) => {
+            if (err.response && err.response.status === 401) {
+              setErrorMessage('You are not logged in. Redirecting to login page...');
+              setTimeout(() => {
+                window.location.href = "/admin/login";
+              }, 500);
+            } 
+            else{
+
+              console.error(err);
+            }
+          });
     }
         
     
@@ -120,6 +141,7 @@ const AdminRegisterPage = () => {
                                         type_value="email" 
                                         is_required={true} />
                                 </div>
+                                <p>{errorMessage}</p>
                                 <div className="mb-3">
                                     <button type="button" className="btn btn-secondary" style={{marginLeft: 0 + "px"}}
                                     onClick={() => {
