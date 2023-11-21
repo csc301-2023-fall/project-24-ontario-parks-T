@@ -23,12 +23,12 @@ jobs:
 
     - name: Push image to GitHub Container Registry
       run: |
-        IMAGE_ID_API=ghcr.io/project-24-ontario-parks-T/$IMAGE_NAME_API
+        IMAGE_ID_API=ghcr.io/project-24-ontario-parks-t/$IMAGE_NAME_API
         echo IMAGE_ID_API=$IMAGE_ID_API
         docker tag $IMAGE_NAME_API $IMAGE_ID_API:latest
         docker push $IMAGE_ID_API:latest
 
-        IMAGE_ID_FRONTEND=ghcr.io/project-24-ontario-parks-T/$IMAGE_NAME_FRONTEND
+        IMAGE_ID_FRONTEND=ghcr.io/project-24-ontario-parks-t/$IMAGE_NAME_FRONTEND
         echo IMAGE_ID_FRONTEND=$IMAGE_ID_FRONTEND
         docker tag $IMAGE_NAME_FRONTEND $IMAGE_ID_FRONTEND:latest
         docker push $IMAGE_ID_FRONTEND:latest
