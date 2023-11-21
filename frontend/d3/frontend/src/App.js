@@ -21,6 +21,7 @@ import LocationCreationForm from './components/LocationCreateForm';
 import AdminLoginPage from './components/AdminLoginPage';
 import LocationEditForm from './components/LocationEditForm';
 import LogoutPage from "./components/Logout";
+import AdminRegisterPage from "./components/AdminRegisterPage";
 
 function App() {
   useEffect(() => {
@@ -58,6 +59,7 @@ function App() {
         </Route>
 
         <Route path="/admin">
+          <Route path="register" element={<AdminRegisterPage/>} />
           <Route path="login" element={<AdminLoginPage/>} />
           <Route path="audios" element={<AudioRepo/>} />
           <Route path="audios/create" element={<AudioCreateForm/>} />

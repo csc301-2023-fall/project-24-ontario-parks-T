@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders', # yilz: add corsheaders
+    'corsheaders', # yilz: add corsheaders, Brandon: ok
 ]
 
 REST_FRAMEWORK = {
