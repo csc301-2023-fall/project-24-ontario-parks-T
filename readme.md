@@ -72,21 +72,25 @@ Update the Readme file you created as part of the D1 deliverable to also include
 	* Scan the QR code, and play the audio.
 	
 * For the administrator side:
-	* 1, Scan the QR code
-	* 2, Switch to administration side
-	* 3, Sign in if you don’t have the administrator account with your employee ID, email, and password. 
-	* 4, Now, that you are on the administration side, you can click any location section
-	* 5, Then, you can search for the audio with some text or add some audio from your local device.
-	* 6, For Deleting, Editing, or Adding the audio, you click management,  there are two options Delete this audio or Editing this audio.
-	* 6.1, For deletion, it will ask you if you are sure you want to delete it. If you click Yes, it will be deleted No to save the current audio.
-	* 6.2, For Editing, you can change the audio and replace the picture of the current audio which will be shown on the user side.  Click Save to save the update and No for future changes.
-	* 7, If the season is changed, then it will automatically change for all audios.
-	* 8, Once you finish your update for audios, you have to log out of your administrator account.
-	* 9, Once you log out, you can scan this QR code and use it as a user. 
+	* 1, reach the login page, which is http://3.99.190.60:3000/admin/login and input your username and passsword to login
+	* 1.1, in case you do not have an account, you need to ask your colleague who have an account to sign in and create an account for you (this feature is demanded by our partner)
 
- * This section is critical to testing your application and must be done carefully and thoughtfully.
+ 	* 2,At the top of each page, there will be an navigation bar, which include buttons to Add Location, Add Audio,AudioList,Location List, Register, Logout
+   
+   	* 3, Location repo page: after log in, you will be redirected to the location repo page(you can also reach this page by using the Location List button on Navigation bar) which includes a list of all locations' cards and their QR code on the cards. In addition there is 1 empty card can be used to quich create location with location name.
+   	* 3.1, at the location repo page you may also use the edit and delete button on the location card to delete the location or jump to the edit page of that location.
+   	* 4, at location edit page, you may change the detail imformation of the location and click save to save the update. please notice that after changing the name of location, the QR code will change, so you may need to go back to location repo to collect the updated version of Qr code.
+   	* 5, you may use the Add Location on the Navigation bar to go to the add location page. After finish the form and click button to create, a new location will be created with detail.
+   	* 6, you may use the AudioList on the Navigation bar to go to the audio repo page. Similar to Location repo page, you may delete audio or go to edit audio page with the "delete" and "edit" button near the card.
+   	* 7, at audio edit page, you may change the detail imformation of the audio and click save to save the update. Please notice that the update of audio, will not influence QR code of location, as our partner asked
+   	* 8, you may use the Add Audio on the Navigation bar to go to the add audio page. After finish the form and click button to create, a new audio item will be created with detail.
+   	* 9, you may use the Register on the Navigation bar to help a colleague to create their account, email, unqiue username and password will be needed
+   	  
+   	  
+	* 10, Once you finish your management of the system, you can log out of your administrator account with the button Log out button on the Navigation bar.
 
- * We clearly understand it and we provided a careful guide for users and administrators. If there are any features added to our website, we update this section carefully and frequently once we clearly and totally successfully implement it.
+
+ * We clearly understand it and we provided a careful guide for users and administrators. If there are any features added to our website, we update this section carefully and frequently once we clearly and totally successfully implement it. 
 
  
  ## Development requirements
