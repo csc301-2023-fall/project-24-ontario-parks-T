@@ -92,20 +92,27 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
  * We clearly understand it and we provided a careful guide for users and administrators. If there are any features added to our website, we update this section carefully and frequently once we clearly and totally successfully implement it. 
 
- 
- ## Development requirements
+  ## Development requirements
  * What are the technical requirements for a developer to set up on their machine or server (e.g. OS, libraries, etc.)?
-     * Currently, we have not decided on every technical requirement we might need. For D1, we can only say that we will need some libraries including Django, REACT, and CSS templates like Bulma or Bootstrap. We might also need our members to download and set up Postman, in order to test the applications. But again this is only D1, we have not really started any actual implementations, so this part is expected to change as our project goes on.
+     * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
+     * Docker: Ensure Docker is installed on your machine or server.
  * Briefly describe instructions for setting up and running the application. You should address this part like how one would expect a README doc of a real-world deployed application would be.
-     * This part will also be updated as we continue on our project. For D1, it's really impossible for us to make clear instructions on how our application can be set up and run.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/csc301-2023-fall/project-24-ontario-parks-T.git
+   cd /project-24-ontario-parks-T```
+2. **Build and Run the Docker Containers:**
+   ```bash docker-compose up -d```
+   * This command will automatically compose the required Docker images and run the containers in detached mode
+3. **Access the Application:**
+     * Once the containers are up and running, you can access the application by navigating to http://localhost:3000/admin/login in your web browser
  
  ## Deployment and Github Workflow
 
- * For every new feature added to the product, a new branch should be opened up. The great changes should be made in the new feature branch. Later, when the feature is complete, the one who made the feature should make a pull request to merge the new branch to the main branch. In this way, we prevented the possibility in which a big, careless change break the whole repository.
-
- * Whenever a member makes a pull request, the request will be reviewed by a project manager. Other members can review and leave comments on the request as well, but only project managers are supposed to merge a pull request. Also, members can leave issues in the issue section, for other members to answer or fix. We will discuss the choice of deployment tools later on, as for D1, we cannot say we will be using any deployment tools for certain. 
-     
- * The reason we choose such a workflow is that we want our team to be well managed; it would be a mess if everyone could merge pull requests, for example, if someone merged a pull request, while other team members do not know this happened, there will be conflicts for sure. We want to avoid any additional work that is not necessary, and that's why we decided that only project managers can merge pull requests.
+ * Our web application is deployed using the AWS Lightsail service on an EC2 instance. The application runs on a virtual machine and is accessible at [http://3.99.190.60:3000/admin/login](http://3.99.190.60:3000/admin/login).
+ * We chose AWS Lightsail due to its suitability for small to medium-scale workloads and the availability of a free tier for testing deployment without incurring charges.
+ * For continuous integration and continuous deployment (CI/CD), we have implemented a GitHub Actions workflow. This workflow automatically pulls and restarts the Docker container on our virtual machine whenever changes are pushed to the main branch of the repository.
+ * The GitHub Actions workflow automates the build, tagging, and pushing of Docker images to the GitHub Container Registry, then it connects to the EC2 instance (ssh to the VM), re-compose docker containers and run the updated application.
 
  ## Coding Standards and Guidelines
   * Since we have not decided what development tools and languages we will use, we can't decide the coding standards we should follow. We will decide our coding standards timely when we have made those decisions.
