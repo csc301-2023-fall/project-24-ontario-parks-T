@@ -16,7 +16,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker-compose --build -d
+      run: docker-compose up --build -d
 
     - name: Log into GitHub Container Registry
       run: echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
