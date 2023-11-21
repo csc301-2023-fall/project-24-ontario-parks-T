@@ -8,7 +8,8 @@ env:
   IMAGE_NAME_FRONTEND: ontario-park-audio-frontend
   
 jobs:
-  push-new-images-and-audo-deploy:
+
+  build-and-push-images:
   
     runs-on: ubuntu-latest
 
@@ -18,7 +19,7 @@ jobs:
       run: docker-compose up --build -d
 
     - name: Log into GitHub Container Registry
-      run: echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | docker login https://ghcr.io -u ${{ github.actor }} --password-stdin
+      run: echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | docker login https://ghcr.io -u JacqJingyuH --password-stdin
 
     - name: Push image to GitHub Container Registry
       run: |
@@ -26,7 +27,6 @@ jobs:
         echo IMAGE_ID_API=$IMAGE_ID_API
         docker tag $IMAGE_NAME_API $IMAGE_ID_API:latest
         docker push $IMAGE_ID_API:latest
-
         IMAGE_ID_FRONTEND=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME_FRONTEND
         echo IMAGE_ID_FRONTEND=$IMAGE_ID_FRONTEND
         docker tag $IMAGE_NAME_FRONTEND $IMAGE_ID_FRONTEND:latest
