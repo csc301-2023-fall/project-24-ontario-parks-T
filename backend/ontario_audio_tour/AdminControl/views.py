@@ -24,6 +24,7 @@ from PIL import Image
 from django.http import HttpResponse
 
 # Create your views here.
+BASE_URL = "http://3.99.190.60:3000"
 
 @login_required
 def upload_audio(request):
@@ -193,7 +194,7 @@ class LocationListApiView(APIView):
         if serializer.is_valid():
             location=serializer.save()
             location_name = location.location_name
-            model_link = f"http://localhost:3000/english/play/{location_name.replace(' ', '%20')}/"
+            model_link = f"{BASE_URL}/english/play/{location_name.replace(' ', '%20')}/"
 
             # Generate QR code
             qr = qrcode.QRCode(
@@ -245,7 +246,7 @@ class LocationDetailApiView(APIView):
             new=serializer.save()
             if location_name != new.location_name :
                 location_name =new.location_name
-                model_link = f"http://localhost:3000/english/play/{location_name.replace(' ', '%20')}/"
+                model_link = f"{BASE_URL}/english/play/{location_name.replace(' ', '%20')}/"
 
                 # Generate QR code
                 qr = qrcode.QRCode(

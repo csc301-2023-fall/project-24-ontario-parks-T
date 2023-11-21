@@ -29,7 +29,7 @@ const AudioEditForm = ({}) =>{
 
         const fetchLocations = async () => {
             try {
-              const response = await axios.get('http://localhost:8000/AdminControl/api/location/', {
+              const response = await axios.get(`${backendAPI}AdminControl/api/location/`, {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,
                 }
@@ -55,7 +55,7 @@ const AudioEditForm = ({}) =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.put(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`, audioData, 
+          const response = await axios.put(`${backendAPI}AdminControl/api/audio/${audio_name}/`, audioData, 
           {
               headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,

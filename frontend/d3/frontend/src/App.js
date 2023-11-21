@@ -22,6 +22,7 @@ import AdminLoginPage from './components/AdminLoginPage';
 import LocationEditForm from './components/LocationEditForm';
 import LogoutPage from "./components/Logout";
 import AdminRegisterPage from "./components/AdminRegisterPage";
+import { backendAPI } from "./API";
 
 function App() {
   useEffect(() => {
@@ -30,7 +31,7 @@ function App() {
         const data = {
           refresh: localStorage.getItem('refresh'),
         };
-        const response = await axios.post('http://localhost:8000/AdminControl/api/token/refresh/', data);
+        const response = await axios.post(`${backendAPI}AdminControl/api/token/refresh/`, data);
 
         localStorage.setItem('token', response.data.access);
 
