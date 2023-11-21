@@ -58,16 +58,16 @@ Update the Readme file you created as part of the D1 deliverable to also include
 ## Instructions
 * The instructions will be different for users who are visitors and who are administrators. Please notice, administrators are also considered as users here.
 	* For the tourist side, we are targeting tourists who have smart devices that can scan the QR code at locations. If they use their smart device to scan our QR code, they will be able to see the audio that corresponds to certain items or landscapes. They could see related pictures of items and listen to the audio. 
-	* For the administrator side, they have to get the administrator privilege and log in first. Once they log in, the web page will jump to the administrator management page, they can search/ add/edit/delete the audio and corresponding picture there. If the outside season has been changed, the audio and picture will be changed automatically. 
+	* For the administrator side, they have to get the administrator privilege and log in first. Once they log in, the web page will jump to the administrator management page, they can add/edit/delete the audio and corresponding locations there.
 
  
 * To access as an administrator:
-	* Details TBD. Below is just a draft.
-	* Go to the administrator management website or scan the corresponding QR code. To register an account, you have to sign up with information such as email address, etc. If the registration is correctly processed, you will be able to access the administration side. With the account, you can do any operation mentioned above for the video.
+	* Go to the administrator management website which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you have to use a logged in account to sign up with username, email address and password. If the registration is correctly processed, you created a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
 * To access as a user:
 	* No need for an account, grab your smart device, scan the QR code, and enjoy the audio.  
 
  * Clear steps for using each feature described in the previous section.
+ * 
  * For the visitor's side:
 	* Scan the QR code, and play the audio.
 	
