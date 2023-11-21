@@ -109,7 +109,7 @@ const Locations = () => {
                 </div>
                 <div>
                   <button className="btn btn-secondary ml-1 mr-2">
-                    <NavLink className="nav-link" to={`edit/${location.name}`}>
+                    <NavLink className="nav-link" to={`edit/${location.location_name}`}>
                       Edit
                     </NavLink>
                   </button>
