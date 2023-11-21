@@ -2,14 +2,13 @@ name: Docker Image CI/CD
 
 on:
   push:
-    # branches: [ "main" ]
+    branches: [ "main" ]
 env:
   IMAGE_NAME_API: ontario-park-audio-api
   IMAGE_NAME_FRONTEND: ontario-park-audio-frontend
   
 jobs:
-
-  build-and-push-images:
+  push-new-images-and-audo-deploy:
   
     runs-on: ubuntu-latest
 
@@ -23,12 +22,22 @@ jobs:
 
     - name: Push image to GitHub Container Registry
       run: |
-        IMAGE_ID_API=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME_API
+        IMAGE_ID_API=ghcr.io/jacqjingyuh/$IMAGE_NAME_API
         echo IMAGE_ID_API=$IMAGE_ID_API
         docker tag $IMAGE_NAME_API $IMAGE_ID_API:latest
         docker push $IMAGE_ID_API:latest
 
-        IMAGE_ID_FRONTEND=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME_FRONTEND
+        IMAGE_ID_FRONTEND=ghcr.io/jacqjingyuh/$IMAGE_NAME_FRONTEND
         echo IMAGE_ID_FRONTEND=$IMAGE_ID_FRONTEND
         docker tag $IMAGE_NAME_FRONTEND $IMAGE_ID_FRONTEND:latest
         docker push $IMAGE_ID_FRONTEND:latest
+        
+    - name: Connect to VM and run updated images
+      run: |
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > private_key && chmod 600 private_key
+        ssh -o StrictHostKeyChecking=no -i private_key ec2-user@3.99.190.60 '
+            cd /home/ec2-user/project-24-ontario-parks-T &&
+            git pull &&
+            docker-compose pull &&
+            docker-compose up -d
+        '
