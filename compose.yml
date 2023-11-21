@@ -3,7 +3,7 @@ services:
    api:
       # platform: linux/amd64
       build: ./backend/ontario_audio_tour
-      image: ontario-park-audio-api:latest
+      image: ghcr.io/csc301-2023-fall/ontario-park-audio-api:latest
       container_name: ontario-park-audio-api
       tty: true               
       ports:
@@ -11,7 +11,7 @@ services:
       
    web:
       build: ./frontend/d3/frontend
-      image: ontario-park-audio-frontend:latest
+      image: ghcr.io/csc301-2023-fall/ontario-park-audio-frontend:latest
       container_name: ontario-park-audio-frontend
       ports:
       - 3000:3000
