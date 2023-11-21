@@ -35,8 +35,14 @@ const AdminPageMainFrame = () => {
                             <li className="nav-item me-3">
                                 <NavLink activeclassname="navbar__link--active" 
                                 className="nav-link" aria-current="page" 
+                                to="/admin/register">Create new account</NavLink>
+                            </li>
+                            <li className="nav-item me-3">
+                                <NavLink activeclassname="navbar__link--active" 
+                                className="nav-link" aria-current="page" 
                                 to="/admin/logout">Logout</NavLink>
                             </li>
+                            
 
                         </ul>
                     </div>
