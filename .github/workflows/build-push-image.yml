@@ -9,14 +9,20 @@ env:
   
 jobs:
 
-  build-and-push-images:
+  push-new-images-and-audio-deploy:
   
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker-compose up --build -d
+    
+    - name: Build the Docker image for API
+      working-directory: backend/ontario_audio_tour
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME_API
+
+    - name: Build the Docker image for frontend
+      working-directory: frontend/d3/frontend
+      run: docker build . --file Dockerfile --tag $IMAGE_NAME_FRONTEND
 
     - name: Log into GitHub Container Registry
       run: echo "${{ secrets.PERSONAL_ACCESS_TOKEN }}" | docker login https://ghcr.io -u JacqJingyuH --password-stdin
