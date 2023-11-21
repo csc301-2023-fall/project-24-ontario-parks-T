@@ -2,7 +2,7 @@ name: Docker Image CI/CD
 
 on:
   push:
-    # branches: [ "main" ]
+    branches: [ "main" ]
 env:
   IMAGE_NAME_API: ontario-park-audio-api
   IMAGE_NAME_FRONTEND: ontario-park-audio-frontend
