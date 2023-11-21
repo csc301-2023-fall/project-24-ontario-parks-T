@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import AdminMain from "./AdminMain";
+import { backendAPI } from "./API";
 
 const LocationEditForm = () => {
     const location_name = useParams()["location_name"];
@@ -11,7 +12,7 @@ const LocationEditForm = () => {
     useEffect(() => {
         const fetchLocationData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/AdminControl/api/location/${location_name}/`,
+                const response = await axios.get(`${backendAPI}AdminControl/api/location/${location_name}/`,
                 {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -36,7 +37,7 @@ const LocationEditForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:8000/AdminControl/api/location/${location_name}/`, locationData, 
+            const response = await axios.put(`${backendAPI}AdminControl/api/location/${location_name}/`, locationData, 
             {
                 headers: {
                     'Authorization': `Bearer ${localStorage.getItem('token')}`,

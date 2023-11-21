@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AdminMain from "./AdminMain";
+import { backendAPI } from "./API";
 
 
 const AudioCreationForm = () =>{
@@ -27,7 +28,7 @@ const AudioCreationForm = () =>{
     useEffect(() => {
       const fetchLocations = async () => {
           try {
-            const response = await axios.get('http://localhost:8000/AdminControl/api/location/', {
+            const response = await axios.get(`${backendAPI}AdminControl/api/location/`, {
               headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,
               }
@@ -52,7 +53,7 @@ const AudioCreationForm = () =>{
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const response = await axios.post('http://localhost:8000/AdminControl/api/audio/', audioData, 
+          const response = await axios.post(`${backendAPI}AdminControl/api/audio/`, audioData, 
           {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`,

@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { backendAPI } from "./API";
 
 import UserPageMainFrame from "./UserMain";
 
 
 const AudioPlay = () => {
-    const host = "http://localhost:8000"
+    const host = backendAPI;
 
     // get the audio id from scanned
     var location_id = useParams()["location_id"];

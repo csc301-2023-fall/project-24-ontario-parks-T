@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { backendAPI } from "./API";
 
 import AdminPageMainFrame from "./AdminMain";
 import LoginInput from "./LoginInput";
@@ -11,6 +12,7 @@ const AdminRegisterPage = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
     const [errorMessage, setErrorMessage] = useState('');
+    const [sMessage, setSMessage] = useState('');
     const navigate = useNavigate();
 
     const Register = (username, password, email,navigate) => {
@@ -57,7 +59,7 @@ const AdminRegisterPage = () => {
         data.append("password", password);
         data.append("email", email);
     
-        fetch("http://localhost:8000/AdminControl/create/", {
+        fetch(`${backendAPI}AdminControl/create/`, {
             method: "POST",
             body: data,
             headers: {
@@ -68,9 +70,11 @@ const AdminRegisterPage = () => {
         .then(response => {
             if (response.status === 201) {
 
-                navigate("/admin/login");
+                setSMessage('New account created');
+                setErrorMessage('');
             } 
             else if(response.status === 400){
+                    setSMessage('');
                     setErrorMessage('You are not inputting valid input');
 
             }
@@ -141,7 +145,8 @@ const AdminRegisterPage = () => {
                                         type_value="email" 
                                         is_required={true} />
                                 </div>
-                                <p>{errorMessage}</p>
+                                <p style={{ color: 'red' }}>{errorMessage}</p>
+                                <p style={{ color: 'green' }}>{sMessage}</p>
                                 <div className="mb-3">
                                     <button type="button" className="btn btn-secondary" style={{marginLeft: 0 + "px"}}
                                     onClick={() => {

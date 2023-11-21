@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 import AdminMain from "./AdminMain";
+import { backendAPI } from "./API";
 
 
 const AudioEditForm = ({}) =>{
@@ -15,7 +16,7 @@ const AudioEditForm = ({}) =>{
     useEffect(() => {
         const fetchAudioData = async () => {
           try {
-            const response = await axios.get(`http://localhost:8000/AdminControl/api/audio/${audio_name}/`, {
+            const response = await axios.get(`${backendAPI}AdminControl/api/audio/${audio_name}/`, {
               headers: {
                   'Authorization': `Bearer ${localStorage.getItem('token')}`,
               }
