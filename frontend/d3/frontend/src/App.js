@@ -22,7 +22,7 @@ import AdminLoginPage from './components/AdminLoginPage';
 import LocationEditForm from './components/LocationEditForm';
 import LogoutPage from "./components/Logout";
 import AdminRegisterPage from "./components/AdminRegisterPage";
-import { backendAPI } from "./API";
+import { backendAPI } from "./components/API";
 
 function App() {
   useEffect(() => {
