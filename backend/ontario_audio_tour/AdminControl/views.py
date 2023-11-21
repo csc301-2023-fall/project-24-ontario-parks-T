@@ -104,6 +104,11 @@ class AudioListApiView(APIView):
             return Response({'notification': 'No name in input'}, status=status.HTTP_400_BAD_REQUEST)
         if Audio.objects.filter(name=request.data['name']).exists():
             return Response({'notification': 'Duplicated audio name'}, status=status.HTTP_409_CONFLICT)
+        if 'location' in request.data:
+            location_name = request.data['location']
+            location = Location.objects.filter(location_name=location_name).first()
+            if location:
+                request.data['location'] = location.location_id
 
         serializer = AudioSerializer(data=request.data)
         if serializer.is_valid():
