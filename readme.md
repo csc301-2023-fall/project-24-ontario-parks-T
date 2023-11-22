@@ -73,33 +73,32 @@ Update the Readme file you created as part of the D1 deliverable to also include
   * Go to the administrator management website, which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you must use a logged-in account to sign up with a username, email address, and password. If the registration is correctly processed, you create a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
 * To access as a user:
   * No need for an account; grab your smart device, scan the QR code, and enjoy the audio.  
+* To upload an audio or image file:
+  - This is including at the end of this readme file, as it is includes many screenshots.
 
- * Clear steps for using each feature described in the previous section.
- * 
- * For the visitor's side:
-  * Scan the QR code and play the audio.
+## Clear steps for using each feature described in the previous section.
+
+### For the visitor's side:
+
+Scan the QR code and play the audio.
   
-* For the administrator side:
-  * 1. Reach the login page, which is http://3.99.190.60:3000/admin/login, and input your username and password to log in
-  * 1.1, in case you do not have an account, you need to ask your colleague who has an account to sign in and create an account for you (our partner demands this feature)
+### For the administrator side:
+1. Reach the login page, which is http://3.99.190.60:3000/admin/login, and input your username and password to log in
+   1. In case you do not have an account, you need to ask your colleague who has an account to sign in and create an account for you (our partner demands this feature)
 
-  * 2, At the top of each page, there will be a navigation bar, which includes buttons to Add Location, Add Audio, AudioList, Location List, Register, Logout
-   
-    * 3, Location repo page: After logging in, you will be redirected to the location repo page(you can also reach this page by using the Location List button on the Navigation bar), which includes a list of all locations' cards and their QR code on the cards. In addition, one empty card can be used to quickly create a location with a location name.
-    * 3.1, at the location repo page, you may also use the edit and delete button on the location card to delete the location or jump to the edit page of that location.
-    * 4, at the location edit page, you may change the detail information of the location and click save to save the update. The QR code will change after changing the location's name, so you may need to go back to the location repo to collect the updated version of the QR code.
-    * 5, you may use the Add Location on the Navigation bar to go to the Add Location page. After finishing the form and clicking the button to create, a new location will be created with details.
-    * 6, you may use the AudioList on the Navigation bar to go to the audio repo page. Like the Location repo page, you may delete audio or go to the edit audio page with the "delete" and "edit" buttons near the card.
-    * 7, on the audio edit page, you may change the detail information of the audio and click save to save the update. Please notice that the update of audio will not influence the QR code of the location, as our partner asked
-    * 8, you may use the Add Audio on the Navigation bar to go to the Add Audio page. After finishing the form and clicking the button to create, a new audio item will be created with detail.
-    * 9, you may use the Register on the Navigation bar to help a colleague create their account; email, unique username, and password will be needed
-      
-      
-  * 10, Once you finish managing the system, you can log out of your administrator account with the Logout button on the Navigation bar.
+1. At the top of each page, there will be a navigation bar, which includes buttons to Add Location, Add Audio, AudioList, Location List, Register, Logout
+     
+1. Location repo page: After logging in, you will be redirected to the location repo page(you can also reach this page by using the Location List button on the Navigation bar), which includes a list of all locations' cards and their QR code on the cards. In addition, one empty card can be used to quickly create a location with a location name.
+   1. At the location repo page, you may also use the edit and delete button on the location card to delete the location or jump to the edit page of that location.
+1. At the location edit page, you may change the detail information of the location and click save to save the update. The QR code will change after changing the location's name, so you may need to go back to the location repo to collect the updated version of the QR code.
+1. You may use the Add Location on the Navigation bar to go to the Add Location page. After finishing the form and clicking the button to create, a new location will be created with details.
+1. You may use the AudioList on the Navigation bar to go to the audio repo page. Like the Location repo page, you may delete audio or go to the edit audio page with the "delete" and "edit" buttons near the card.
+1. On the audio edit page, you may change the detail information of the audio and click save to save the update. Please notice that the update of audio will not influence the QR code of the location, as our partner asked
+1. You may use the Add Audio on the Navigation bar to go to the Add Audio page. After finishing the form and clicking the button to create, a new audio item will be created with detail.
+1. You may use the Register on the Navigation bar to help a colleague create their account; email, unique username, and password will be needed
+2. Once you finish managing the system, you can log out of your administrator account with the Logout button on the Navigation bar.
 
-
- * We clearly understand it and provide a careful guide for users and administrators. If any features are added to our website, we update this section carefully and frequently once we clearly and successfully implement it. 
-  ## Development requirements
+We clearly understand it and provide a careful guide for users and administrators. If any features are added to our website, we update this section carefully and frequently once we clearly and successfully implement it. 
   ## Development requirements
  * What are the technical requirements for a developer to set up on their machine or server (e.g., OS, libraries, etc.)?
      * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
@@ -129,3 +128,41 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
  * We would like to apply the MIT license to our codebase because we want to clarify and simplify our license, and we do not intend to profit from what we created.
  * It would not affect much of our development, except that we may not hard-code any sensitive information and will need to make our code structured and readable to share it with others reasonably.
+
+## Special: Upload Audio or Image Files
+
+1. First, download Microsoft Azure Storage Explorer, here is the [link to Microsoft Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer). Click on download now and choose your system. Then, follow the instructions provided by the installer to complete the installation.
+   ![Alt text](image.png) 
+2. After the installation is complete, open the Storage Explorer, and the start page will be shown automatically:
+   ![Alt text](image-1.png)
+1. If not, you can also manually open the start page by: 
+   ![Alt text](image-2.png)
+2. On the start page, click “Attach to a resource”, this will show a window asking for selecting resources.
+   ![Alt text](image-3.png)
+3. Choose “Storage account or service”, then select “Connection String (Key or SAS)”, click “Next”.
+   ![Alt text](image-4.png)
+   ![Alt text](image-5.png)
+4. In the “Connection string” box, copy the following connection string into the box, this will automatically generate the “Display name”.
+          
+        DefaultEndpointsProtocol=https;AccountName=yilz;AccountKey=pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==;EndpointSuffix=core.windows.net
+
+    Account name and key are also presented, in case if they are needed:
+
+          Account Name: yilz
+          Key: pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==
+
+    ![Alt text](image-6.png)
+5. Then click “Next” and finally “Connect”.
+   ![Alt text](image-7.png)
+
+6. By now, you should be able to find a new storage account being added to the “EXPLORER” panel on the left
+   ![Alt text](image-8.png)
+7.  Navigate to “Blob Containers”, double click on “c-1”.
+    ![Alt text](image-9.png)
+8.  This should display the window:
+    ![Alt text](image-10.png)
+9.  Now you can upload files by clicking on the “Upload” button on the top. When uploading using the window below, only select the files needed, and do not change the other choices.
+    ![Alt text](image-11.png)
+10. As an example I have uploaded a new png file. To get the url (link) to the picture, right click on it, and select “Copy URL”.
+    ![Alt text](image-12.png)
+11. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
