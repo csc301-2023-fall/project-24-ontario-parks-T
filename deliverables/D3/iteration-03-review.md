@@ -18,9 +18,9 @@ List **process-related** (i.e. team organization and how you work) decisions and
  * Feel free to refer/link to process artifact(s).
 -->
 
-* In the later half of the deliverable, we changed our git workflow from centralized workflow to feature branching. This saved us from the danger of having our repository broken because of some member's careless push, and helped our pull history look more managed. Also, we were able to see the features implemented from the pull request history in this way.
+* In the later half of the deliverable, we changed our git workflow from centralized to feature branching. This saved us from the danger of having our repository broken because of some members' careless push and helped our pull history look more managed. Also, we could see the features implemented from the pull request history in this way.
 
-* We changed our team member's responsibilities. In the last deliverable, we are divided into subgroups, but in this deliverable, we decided that it would be better if we assign more people to the frontend, and leave nobody responsible for only the database. This change made us put more working hours into the part with more work to be done.
+* We changed our team member's responsibilities. In the last deliverable, we are divided into subgroups. However, in this deliverable, we decided it would be better to assign more people to the frontend and leave nobody responsible for only the database. This change made us put more working hours into the part with more work to be done.
 
 #### What did not work well
 
@@ -32,9 +32,9 @@ List **process-related** (i.e. team organization and how you work) decisions and
  * Feel free to refer/link to process artifact(s).
 -->
 
-* In the first half of the deliverable, we used a centralized workflow, in which all of our team members simply pull from and push into the main branch. This provided convinience, as we don't need to navigate through pull requests and multiple branches, but this also made our repository vulnerable. One careless push to the main branch might break the repository, and create a great amount of work to fix the it.
+* In the first half of the deliverable, we used a centralized workflow, in which all our team members pull from and push into the main branch. This provided convenience, as we did not need to navigate through pull requests and multiple branches, making our repository vulnerable. One careless push to the main branch might break the repository and create tremendous work to fix it.
 
-* Initially, we separated our team just like we did in deliverable 2, into three equal-sized subteams. However, this strategy soon turned out to work badly. Each member of our team has different technical capabilities, and each task has different amount of work. Especially for database, as there was little left in the database to be done after we finished deliverable 2. Some of our members don't know how to do the work they are assigned to, and some front-end work piled up and no one was scheduled to complete them. So we changed this team-division strategy later on.
+* Initially, we separated our team into three equal-sized subteams, like in deliverable 2. However, this strategy soon turned out to work poorly. Each team member has different technical capabilities, and each task has a different amount of work. Especially for the database, as there was little left in the database to be done after we finished deliverable 2. Some of our members do not know how to do the assigned work, and some front-end work piled up, and no one was scheduled to complete them. So, we changed this team-division strategy later on.
 
 #### Planned changes
 
@@ -53,7 +53,7 @@ Briefly explain how you integrated the previously developed individuals componen
  * Keep this very short (1-3 lines).
 -->
 
-We integraed the previously developed individual components as one product by pulling the code from our subteam repos, and then pushing them all to the main repo. Then, we together decided on how should the backend process the requests from the frontend, and how the frontend should present the backend. D2 is helpful in terms of helping us separate our jobs and make clear the structure of our product.
+We integrated the previously developed individual components as one product by pulling the code from our subteam repos and then pushing them all to the main repo. Then, we decided on how the backend should process the requests from the frontend and how the frontend should present the backend. D2 is helpful in terms of helping us separate our jobs and make clear the structure of our product.
 
 
 ## Product Demo
@@ -66,4 +66,4 @@ We integraed the previously developed individual components as one product by pu
  * *This section will be marked very leniently so keep it brief and just make sure the points are addressed*
 -->
 
-We prepared our demo by setting up the running environment in the developer's device, and made a demo to our partner through our zoom meeting. Our partner, Mr. Leadston, accepted most of the features. He mainly asked us to increase the usability of the admin UI. Also, we are requested to increase the usability and accessibility of our visitor's interface. We learned that there are a great amount of details that we need to improve for the accessibility of people with various difficulties.
+We prepared our demo by setting up the running environment in the developer's device and made a demo to our partner through our Zoom meeting. Our partner, Mr. Leadston, accepted most of the features. He mainly asked us to increase the usability of the admin UI. Also, we are requested to increase the usability and accessibility of our visitor's interface. We learned that there are a great amount of details that we need to improve for the accessibility of people with various difficulties.

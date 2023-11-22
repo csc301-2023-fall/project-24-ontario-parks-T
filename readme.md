@@ -22,7 +22,7 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
 ## Description of the project
  * Our product is an AudioQR Management Solution - an audio system for park guides and its management system based on QR code distribution.
- * Our product may replace some physical information boards at the park, which are expensive and manpower-consuming to maintain and update, and are not friendly for people who are visually impaired. Also, sometimes people would need to line up in front of information desks for simple questions. Our product is expected to increase the accessibility of guiding information at parks and to allow more cost-efficient and easier management for administrators. 
+ * Our product may replace some physical information boards at the park, which are expensive and manpower-consuming to maintain and update and could be more friendly for visually impaired people. Also, people sometimes need to line up in front of information desks for simple questions. Our product is expected to increase the accessibility of guiding information at parks and allow more cost-efficient and easier administrative management. 
 ​
 ## Key Features
  For Administrators:
@@ -36,8 +36,17 @@ Update the Readme file you created as part of the D1 deliverable to also include
       
  * QR Code Generation:
    * Description: After creating a new location, administrators can generate a QR code for that location.
-   * Details: Each location will have a unique QR code associated with it, allowing easy access for tourists.
+   * Details: Each location will have a unique QR code, allowing easy access for tourists.
  
+* Location Management:
+  * Description: Admins can manage location content within the system.
+  * Details: They can add new locations, edit existing locations, or remove location content. Each location can be associated
+  with a specific audio file and image.
+
+* Langauage Transimission: 
+  * Description: The client and administrators can switch the language.
+  * Details: In Canada, people who speak English and French can use the language Transmission feature to understand the content in our system.
+
  * Audio Management:
    * Description: Admins can manage audio content within the system.
    * Details: They can upload new audio files, edit existing ones, or remove outdated content. Each audio file can be associated with a specific location.
@@ -53,17 +62,17 @@ Update the Readme file you created as part of the D1 deliverable to also include
  
  * Introduction Audio Playback:
    * Description: Tourists can listen to an introduction audio about the scanned location.
-   * Details: Upon scanning the QR code, tourists are presented with an audio introduction detailing the historical or interesting aspects of the location. They can play and listen to this audio content directly from the webpage.
+   * Details: Upon scanning the QR code, tourists are presented with an audio introduction detailing the historical or exciting aspects of the location. They can play and listen to this audio content directly from the webpage.
  ​
 ## Instructions
-* The instructions will be different for users who are visitors and who are administrators. Please notice, administrators are also considered as users here.
-	* For the tourist side, we are targeting tourists who have smart devices that can scan the QR code at locations. If they use their smart device to scan our QR code, they will be able to see the audio that corresponds to certain items or landscapes. They could see related pictures of items and listen to the audio. 
-	* For the administrator side, they have to get the administrator privilege and log in first. Once they log in, the web page will jump to the administrator management page, they can add/edit/delete the audio and corresponding locations there.
-
+* The instructions will be different for users who are visitors and who are administrators. Please notice administrators are also considered as users here.
+  * For the tourist side, we target tourists with smart devices that can scan the QR code at locations. If they use their smart device to scan our QR code, they can see the audio corresponding to certain items or landscapes. They could see related pictures of items and listen to the audio. 
+  * The administrator side has to get the administrator privilege and log in first. Once they log in, the web page will jump to the administrator management page. They can add/edit/delete the audio and corresponding locations there.
  
 * To access as an administrator:
-	* Go to the administrator management website which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you have to use a logged in account to sign up with username, email address and password. If the registration is correctly processed, you created a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
+  * Go to the administrator management website, which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you must use a logged-in account to sign up with a username, email address, and password. If the registration is correctly processed, you create a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
 * To access as a user:
+
 	* No need for an account, grab your smart device, scan the QR code, and enjoy the audio.  
 
  * Clear steps for using each feature described in the previous section.
@@ -94,8 +103,10 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
  * We clearly understand it and we provided a careful guide for users and administrators. If there are any features added to our website, we update this section carefully and frequently once we clearly and totally successfully implement it. 
 
+
+We clearly understand it and provide a careful guide for users and administrators. If any features are added to our website, we update this section carefully and frequently once we clearly and successfully implement it. 
   ## Development requirements
- * What are the technical requirements for a developer to set up on their machine or server (e.g. OS, libraries, etc.)?
+ * What are the technical requirements for a developer to set up on their machine or server (e.g., OS, libraries, etc.)?
      * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
      * Docker: Ensure Docker is installed on your machine or server.
  * Briefly describe instructions for setting up and running the application. You should address this part like how one would expect a README doc of a real-world deployed application would be.
@@ -113,13 +124,14 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
  * Our web application is deployed using the AWS Lightsail service on an EC2 instance. The application runs on a virtual machine and is accessible at [http://3.99.190.60:3000/admin/login](http://3.99.190.60:3000/admin/login).
  * We chose AWS Lightsail due to its suitability for small to medium-scale workloads and the availability of a free tier for testing deployment without incurring charges.
- * For continuous integration and continuous deployment (CI/CD), we have implemented a GitHub Actions workflow. This workflow automatically pulls and restarts the Docker container on our virtual machine whenever changes are pushed to the main branch of the repository.
- * The GitHub Actions workflow automates the build, tagging, and pushing of Docker images to the GitHub Container Registry, then it connects to the EC2 instance (ssh to the VM), re-compose docker containers and run the updated application.
+ * We have implemented a GitHub Actions workflow for continuous integration and continuous deployment (CI/CD). This workflow automatically pulls and restarts the Docker container on our virtual machine whenever changes are pushed to the repository's main branch.
+ * The GitHub Actions workflow automates the build, tagging, and pushing of Docker images to the GitHub Container Registry. It connects to the EC2 instance (ssh to the VM), re-composes docker containers, and run the updated application.
 
- ## Coding Standards and Guidelines
-  * Since we have not decided what development tools and languages we will use, we can't decide the coding standards we should follow. We will decide our coding standards timely when we have made those decisions.
+  ## Coding Standards and Guidelines
+  * Since we have not decided what development tools and languages we will use, we cannot decide what coding standards to follow. We will decide our coding standards in a timely when we have made those decisions.
 ​
  ## Licenses 
+
 
  * We would like to apply the MIT license to our codebase, because we want to make our license clear and simple, and we don't intend to profit from what we created.
  * It wouldn't affect much of our development, except that we may not hard-code any sensitive information, and we will need to make our code structured and readable to share it with others reasonably.
@@ -129,6 +141,7 @@ Update the Readme file you created as part of the D1 deliverable to also include
 ## Special: Upload Audio or Image Files
 
 1. First, download Microsoft Azure Storage Explorer, here is the [link to Microsoft Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer). Click on download now and choose your system. Then, follow the instructions provided by the installer to complete the installation.
+
    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/80387981-9600-4a09-9685-75bda7092b71)
 3. After the installation is complete, open the Storage Explorer, and the start page will be shown automatically:
    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/eff8b3f3-b4eb-46cb-bcb6-5b113b5fcc87)
@@ -139,6 +152,7 @@ Update the Readme file you created as part of the D1 deliverable to also include
 3. Choose “Storage account or service”, then select “Connection String (Key or SAS)”, click “Next”.
    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/a9f953cd-4189-49a6-acfe-bcbe89d332ba)
    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/fd4fe99a-e944-4571-9eb6-bce820aad248)
+
 4. In the “Connection string” box, copy the following connection string into the box, this will automatically generate the “Display name”.
           
         DefaultEndpointsProtocol=https;AccountName=yilz;AccountKey=pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==;EndpointSuffix=core.windows.net
@@ -147,6 +161,7 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
           Account Name: yilz
           Key: pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==
+
 
     ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/8e7cde4c-a368-479d-a669-358b9eee81e3)
 5. Then click “Next” and finally “Connect”.
@@ -163,3 +178,4 @@ Update the Readme file you created as part of the D1 deliverable to also include
 11. As an example I have uploaded a new png file. To get the url (link) to the picture, right click on it, and select “Copy URL”.
     ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/5958d524-8514-47fd-9fdc-42ee9265614a)
 12. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
+
