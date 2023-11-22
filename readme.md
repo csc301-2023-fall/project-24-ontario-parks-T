@@ -123,3 +123,43 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
  * We would like to apply the MIT license to our codebase, because we want to make our license clear and simple, and we don't intend to profit from what we created.
  * It wouldn't affect much of our development, except that we may not hard-code any sensitive information, and we will need to make our code structured and readable to share it with others reasonably.
+
+
+
+## Special: Upload Audio or Image Files
+
+1. First, download Microsoft Azure Storage Explorer, here is the [link to Microsoft Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer). Click on download now and choose your system. Then, follow the instructions provided by the installer to complete the installation.
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/80387981-9600-4a09-9685-75bda7092b71)
+3. After the installation is complete, open the Storage Explorer, and the start page will be shown automatically:
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/eff8b3f3-b4eb-46cb-bcb6-5b113b5fcc87)
+1. If not, you can also manually open the start page by: 
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/042de543-f6fc-45d0-b315-bc76933df438)
+2. On the start page, click “Attach to a resource”, this will show a window asking for selecting resources.
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/d07ae5c8-620b-40f9-bb3f-9422f83bf33b)
+3. Choose “Storage account or service”, then select “Connection String (Key or SAS)”, click “Next”.
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/a9f953cd-4189-49a6-acfe-bcbe89d332ba)
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/fd4fe99a-e944-4571-9eb6-bce820aad248)
+4. In the “Connection string” box, copy the following connection string into the box, this will automatically generate the “Display name”.
+          
+        DefaultEndpointsProtocol=https;AccountName=yilz;AccountKey=pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==;EndpointSuffix=core.windows.net
+
+    Account name and key are also presented, in case if they are needed:
+
+          Account Name: yilz
+          Key: pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==
+
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/8e7cde4c-a368-479d-a669-358b9eee81e3)
+5. Then click “Next” and finally “Connect”.
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/f4c2ddd7-bbf6-4bdd-ab0f-b307eddc6c1f)
+6. By now, you should be able to find a new storage account being added to the “EXPLORER” panel on the left
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/e4125722-ec4d-480e-b0b5-dc0de9bbff52)
+7.  Navigate to “Blob Containers”, double click on “c-1”.
+
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/3fe7868e-bbdc-46fb-9109-361dcc37db0d)
+9.  This should display the window:
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/e16b92fa-8046-48df-a216-aa4ed681b5a9)
+10.  Now you can upload files by clicking on the “Upload” button on the top. When uploading using the window below, only select the files needed, and do not change the other choices.
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/ceb97b64-b8d6-40a3-8ec8-5b1fc877ea45)
+11. As an example I have uploaded a new png file. To get the url (link) to the picture, right click on it, and select “Copy URL”.
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/5958d524-8514-47fd-9fdc-42ee9265614a)
+12. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
