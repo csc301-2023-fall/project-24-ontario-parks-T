@@ -72,31 +72,37 @@ Update the Readme file you created as part of the D1 deliverable to also include
 * To access as an administrator:
   * Go to the administrator management website, which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you must use a logged-in account to sign up with a username, email address, and password. If the registration is correctly processed, you create a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
 * To access as a user:
-  * No need for an account; grab your smart device, scan the QR code, and enjoy the audio.  
-* To upload an audio or image file:
-  - This is including at the end of this readme file, as it is includes many screenshots.
 
-## Clear steps for using each feature described in the previous section.
+	* No need for an account, grab your smart device, scan the QR code, and enjoy the audio.  
 
-### For the visitor's side:
+ * Clear steps for using each feature described in the previous section.
+ * 
+ * For the visitor's side:
+	* Scan the QR code, and play the audio.
+	
+* For the administrator side:
+	* 1, reach the login page, which is http://3.99.190.60:3000/admin/login and input your username and passsword to login
+	* 1.1, in case you do not have an account, you need to ask your colleague who have an account to sign in and create an account for you (this feature is demanded by our partner)
 
-Scan the QR code and play the audio.
-  
-### For the administrator side:
-1. Reach the login page, which is http://3.99.190.60:3000/admin/login, and input your username and password to log in
-   1. In case you do not have an account, you need to ask your colleague who has an account to sign in and create an account for you (our partner demands this feature)
+ 	* 2,At the top of each page, there will be an navigation bar, which include buttons to Add Location, Add Audio,AudioList,Location List, Register, Logout
+   
+   	* 3, Location repo page: after log in, you will be redirected to the location repo page(you can also reach this page by using the Location List button on Navigation bar) which includes a list of all locations' cards and their QR code on the cards. In addition there is 1 empty card can be used to quich create location with location name.
+   	* 3.1, at the location repo page you may also use the edit and delete button on the location card to delete the location or jump to the edit page of that location.
+   	* 4, at location edit page, you may change the detail imformation of the location and click save to save the update. please notice that after changing the name of location, the QR code will change, so you may need to go back to location repo to collect the updated version of Qr code.
+   	* 5, you may use the Add Location on the Navigation bar to go to the add location page. After finish the form and click button to create, a new location will be created with detail.
+   	* 6, you may use the AudioList on the Navigation bar to go to the audio repo page. Similar to Location repo page, you may delete audio or go to edit audio page with the "delete" and "edit" button near the card.
+   	* 7, at audio edit page, you may change the detail imformation of the audio and click save to save the update. Please notice that the update of audio, will not influence QR code of location, as our partner asked
+   	* 8, you may use the Add Audio on the Navigation bar to go to the add audio page. After finish the form and click button to create, a new audio item will be created with detail.(Please check the instuctions about file upload below for more detail about how to upload audios and images)
+   	* 9, you may use the Register on the Navigation bar to help a colleague to create their account, email, unqiue username and password will be needed
+   	  
+   	  
+	* 10, Once you finish your management of the system, you can log out of your administrator account with the button Log out button on the Navigation bar.
+ * Instructions about uploading files to the system
+ 	* Please notice, to reduce the price cost of this demo product, our product will use external url links to get audios and images. So, when creating an audio item in our system, please use an extern storage to hold the real file and copy and paste the sharing link of that file. You may follow the below instruction wrote by our excellent team members about how to use microsoft azure storage's service to hold your files and sharing the url to used in our system. 
 
-1. At the top of each page, there will be a navigation bar, which includes buttons to Add Location, Add Audio, AudioList, Location List, Register, Logout
-     
-1. Location repo page: After logging in, you will be redirected to the location repo page(you can also reach this page by using the Location List button on the Navigation bar), which includes a list of all locations' cards and their QR code on the cards. In addition, one empty card can be used to quickly create a location with a location name.
-   1. At the location repo page, you may also use the edit and delete button on the location card to delete the location or jump to the edit page of that location.
-1. At the location edit page, you may change the detail information of the location and click save to save the update. The QR code will change after changing the location's name, so you may need to go back to the location repo to collect the updated version of the QR code.
-1. You may use the Add Location on the Navigation bar to go to the Add Location page. After finishing the form and clicking the button to create, a new location will be created with details.
-1. You may use the AudioList on the Navigation bar to go to the audio repo page. Like the Location repo page, you may delete audio or go to the edit audio page with the "delete" and "edit" buttons near the card.
-1. On the audio edit page, you may change the detail information of the audio and click save to save the update. Please notice that the update of audio will not influence the QR code of the location, as our partner asked
-1. You may use the Add Audio on the Navigation bar to go to the Add Audio page. After finishing the form and clicking the button to create, a new audio item will be created with detail.
-1. You may use the Register on the Navigation bar to help a colleague create their account; email, unique username, and password will be needed
-2. Once you finish managing the system, you can log out of your administrator account with the Logout button on the Navigation bar.
+
+ * We clearly understand it and we provided a careful guide for users and administrators. If there are any features added to our website, we update this section carefully and frequently once we clearly and totally successfully implement it. 
+
 
 We clearly understand it and provide a careful guide for users and administrators. If any features are added to our website, we update this section carefully and frequently once we clearly and successfully implement it. 
   ## Development requirements
@@ -126,22 +132,27 @@ We clearly understand it and provide a careful guide for users and administrator
 ​
  ## Licenses 
 
- * We would like to apply the MIT license to our codebase because we want to clarify and simplify our license, and we do not intend to profit from what we created.
- * It would not affect much of our development, except that we may not hard-code any sensitive information and will need to make our code structured and readable to share it with others reasonably.
+
+ * We would like to apply the MIT license to our codebase, because we want to make our license clear and simple, and we don't intend to profit from what we created.
+ * It wouldn't affect much of our development, except that we may not hard-code any sensitive information, and we will need to make our code structured and readable to share it with others reasonably.
+
+
 
 ## Special: Upload Audio or Image Files
 
 1. First, download Microsoft Azure Storage Explorer, here is the [link to Microsoft Azure Storage Explorer](https://azure.microsoft.com/en-us/products/storage/storage-explorer). Click on download now and choose your system. Then, follow the instructions provided by the installer to complete the installation.
-   ![Alt text](image.png) 
-2. After the installation is complete, open the Storage Explorer, and the start page will be shown automatically:
-   ![Alt text](image-1.png)
+
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/80387981-9600-4a09-9685-75bda7092b71)
+3. After the installation is complete, open the Storage Explorer, and the start page will be shown automatically:
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/eff8b3f3-b4eb-46cb-bcb6-5b113b5fcc87)
 1. If not, you can also manually open the start page by: 
-   ![Alt text](image-2.png)
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/042de543-f6fc-45d0-b315-bc76933df438)
 2. On the start page, click “Attach to a resource”, this will show a window asking for selecting resources.
-   ![Alt text](image-3.png)
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/d07ae5c8-620b-40f9-bb3f-9422f83bf33b)
 3. Choose “Storage account or service”, then select “Connection String (Key or SAS)”, click “Next”.
-   ![Alt text](image-4.png)
-   ![Alt text](image-5.png)
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/a9f953cd-4189-49a6-acfe-bcbe89d332ba)
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/fd4fe99a-e944-4571-9eb6-bce820aad248)
+
 4. In the “Connection string” box, copy the following connection string into the box, this will automatically generate the “Display name”.
           
         DefaultEndpointsProtocol=https;AccountName=yilz;AccountKey=pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==;EndpointSuffix=core.windows.net
@@ -151,18 +162,20 @@ We clearly understand it and provide a careful guide for users and administrator
           Account Name: yilz
           Key: pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==
 
-    ![Alt text](image-6.png)
-5. Then click “Next” and finally “Connect”.
-   ![Alt text](image-7.png)
 
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/8e7cde4c-a368-479d-a669-358b9eee81e3)
+5. Then click “Next” and finally “Connect”.
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/f4c2ddd7-bbf6-4bdd-ab0f-b307eddc6c1f)
 6. By now, you should be able to find a new storage account being added to the “EXPLORER” panel on the left
-   ![Alt text](image-8.png)
+   ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/e4125722-ec4d-480e-b0b5-dc0de9bbff52)
 7.  Navigate to “Blob Containers”, double click on “c-1”.
-    ![Alt text](image-9.png)
-8.  This should display the window:
-    ![Alt text](image-10.png)
-9.  Now you can upload files by clicking on the “Upload” button on the top. When uploading using the window below, only select the files needed, and do not change the other choices.
-    ![Alt text](image-11.png)
-10. As an example I have uploaded a new png file. To get the url (link) to the picture, right click on it, and select “Copy URL”.
-    ![Alt text](image-12.png)
-11. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
+
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/3fe7868e-bbdc-46fb-9109-361dcc37db0d)
+9.  This should display the window:
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/e16b92fa-8046-48df-a216-aa4ed681b5a9)
+10.  Now you can upload files by clicking on the “Upload” button on the top. When uploading using the window below, only select the files needed, and do not change the other choices.
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/ceb97b64-b8d6-40a3-8ec8-5b1fc877ea45)
+11. As an example I have uploaded a new png file. To get the url (link) to the picture, right click on it, and select “Copy URL”.
+    ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/5958d524-8514-47fd-9fdc-42ee9265614a)
+12. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
+
