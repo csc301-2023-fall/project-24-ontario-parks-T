@@ -83,11 +83,13 @@ Update the Readme file you created as part of the D1 deliverable to also include
    	* 5, you may use the Add Location on the Navigation bar to go to the add location page. After finish the form and click button to create, a new location will be created with detail.
    	* 6, you may use the AudioList on the Navigation bar to go to the audio repo page. Similar to Location repo page, you may delete audio or go to edit audio page with the "delete" and "edit" button near the card.
    	* 7, at audio edit page, you may change the detail imformation of the audio and click save to save the update. Please notice that the update of audio, will not influence QR code of location, as our partner asked
-   	* 8, you may use the Add Audio on the Navigation bar to go to the add audio page. After finish the form and click button to create, a new audio item will be created with detail.
+   	* 8, you may use the Add Audio on the Navigation bar to go to the add audio page. After finish the form and click button to create, a new audio item will be created with detail.(Please check the instuctions about file upload below for more detail about how to upload audios and images)
    	* 9, you may use the Register on the Navigation bar to help a colleague to create their account, email, unqiue username and password will be needed
    	  
    	  
 	* 10, Once you finish your management of the system, you can log out of your administrator account with the button Log out button on the Navigation bar.
+ * Instructions about uploading files to the system
+ 	* Please notice, to reduce the price cost of this demo product, our product will use external url links to get audios and images. So, when creating an audio item in our system, please use an extern storage to hold the real file and copy and paste the sharing link of that file. You may follow the below instruction wrote by our excellent team members about how to use microsoft azure storage's service to hold your files and sharing the url to used in our system. 
 
 
  * We clearly understand it and we provided a careful guide for users and administrators. If there are any features added to our website, we update this section carefully and frequently once we clearly and totally successfully implement it. 
