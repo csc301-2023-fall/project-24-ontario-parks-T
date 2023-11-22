@@ -128,10 +128,35 @@ We clearly understand it and provide a careful guide for users and administrator
  * We have implemented a GitHub Actions workflow for continuous integration and continuous deployment (CI/CD). This workflow automatically pulls and restarts the Docker container on our virtual machine whenever changes are pushed to the repository's main branch.
  * The GitHub Actions workflow automates the build, tagging, and pushing of Docker images to the GitHub Container Registry. It connects to the EC2 instance (ssh to the VM), re-composes docker containers, and run the updated application.
 
-  ## Coding Standards and Guidelines
-  * Limited use of globals: we only use globals with the hostname, so this will make easy for deployment.
-  * Indentation: we use proper indentation (Hierarchical Indentation) in html components and python files so it's easy to review and chek our code
-  * Exception handling conventions: In our system, for unlogged in users, they will be redirected to log in page when they are trying to check protected pages.
+## Coding Standards and Guidelines
+
+### Limited use of globals:
+   - We only use globals with the hostname, so this will make easy for deployment.
+
+### Naming conventions for local variables, global variables, constants and functions:
+   - The name of the variable and function must describe the reason of using it clearly and briefly.
+   - Local variables are named using camel case lettering starting with small letter (e.g. localData).
+   - Global variables names should start with a capital letter (e.g. GlobalData). 
+   - Constant names should be formed using capital letters only (e.g. CONSDATA).
+   - Using digits in variable names are not suggested, but we do allow it in some situations.
+
+### Indentation:
+   -  We use proper indentation (Hierarchical Indentation) in html components and python files so it's easy to review and chek our code
+   -  There must be a space after giving a comma between two function arguments.
+   -  Each nested block should be properly indented and spaced.
+   -  Proper Indentation should be there at the beginning and at the end of each block in the program.
+   -  All braces should start from the end of a function call or a new line immediately below the function call, and the code following the end of braces also start from a new line. Exceptions are given for .then() calls, as they are connected highly to the content in the previous braces.
+
+### Error return values and exception handling conventions:
+   -  All error code should be displayed in the console.
+   -  In our system, for unlogged in users, they will be redirected to log in page when they are trying to check protected pages.
+
+### Other
+   -  Avoid using a coding style that is too difficult to understand.
+   -  Avoid using an identifier for multiple purposes
+   -  Code should be well documented
+   -  Length of functions should not be very large
+   -  Avoid using GOTO statement
 ​
  ## Licenses 
 

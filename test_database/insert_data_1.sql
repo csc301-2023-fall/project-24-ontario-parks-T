@@ -3,7 +3,7 @@ INSERT INTO auth_user VALUES (2,'hao','123789', null, 1, "Hao", "Yin", "", '1', 
 INSERT INTO admins VALUES (1,'yilz','123789');
 INSERT INTO admins VALUES (2,'hao','123789');
 
-INSERT INTO locations VALUES (1,'Ontario Science Centre','770 Don Mills Rd','Toronto','ON','M3C 1T3', 43.7161, -79.3393);
+INSERT INTO locations VALUES (1,'Ontario Science Center','770 Don Mills Rd','Toronto','ON','M3C 1T3', 43.7161, -79.3393);
 INSERT INTO locations VALUES (2,'Royal Ontario Museum','100 Queen''s Park','Toronto','ON','M5S 2C6', 43.6677, -79.3947);
 INSERT INTO locations VALUES (3,'Vancouver Public Library','350 W Georgia St','Vancouver','BC','V6B 6B1', 49.2799, -123.1151);
 INSERT INTO locations VALUES (4,'Vancouver Art Gallery','750 Hornby St','Vancouver','BC','V6Z 2H7', 49.2827, -123.1207);
@@ -12,11 +12,11 @@ INSERT INTO locations VALUES (5,'Toronto Public Library','789 Yonge St','Toronto
 INSERT INTO medias VALUES (
     1,
     1,
-    'Ontario Science Centre Audio Winter Ver.',
+    'Ontario Science Center Audio Winter Ver.',
     'audio',
     'Left blank',
     'https://www.ontariosciencecentre.ca/media/1021/building.jpg',
-    'https://websrvr90va.audiovideoweb.com/va90web25003/companions/Foundations%20of%20Rock/13.03.mp3',
+    'https://yilz.blob.core.windows.net/c-1/background-welcome.mp3',
     'winter',
     NULL,
     NULL,

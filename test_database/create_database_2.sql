@@ -16,13 +16,13 @@ CREATE TABLE locations (
     location_id int(15) NOT NULL AUTO_INCREMENT,
     location_name varchar(255) NOT NULL,
 
-    location_address varchar(255) NOT NULL,
-    location_city varchar(255) NOT NULL,
-    location_province varchar(255) NOT NULL,
-    location_postal_code varchar(255) NOT NULL,
+    location_address varchar(255) DEFAULT NULL,
+    location_city varchar(255) DEFAULT NULL,
+    location_province varchar(255) DEFAULT NULL,
+    location_postal_code varchar(255) DEFAULT NULL,
 
-    longitude FLOAT NOT NULL,
-    latitude FLOAT NOT NULL,
+    longitude FLOAT DEFAULT NULL,
+    latitude FLOAT DEFAULT NULL,
     
     PRIMARY KEY (location_id)
 );
@@ -42,8 +42,8 @@ CREATE TABLE medias (
     month int(2) DEFAULT NULL,
     day int(2) DEFAULT NULL,
     
-    longitude FLOAT NOT NULL,
-    latitude FLOAT NOT NULL,
+    longitude FLOAT DEFAULT NULL,
+    latitude FLOAT DEFAULT NULL,
     
     name_french varchar(255) NOT NULL,
     description_french varchar(255) DEFAULT NULL,
