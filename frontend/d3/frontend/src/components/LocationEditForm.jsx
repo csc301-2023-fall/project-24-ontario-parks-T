@@ -62,13 +62,13 @@ const LocationEditForm = () => {
                 <form className="card" onSubmit={handleSubmit}>
 
                     <div className="form-group">
-                        <label>Location Address</label>
-                        <input name="location_address" type="text" onChange={handleChange} value={locationData.location_address} />
+                        <label>Location Name</label>
+                        <input name="location_name" type="text" onChange={handleChange} value={locationData.location_name} />
                     </div>
 
                     <div className="form-group">
-                        <label>Location Name</label>
-                        <input name="location_name" type="text" onChange={handleChange} value={locationData.location_name} />
+                        <label>Location Address</label>
+                        <input name="location_address" type="text" onChange={handleChange} value={locationData.location_address} />
                     </div>
 
                     <div className="form-group">
