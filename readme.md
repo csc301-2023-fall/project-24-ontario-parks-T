@@ -128,7 +128,9 @@ We clearly understand it and provide a careful guide for users and administrator
  * The GitHub Actions workflow automates the build, tagging, and pushing of Docker images to the GitHub Container Registry. It connects to the EC2 instance (ssh to the VM), re-composes docker containers, and run the updated application.
 
   ## Coding Standards and Guidelines
-  * Since we have not decided what development tools and languages we will use, we cannot decide what coding standards to follow. We will decide our coding standards in a timely when we have made those decisions.
+  * Limited use of globals: we only use globals with the hostname, so this will make easy for deployment.
+  * Indentation: we use proper indentation (Hierarchical Indentation) in html components and python files so it's easy to review and chek our code
+  * Exception handling conventions: In our system, for unlogged in users, they will be redirected to log in page when they are trying to check protected pages.
 ​
  ## Licenses 
 
