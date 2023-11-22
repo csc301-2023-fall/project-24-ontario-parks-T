@@ -71,10 +71,12 @@ const AudioCreationForm = () =>{
       };
     
       const handleLocationChange = (e) => {
-        setAudioData({
-          ...audioData,
-          location: e.target.value
-        });
+        if (e.target.value !== null) {
+          setAudioData({
+            ...audioData,
+            location: e.target.value
+          });
+        }
       };
 
     return(
@@ -103,13 +105,27 @@ const AudioCreationForm = () =>{
                     <input className="form-control col-8" name="link" onChange={handleChange} />
                 </div>
                 <div className="form-group row m-2">
+                    <label className="col-4 col-form-label">Link To Image</label>
+                    <input className="form-control col-8" name="image" onChange={handleChange} />
+                </div>
+                <div className="form-group row m-2">
                     <label className="col-4 col-form-label">Location</label>
                     <select className="form-control col-8" name="location_name" onChange={handleLocationChange}>
+                      <option></option>
                         {locations.map((location) => (
-                        <option key={location.location_name} value={location.location_name}>
+                        <option key={location.location_name} value={location.location_id}>
                             {location.location_name}
                         </option>
                         ))}
+                    </select>
+                </div>
+                <div className="form-group row m-2">
+                    <label className="col-4 col-form-label">Season</label>
+                    <select className="form-control col-8" name="season" onChange={handleChange}>
+                      <option key="Spring" value="Spring">Spring</option>
+                      <option key="Summer" value="Summer">Summer</option>
+                      <option key="Fall" value="Fall">Fall</option>
+                      <option key="Winter" value="Winter">Winter</option>
                     </select>
                 </div>
                 <button className="btn btn-primary m-2" type="submit">Submit</button>
