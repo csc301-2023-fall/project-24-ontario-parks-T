@@ -1,0 +1,25 @@
+Group 24 Room Three Meeting Minutes with John Leadston on Nov 23rd
+
+Date: 2023 November 23th
+Time: 9:00 a.m.
+Location: Online (Zoom)
+Meeting attendees: Jingyu He, John Leadston, Yifang Zhang, Yuhan Fu, Xinyan Lyu, Zihan Wang, Hao Yin
+
+Points: 
+- The team demonstrated Mr. Leadston how to add an audio to storage.
+- The team demonstrated Mr. Leadston how to log into the management system, create, and edit locations.
+- The team demonstrated Mr. Leadston how may the user access the audio through QR code.
+- The team demonstrated Mr. Leadston what would happen if an unauthorized user tried to use the management system.
+- Mr. Leadston shared his opinions about the management system.
+- Mr. Leadston shared his opinions about the UI design of the vistor end.
+- Mr. Leadston expressed his need of being able to remove manager accounts.
+- Mr. Leadston expressed his need of clear documentation and guidance to operate, access, modify our product.
+- Attendees exchanged information on what will happen to the project after the end of the semester.
+- Mr. Leadston shared some of his previous projects.
+
+Decisions: 
+- The team will focus on documentation, and refining existing features, instead of adding new ones.
+- The team will later transfer the project to Mr. Leadston for possible further works.
+
+Next Meeting Date and Time:
+- 2023 November 30th, 9 a.m.
