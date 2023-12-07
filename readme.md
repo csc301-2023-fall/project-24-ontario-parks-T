@@ -207,3 +207,13 @@ We clearly understand it and provide a careful guide for users and administrator
     ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/5958d524-8514-47fd-9fdc-42ee9265614a)
 12. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
 
+
+## Instructions For Further Development
+
+### Frontend
+
+### Backend
+
+### Database And Storage
+
+### Deployment
