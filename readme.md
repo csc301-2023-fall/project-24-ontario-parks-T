@@ -234,6 +234,28 @@ We clearly understand it and provide a careful guide for users and administrator
  * Once the containers are up and running, you can access the application by navigating to http://localhost:3000/admin/login in your web browser
 
 ## Frontend
+For Frontend in this project, you will use react, the `jsx` file in the components folder is the key to showing the clients what feature we have.
+
+1. Before you begin the project, you should go to the folder by the path `frontend/src/READEM.md` to download the required application ie. React APP.
+
+2. After you finish downloading, you can start the frontend part.
+
+3. The key technical feature is the `jsx` file in the components folder. The path is `frontend/src/components`.
+
+For the `jsx` file, there is a brief explanation for the future developers.
+
+Admin main page and login page: Several pages focus on logging in on the host side.
+
+Language transfer features: Several files focus on language transfer from ENGLISH to FRENCH  or otherwise.
+
+Location: Location create and edit ie, add, delete, edit.
+
+Audio: Each Audio will have a location, or more different seasons of audio will connect to the same location. For audio, you can update and delete the audio for the location or different seasons of the location.
+
+More Important:
+
+You much connect your `jsx` file in the App.js file, there is a lot of sample to guide you on how to connect.
+
 
 ## Backend
 In this project, we use Django rest Framework api, you may sh to the backend folder and run `pip install -r requirements.txt` to install all dependencies.
