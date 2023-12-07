@@ -254,7 +254,7 @@ Audio: Each Audio will have a location, or more different seasons of audio will 
 
 More Important:
 
-You much connect your `jsx` file in the App.js file, there is a lot of sample to guide you on how to connect.
+You must connect your `jsx` file in the App.js file, there is a lot of sample to guide you on how to connect.
 
 
 ## Backend
