@@ -96,13 +96,6 @@ const FreAudioPlay = () => {
                                     Votre navigateur ne supporte pas l'élément audio.
                                     </audio>
                                 </div>
-
-                                {/* <div className="text-center">
-                                    <audio id="dynamicAudio" style={{width: 90 + "%"}} controls>
-                                        <source src={audioPath} type="audio/mpeg"/>
-                                    </audio>
-                                </div> */}
-
                             </div>
 
                         </div>
