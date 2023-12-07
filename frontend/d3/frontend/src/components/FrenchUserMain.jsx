@@ -28,10 +28,6 @@ const FreUserPageMainFrame = (props) => {
 
                     <div className="navbar">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                            {/* <li className="nav-item me-3">
-                                <Link className="nav-link active" aria-current="page" href="#">Home</Link>
-                            </li> */}
-
                             <li className='nav-item'>
                                 <Dropdown>
                                 <Dropdown.Toggle variant='secondary' id="dropdown-basic">
