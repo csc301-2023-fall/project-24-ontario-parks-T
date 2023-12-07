@@ -1,0 +1,20 @@
+Group 24 Room Three Meeting Minutes with John Leadston on Dec 7th
+
+Date: 2023 December 7th
+Time: 9:00 a.m.
+Location: Online (Zoom)
+Meeting attendees: Jingyu He, John Leadston, Yifang Zhang, Yuhan Fu, Xinyan Lyu, Zihan Wang, Hao Yin
+
+Points: 
+- The team announced our handoff plan to Mr. Leadston.
+- The team explained GitHub ownership to Mr. Leadston.
+- Mr. Leadston explained that ODS might provide a storage service.
+- The team discussed handoff details with Mr. Leadston.
+- Mr. Leadston told the team that he will be able to find technicians to take on our project in the next few days.
+
+Decisions: 
+- Join the ODS session to see what cloud storage solution can they provide.
+- The current handoff is good.
+
+Next Meeting Date and Time:
+- 10:00 a.m. Dec 7th, in the ODS session.
