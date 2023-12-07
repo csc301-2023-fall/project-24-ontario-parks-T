@@ -113,9 +113,9 @@ We clearly understand it and provide a careful guide for users and administrator
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/csc301-2023-fall/project-24-ontario-parks-T.git
-   cd /project-24-ontario-parks-T```
+   cd /project-24-ontario-parks-T
 2. **Build and Run the Docker Containers:**
-   ```bash docker-compose up -d```
+   `docker-compose up -d`
    * This command will automatically compose the required Docker images and run the containers in detached mode
    * for local host testing, you need to change frontend/d3/frontend/src/components/config.jsx's global variable about host address to "localhost:3000" and "localhost:8000"
 3. **Access the Application:**
@@ -219,7 +219,19 @@ We clearly understand it and provide a careful guide for users and administrator
  * Make sure Node.js and npm are installed, run `npm install` in the backend directory for Node.js dependencies
  * Install Docker Compose
 
-**To run the project locally, follow the instructions in Development Requirements**
+## Run Project Locally
+1. **Clone the Repository:**
+```bash
+   git clone https://github.com/csc301-2023-fall/project-24-ontario-parks-T.git
+   cd /project-24-ontario-parks-T
+```
+2. **Change Host Name global variables**
+3. **Build and Run the Docker Containers:**
+   `docker-compose up -d`
+ * This command will automatically compose the required Docker images and run the containers in detached mode
+ * for local host testing, you need to change frontend/d3/frontend/src/components/config.jsx's global variable about host address to "localhost:3000" and "localhost:8000"
+4. **Access the Application:**
+ * Once the containers are up and running, you can access the application by navigating to http://localhost:3000/admin/login in your web browser
 
 ## Frontend
 
