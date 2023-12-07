@@ -105,7 +105,7 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
 
 We clearly understand it and provide a careful guide for users and administrators. If any features are added to our website, we update this section carefully and frequently once we clearly and successfully implement it. 
-  ## Development requirements
+  ## Development Requirements
  * What are the technical requirements for a developer to set up on their machine or server (e.g., OS, libraries, etc.)?
      * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
      * Docker: Ensure Docker is installed on your machine or server.
@@ -209,6 +209,17 @@ We clearly understand it and provide a careful guide for users and administrator
 
 
 # Instructions For Further Development
+## Setting Up
+**Device Requirements:**
+ * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
+ * Docker: Ensure Docker is installed on your machine or server
+
+**Dependencies:**
+ * Make sure Python and pip are installed, run `pip install -r requirements.txt` in the backend directory for Python dependencies
+ * Make sure Node.js and npm are installed, run `npm install` in the backend directory for Node.js dependencies
+ * Install Docker Compose
+
+**To run the project locally, follow the instructions in Development Requirements**
 
 ## Frontend
 
@@ -322,4 +333,27 @@ One specific thing about Django is that, the tables in database should be matche
 ## Storage Place
 Currently, the storage space also uses servers from Microsoft Azure, and is not coupled with our source code. For later development, you can switch storage places to the one provided by Government of Ontario, and use the URL to the files when creating an audio. You can refer this process to [this section](#special-upload-audio-or-image-files).
 
-## Deployment
+## Deployment and CI/CD Details
+ * Our web application is deployed using the AWS Lightsail service on an EC2 instance. The application runs on a virtual machine and is accessible at [http://3.99.190.60:3000/admin/login](http://3.99.190.60:3000/admin/login).
+ * We chose AWS Lightsail due to its suitability for small to medium-scale workloads and the availability of a free tier for testing deployment without incurring charges.
+ * We have implemented a GitHub Actions workflow for continuous integration and continuous deployment (CI/CD). It is triggered when changes are pushed to the repository's main branch. Please remember to enable this workflow if you want continuous deployment. Below details this GitHub Actions workflow:
+	 - It automates the build, tagging, and pushing of new Docker images (for both frontend and API) to the GitHub Container Registry.
+	 - It automatically connects to the EC2 instance (ssh to the VM), pulls updated images and re-composes docker containers.
+	 - It restarts the Docker containers and runs the updated application on our VM.
+	 - Docker images are automatically updated to our GitHub Container Registry:
+ghcr.io/csc301-2023-fall/ontario-park-audio-api
+ghcr.io/csc301-2023-fall/ontario-park-audio-frontend
+ * Since we have an entirely automated deployment process, it is easy to re-deploy this application. However, to change things, below are the instructions:
+	 - To modify the CI/CD pipeline (the whole auto-deployment process), visit the build-push-image.yml file under .github/workflows directory.
+	 - To modify details of composing docker images, please visit the compose.yml under main directory, and the dockerfile in frontend and backend directory.
+	 - To modify details on the deployment tool, below is the credential for our AWS Lightsail account:
+	> `https://lightsail.aws.amazon.com/ls/webapp/ca-central-1/instances/AWS_Ontario_Park/connect` <br>
+	> `jingyu.he@mail.utoronto.ca` <br>
+	> CSC301aa!
+ * To access the EC2 VM to view container status and other things, directly open a virtual terminal on the above mentioned website, or SSH into the VM in terminal:
+	1. Download the private key to your device
+	2. Open a terminal in the directory that contains the private key file and run the below lines:(in this case, LightsailDefaultKey-ca-central-1.pem is the name of key file)
+	```
+	echo LightsailDefaultKey-ca-central-1.pem > private_key && chmod 600 private_key
+	ssh -o StrictHostKeyChecking=no -i private_key ec2-user@3.99.190.60
+	```
