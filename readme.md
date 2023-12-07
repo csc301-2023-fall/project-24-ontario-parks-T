@@ -208,12 +208,115 @@ We clearly understand it and provide a careful guide for users and administrator
 12. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
 
 
-## Instructions For Further Development
+# Instructions For Further Development
 
-### Frontend
+## Frontend
 
-### Backend
+## Backend
 
-### Database And Storage
+## Database Connection
+
+For the initial project, we are using server provided by Microsoft Azure (full name being Azure Database for MySQL flexible server). Servers around the word have similar ways of managing, and since I also believe that the Government of Ontario has its own servers, I would not focus on setting up databases here. As for handoff, I would simply explain the parts in our code, that handles connections to the database.
+
+### Required Information for Connecting to a Server
+Here is a list of information you would need, but you should have access to many other informaitons as well:
+    
+-   Hostname
+-   Username for connect
+-   Password for connect
+-   Database Name
+-   Database Port
+-   SSL or other secure certificates
+-   The DBMS used by the server (MySQL, PostgreSQL, etc.)
+
+### Set up database
+We have provided an automated script on setting up the database and tables for our system, however you do need to modify them so that they are connected to your server. The scripts can be found in folder `test_database`, and is named as `create_database.bat`. It will create a database, tables, and insert some test data.
+
+The ways connections are made in this script is very simple. Below is the code for `create_database.bat`:
+
+    @echo off
+    setlocal
+
+    :: set connections to database
+    set DB_HOST=
+    set DB_USER=
+    set DB_PASS=
+    set DB_NAME=
+
+    set DB_PORT=
+
+    :: the sql files to execute
+    set SQL_FILES=create_database_2.sql insert_data_1.sql
+
+    :: loop through the list of SQL files and execute them
+    for %%f in (%SQL_FILES%) do (
+
+        echo Executing %%f...
+        
+        mysql -h %DB_HOST% --port=%DB_PORT% -u %DB_USER% --password=%DB_PASS% -p %DB_NAME% --password=%DB_PASS% --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootCA.crt.pem < %%f
+
+        if errorlevel 1 (
+            echo Error executing %%f.
+        ) else (
+            echo %%f executed successfully.
+        )
+    
+    )
+
+    endlocal
+
+Fill in the missing information, and add the needed secure certificates, then execute this script in terminal. It will create a database called `test_database`, some tables populated with test data.
+
+### Connect Back-End to Database
+Connecting from backend to database is similar, and is done in `backend\ontario_audio_tour\ontario_audio_tour\settings.py`. The following part of code handles the connection (from line 92 to 105):
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        },
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.sqlite3',
+        #     'NAME': BASE_DIR / 'db.sqlite3',
+        # }
+    }
+
+If your DBMS is also MySQL, then keep the `ENGINE` key as the same, and fill in other information. If not, then according to the DBMS you are using, find the django engine that supports it, install the dependencies, and change the `ENGINE` key to the corresponding engine.
+
+For example, if you are working with a ProtgreSQL server, first install PostgreSQL adapter for Python:
+
+    pip install psycopg2
+
+Make sure the version is capatible with the other packages this project depends on. Then, change the value of the `ENGINE` key to:
+
+    django.db.backends.postgresql
+
+ Finally, apply migrations by the following line to create the necessary tables in the PostgreSQL database:
+
+    python manage.py migrate
+
+Remember to add secure certificates needed for accessing the server. You can do that by adding key-value pair in `default` dictionary (the sub-dictionary of `DATABASES`). For example, you can add a SSL certificate by adding the following:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': '',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+            'OPTIONS': {
+                'sslmode': 'require',
+                'sslrootcert': '/path/to/root.crt',
+            },
+        },
+    }
+
+### Matching Database to Models
+One specific thing about Django is that, the tables in database should be matched to the file `backend\ontario_audio_tour\AdminControl\models.py`. If you want to make any changes to the columns in the database, make sure you also change the corresponding attributes in `models.py`.
 
 ### Deployment
