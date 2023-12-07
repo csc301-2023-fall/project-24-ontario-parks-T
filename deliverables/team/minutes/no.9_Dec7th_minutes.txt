@@ -1,0 +1,18 @@
+Group 24 Room Three Meeting Minutes in ODS open session on Dec 7th
+
+Date: 2023 December 7th
+Time: 10:00 a.m.
+Location: Online (Zoom)
+Meeting attendees: Jingyu He, John Leadston, Yifang Zhang, Yuhan Fu, Xinyan Lyu, Zihan Wang, Hao Yin, and other attendees and hosts of the ODS open session
+
+Points: 
+- Mr. Leadston introduced the team to the ODS hosts.
+- The team did a short presentation of the product.
+- The meeting host suggests that we should include a video for people taking on the project.
+- The meeting host suggests that we should contact the ODS technical team for further advice.
+
+Decisions: 
+- Contact the ODS technical team through email to get advices on handoff.
+
+Next Meeting Date and Time:
+- Not scheduled
