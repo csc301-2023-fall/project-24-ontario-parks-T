@@ -319,4 +319,7 @@ Remember to add secure certificates needed for accessing the server. You can do 
 ### Matching Database to Models
 One specific thing about Django is that, the tables in database should be matched to the file `backend\ontario_audio_tour\AdminControl\models.py`. If you want to make any changes to the columns in the database, make sure you also change the corresponding attributes in `models.py`.
 
-### Deployment
+## Storage Place
+Currently, the storage space also uses servers from Microsoft Azure, and is not coupled with our source code. For later development, you can switch storage places to the one provided by Government of Ontario, and use the URL to the files when creating an audio. You can refer this process to [this section](##special-upload-audio-or-image-files).
+
+## Deployment
