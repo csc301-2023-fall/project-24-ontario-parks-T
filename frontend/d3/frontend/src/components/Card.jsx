@@ -1,5 +1,7 @@
+// Functional component for displaying a card
 const Card = () => {
     return(
+        // Main card container
         <div className = "card" style="width: 18rem;">
         <img src="..." className="card-img" alt="...">
         <div className="card-body">
