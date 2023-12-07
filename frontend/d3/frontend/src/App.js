@@ -16,7 +16,6 @@ import AudioRepo from './components/AudioRepo';
 import LocationRepo from './components/LocationRepo';
 import AudioCreateForm from './components/AudioCreateForm';
 import AudioEditForm from './components/AudioEditForm';
-import CreateLocation from './components/LocationCreateForm';
 import LocationCreationForm from './components/LocationCreateForm';
 import AdminLoginPage from './components/AdminLoginPage';
 import LocationEditForm from './components/LocationEditForm';
