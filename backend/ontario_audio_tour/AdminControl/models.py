@@ -4,6 +4,10 @@ from django.db import models
 
 
 class Audio(models.Model):
+    """
+    The model used to store audio. Audio save location as a foreign key, 
+    locations can have a one to many relationship with audios.
+    """
     media_id = models.AutoField(primary_key=True, unique=True)
     location = models.ForeignKey(
         "Location", on_delete=models.CASCADE, db_column="location", null=True)
@@ -18,8 +22,6 @@ class Audio(models.Model):
     day = models.IntegerField(null=True)
     longitude = models.FloatField(null=True)
     latitude = models.FloatField(null=True)
-    # uploader = models.CharField(max_length=100)
-    # last_modified_time = models.DateTimeField()
     name_french = models.CharField(max_length=100, unique=True)
     description_french = models.CharField(max_length=500, default="")
 
@@ -29,20 +31,11 @@ class Audio(models.Model):
     def __str__(self):
         return self.name
 
-class Image(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    image = models.ImageField(upload_to="images/")
-
-    def __str__(self):
-        return self.name
-
-    def delete(self, *args, **kwargs):
-        self.image.delete()
-        super().delete(*args, **kwargs)
-
-
 
 class Location(models.Model):
+    """
+    The model used to store location.
+    """
     location_id = models.AutoField(primary_key=True, unique=True)
     location_name = models.CharField(max_length=100, unique=True)
     location_address = models.CharField(max_length=100, unique=False,null=True)
@@ -57,4 +50,3 @@ class Location(models.Model):
 
     def __str__(self):
         return self.location_name
-    

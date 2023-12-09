@@ -105,7 +105,7 @@ Update the Readme file you created as part of the D1 deliverable to also include
 
 
 We clearly understand it and provide a careful guide for users and administrators. If any features are added to our website, we update this section carefully and frequently once we clearly and successfully implement it. 
-  ## Development requirements
+  ## Development Requirements
  * What are the technical requirements for a developer to set up on their machine or server (e.g., OS, libraries, etc.)?
      * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
      * Docker: Ensure Docker is installed on your machine or server.
@@ -113,9 +113,9 @@ We clearly understand it and provide a careful guide for users and administrator
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/csc301-2023-fall/project-24-ontario-parks-T.git
-   cd /project-24-ontario-parks-T```
+   cd /project-24-ontario-parks-T
 2. **Build and Run the Docker Containers:**
-   ```bash docker-compose up -d```
+   `docker-compose up -d`
    * This command will automatically compose the required Docker images and run the containers in detached mode
    * for local host testing, you need to change frontend/d3/frontend/src/components/config.jsx's global variable about host address to "localhost:3000" and "localhost:8000"
 3. **Access the Application:**
@@ -207,3 +207,197 @@ We clearly understand it and provide a careful guide for users and administrator
     ![image](https://github.com/csc301-2023-fall/project-24-ontario-parks-T/assets/90294263/5958d524-8514-47fd-9fdc-42ee9265614a)
 12. Now you have the url that points to the file you just uploaded in your copyboard. Later on when adding images or audios for a location, you can upload needed files here, and copy the urls to the create page.
 
+
+# Instructions For Further Development
+## Setting Up
+**Device Requirements:**
+ * Operating System: Any OS that supports Docker (e.g., Linux, macOS, Windows).
+ * Docker: Ensure Docker is installed on your machine or server
+
+**Dependencies:**
+ * Make sure Python and pip are installed, run `pip install -r requirements.txt` in the backend directory for Python dependencies
+ * Make sure Node.js and npm are installed, run `npm install` in the backend directory for Node.js dependencies
+ * Install Docker Compose
+
+## Run Project Locally
+1. **Clone the Repository:**
+```bash
+   git clone https://github.com/csc301-2023-fall/project-24-ontario-parks-T.git
+   cd /project-24-ontario-parks-T
+```
+2. **Change Host Name global variables**
+3. **Build and Run the Docker Containers:**
+   `docker-compose up -d`
+ * This command will automatically compose the required Docker images and run the containers in detached mode
+ * for local host testing, you need to change frontend/d3/frontend/src/components/config.jsx's global variable about host address to "localhost:3000" and "localhost:8000"
+4. **Access the Application:**
+ * Once the containers are up and running, you can access the application by navigating to http://localhost:3000/admin/login in your web browser
+
+## Frontend
+For Frontend in this project, you will use react, the `jsx` file in the components folder is the key to showing the clients what feature we have.
+
+1. Before you begin the project, you should go to the folder by the path `frontend/src/READEM.md` to download the required application ie. React APP.
+
+2. After you finish downloading, you can start the frontend part.
+
+3. The key technical feature is the `jsx` file in the components folder. The path is `frontend/src/components`.
+
+For the `jsx` file, there is a brief explanation for the future developers.
+
+Admin main page and login page: Several pages focus on logging in on the host side.
+
+Language transfer features: Several files focus on language transfer from ENGLISH to FRENCH  or otherwise.
+
+Location: Location create and edit ie, add, delete, edit.
+
+Audio: Each Audio will have a location, or more different seasons of audio will connect to the same location. For audio, you can update and delete the audio for the location or different seasons of the location.
+
+More Important:
+
+You must connect your `jsx` file in the App.js file, there is a lot of sample to guide you on how to connect.
+
+
+## Backend
+In this project, we use Django rest Framework api, you may sh to the backend folder and run `pip install -r requirements.txt` to install all dependencies.
+
+Then inside the project folder, ontario_audio_tour, is the main backend codes.
+
+In the sub directory ontario_audio_tour (same name with the project folder) is the seetings about the whole api, including installed app and allowed url (you need to add allowed url after deployment).
+
+In sub directory AdminControl (which is an app folder), is api about asset management, including adding/deleting/editing/getting location/audio and binding two.
+
+Also, user managment is also in this app folder, enable register, login, logout user accounts. (we user django defult user and JSON Web Token for authentication)
+
+
+## Database Connection
+
+For the initial project, we are using server provided by Microsoft Azure (full name being Azure Database for MySQL flexible server). Servers around the word have similar ways of managing, and since I also believe that the Government of Ontario has its own servers, I would not focus on setting up databases here. As for handoff, I would simply explain the parts in our code, that handles connections to the database.
+
+### Required Information for Connecting to a Server
+Here is a list of information you would need, but you should have access to many other informaitons as well:
+    
+-   Hostname
+-   Username for connect
+-   Password for connect
+-   Database Name
+-   Database Port
+-   SSL or other secure certificates
+-   The DBMS used by the server (MySQL, PostgreSQL, etc.)
+
+### Set up database
+We have provided an automated script on setting up the database and tables for our system, however you do need to modify them so that they are connected to your server. The scripts can be found in folder `test_database`, and is named as `create_database.bat`. It will create a database, tables, and insert some test data.
+
+The ways connections are made in this script is very simple. Below is the code for `create_database.bat`:
+
+    @echo off
+    setlocal
+
+    :: set connections to database
+    set DB_HOST=
+    set DB_USER=
+    set DB_PASS=
+    set DB_NAME=
+
+    set DB_PORT=
+
+    :: the sql files to execute
+    set SQL_FILES=create_database_2.sql insert_data_1.sql
+
+    :: loop through the list of SQL files and execute them
+    for %%f in (%SQL_FILES%) do (
+
+        echo Executing %%f...
+        
+        mysql -h %DB_HOST% --port=%DB_PORT% -u %DB_USER% --password=%DB_PASS% -p %DB_NAME% --password=%DB_PASS% --ssl-mode=REQUIRED --ssl-ca=DigiCertGlobalRootCA.crt.pem < %%f
+
+        if errorlevel 1 (
+            echo Error executing %%f.
+        ) else (
+            echo %%f executed successfully.
+        )
+    
+    )
+
+    endlocal
+
+Fill in the missing information, and add the needed secure certificates, then execute this script in terminal. It will create a database called `test_database`, some tables populated with test data.
+
+### Connect Back-End to Database
+Connecting from backend to database is similar, and is done in `backend\ontario_audio_tour\ontario_audio_tour\settings.py`. The following part of code handles the connection (from line 92 to 105):
+
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        },
+        # 'default': {
+        #     'ENGINE': 'django.db.backends.sqlite3',
+        #     'NAME': BASE_DIR / 'db.sqlite3',
+        # }
+    }
+
+If your DBMS is also MySQL, then keep the `ENGINE` key as the same, and fill in other information. If not, then according to the DBMS you are using, find the django engine that supports it, install the dependencies, and change the `ENGINE` key to the corresponding engine.
+
+For example, if you are working with a ProtgreSQL server, first install PostgreSQL adapter for Python:
+
+    pip install psycopg2
+
+Make sure the version is capatible with the other packages this project depends on. Then, change the value of the `ENGINE` key to:
+
+    django.db.backends.postgresql
+
+ Finally, apply migrations by the following line to create the necessary tables in the PostgreSQL database:
+
+    python manage.py migrate
+
+Remember to add secure certificates needed for accessing the server. You can do that by adding key-value pair in `default` dictionary (the sub-dictionary of `DATABASES`). For example, you can add a SSL certificate by adding the following:
+
+    DATABASES = {
+        'default': {
+            'ENGINE': '',
+            'NAME': '',
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+            'OPTIONS': {
+                'sslmode': 'require',
+                'sslrootcert': '/path/to/root.crt',
+            },
+        },
+    }
+
+### Matching Database to Models
+One specific thing about Django is that, the tables in database should be matched to the file `backend\ontario_audio_tour\AdminControl\models.py`. If you want to make any changes to the columns in the database, make sure you also change the corresponding attributes in `models.py`.
+
+## Storage Place
+Currently, the storage space also uses servers from Microsoft Azure, and is not coupled with our source code. For later development, you can switch storage places to the one provided by Government of Ontario, and use the URL to the files when creating an audio. You can refer this process to [this section](#special-upload-audio-or-image-files).
+
+## Deployment and CI/CD Details
+ * Our web application is deployed using the AWS Lightsail service on an EC2 instance. The application runs on a virtual machine and is accessible at [http://3.99.190.60:3000/admin/login](http://3.99.190.60:3000/admin/login).
+ * We chose AWS Lightsail due to its suitability for small to medium-scale workloads and the availability of a free tier for testing deployment without incurring charges.
+ * We have implemented a GitHub Actions workflow for continuous integration and continuous deployment (CI/CD). It is triggered when changes are pushed to the repository's main branch. Please remember to enable this workflow if you want continuous deployment. Below details this GitHub Actions workflow:
+	 - It automates the build, tagging, and pushing of new Docker images (for both frontend and API) to the GitHub Container Registry.
+	 - It automatically connects to the EC2 instance (ssh to the VM), pulls updated images and re-composes docker containers.
+	 - It restarts the Docker containers and runs the updated application on our VM.
+	 - Docker images are automatically updated to our GitHub Container Registry:
+ghcr.io/csc301-2023-fall/ontario-park-audio-api
+ghcr.io/csc301-2023-fall/ontario-park-audio-frontend
+ * Since we have an entirely automated deployment process, it is easy to re-deploy this application. However, to change things, below are the instructions:
+	 - To modify the CI/CD pipeline (the whole auto-deployment process), visit the build-push-image.yml file under .github/workflows directory.
+	 - To modify details of composing docker images, please visit the compose.yml under main directory, and the dockerfile in frontend and backend directory.
+	 - To modify details on the deployment tool, below is the credential for our AWS Lightsail account:
+	> `https://lightsail.aws.amazon.com/ls/webapp/ca-central-1/instances/AWS_Ontario_Park/connect` <br>
+	> `jingyu.he@mail.utoronto.ca` <br>
+	> CSC301aa!
+ * To access the EC2 VM to view container status and other things, directly open a virtual terminal on the above mentioned website, or SSH into the VM in terminal:
+	1. Download the private key to your device
+	2. Open a terminal in the directory that contains the private key file and run the below lines:(in this case, LightsailDefaultKey-ca-central-1.pem is the name of key file)
+	```
+	echo LightsailDefaultKey-ca-central-1.pem > private_key && chmod 600 private_key
+	ssh -o StrictHostKeyChecking=no -i private_key ec2-user@3.99.190.60
+	```
