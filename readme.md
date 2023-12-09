@@ -239,9 +239,9 @@ You must connect your `jsx` file in the App.js file, there are a lot of samples 
 ## Backend
 In this project, we use Django rest Framework API, you may sh to the backend folder and run `pip install -r requirements.txt` to install all dependencies.
 
-Then inside the project folder, ontario_audio_tour, are the main backend codes.
+Then inside the project folder, `ontario_audio_tour`, are the main backend codes.
 
-In the subdirectory ontario_audio_tour (same name as the project folder) are the settings about the whole API, including the installed app and allowed URL (you need to add the allowed URL after deployment).
+In the subdirectory `ontario_audio_tour/config` are the settings about the whole API, including the installed app and allowed URL (you need to add the allowed URL after deployment).
 
 In the subdirectory, AdminControl (which is an app folder), is the API about asset management, including adding/deleting/editing/getting location/audio and binding two.
 
@@ -303,7 +303,7 @@ The way connections are made in this script is very simple. Below is the code fo
 Fill in the missing information, and add the needed secure certificates, then execute this script in the terminal. It will create a database called `test_database`, some tables populated with test data.
 
 ### Connect Back-End to Database
-Connecting from the backend to the database is similar, and is done in `backend\ontario_audio_tour\ontario_audio_tour\settings.py`. The following part of the code handles the connection (from line 92 to 105):
+Connecting from the backend to the database is similar, and is done in `backend\ontario_audio_tour\config\settings.py`. The following part of the code handles the connection (from line 92 to 105):
 
     DATABASES = {
         'default': {
