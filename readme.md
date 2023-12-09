@@ -354,7 +354,7 @@ Remember to add secure certificates needed for accessing the server. You can do 
 ### Matching Database to Models
 One specific thing about Django is that the tables in the database should be matched to the file `backend\ontario_audio_tour\AdminControl\models.py`. If you want to make any changes to the columns in the database, make sure you also change the corresponding attributes in `models.py`.
 
-### Current Connect Parameters
+### Connecting to Current Development Server
 Below is the needed parameters for connecting to the server we used for early development and testing.
 
   
