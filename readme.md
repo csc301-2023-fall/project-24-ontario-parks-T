@@ -354,6 +354,17 @@ Remember to add secure certificates needed for accessing the server. You can do 
 ### Matching Database to Models
 One specific thing about Django is that the tables in the database should be matched to the file `backend\ontario_audio_tour\AdminControl\models.py`. If you want to make any changes to the columns in the database, make sure you also change the corresponding attributes in `models.py`.
 
+### Current Connect Parameters
+Below is the needed parameters for connecting to the server we used for early development and testing.
+
+  
+    Django Engine = django.db.backends.mysql
+    Database Name = test_database
+    Username = yilz
+    Password = csc301P24!
+    Hostname = yilz-1.mysql.database.azure.com
+    Port = 3306
+
 ## Storage Place
 Currently, the storage space also uses servers from Microsoft Azure and is not coupled with our source code. For later development, you can switch storage places to the one provided by the Government of Ontario, and use the URL to the files when creating an audio. You can refer to this process in [this section](#special-upload-audio-or-image-files).
 
