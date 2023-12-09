@@ -65,6 +65,11 @@ The instructions will be different for users who are visitors and who are admini
  
 To access as an administrator:
 * Go to the administrator management website, which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you must use a logged-in account to sign up with a username, email address, and password. If the registration is correctly processed, you create a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
+* For developers: You may use the development admin account to log into the system:
+```
+username: yilz
+password: 1
+```
 
 To access as a visitor:
 * No need for an account, grab your smart device, scan the QR code, and enjoy the audio.  
