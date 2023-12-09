@@ -65,7 +65,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 CORS_ALLOW_CREDENTIALS = True
 
-ROOT_URLCONF = 'ontario_audio_tour.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'ontario_audio_tour.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
