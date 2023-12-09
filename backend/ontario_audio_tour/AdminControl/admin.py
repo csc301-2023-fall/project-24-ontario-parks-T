@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Location, Image, Audio
+from .models import Location, Audio
 
 # Register your models here.
 admin.site.register(Location)
-admin.site.register(Image)
 admin.site.register(Audio)
