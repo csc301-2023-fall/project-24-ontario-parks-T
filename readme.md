@@ -362,6 +362,18 @@ One specific thing about Django is that the tables in the database should be mat
 ## Storage Place
 Currently, the storage space also uses servers from Microsoft Azure and is not coupled with our source code. For later development, you can switch storage places to the one provided by the Government of Ontario, and use the URL to the files when creating an audio. You can refer to this process in [this section](#special-upload-audio-or-image-files).
 
+### Connecting to Current Storage Space
+Below is the needed parameters for connecting to the storage we used for early development and testing.
+
+    Account name: yilz
+    Connection string: SharedAccessSignature=sv=2023-01-03&ss=btqf&srt=sco&st=2023-12-09T22%3A51%3A15Z&se=2023-12-10T22%3A51%3A15Z&sp=rwdxftlacup&sig=aNj7nAjpciIcye%2FLHYIufFDWfikQV7%2BTDc2IaQEqofI%3D;BlobEndpoint=https://yilz.blob.core.windows.net;FileEndpoint=https://yilz.file.core.windows.net;QueueEndpoint=https://yilz.queue.core.windows.net;TableEndpoint=https://yilz.table.core.windows.net;
+    SAS token:sv=2023-01-03&ss=btqf&srt=sco&st=2023-12-09T22%3A51%3A15Z&se=2023-12-10T22%3A51%3A15Z&sp=rwdxftlacup&sig=aNj7nAjpciIcye%2FLHYIufFDWfikQV7%2BTDc2IaQEqofI%3D
+
+Alternatively, the following set of parameters can also be used:
+
+    Account Name: yilz
+    Key: pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==
+
 ## Deployment and CI/CD Details
  * Our web application is deployed using the AWS Lightsail service on an EC2 instance. The application runs on a virtual machine and is accessible at [http://3.99.190.60:3000/admin/login](http://3.99.190.60:3000/admin/login).
  * We chose AWS Lightsail due to its suitability for small to medium-scale workloads and the availability of a free tier for testing deployment without incurring charges.
