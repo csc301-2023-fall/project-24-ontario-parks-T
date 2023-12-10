@@ -65,6 +65,11 @@ The instructions will be different for users who are visitors and who are admini
  
 To access as an administrator:
 * Go to the administrator management website, which is http://3.99.190.60:3000/admin/login in our d3 deployment. To register an account, you must use a logged-in account to sign up with a username, email address, and password. If the registration is correctly processed, you create a new account. With the account, you can do any operation mentioned above for the audio and location or register new accounts.
+* For developers: You may use the development admin account to log into the system:
+```
+username: yilz
+password: 1
+```
 
 To access as a visitor:
 * No need for an account, grab your smart device, scan the QR code, and enjoy the audio.  
@@ -239,9 +244,9 @@ You must connect your `jsx` file in the App.js file, there are a lot of samples 
 ## Backend
 In this project, we use Django rest Framework API, you may sh to the backend folder and run `pip install -r requirements.txt` to install all dependencies.
 
-Then inside the project folder, ontario_audio_tour, are the main backend codes.
+Then inside the project folder, `ontario_audio_tour`, are the main backend codes.
 
-In the subdirectory ontario_audio_tour (same name as the project folder) are the settings about the whole API, including the installed app and allowed URL (you need to add the allowed URL after deployment).
+In the subdirectory `ontario_audio_tour/config` are the settings about the whole API, including the installed app and allowed URL (you need to add the allowed URL after deployment).
 
 In the subdirectory, AdminControl (which is an app folder), is the API about asset management, including adding/deleting/editing/getting location/audio and binding two.
 
@@ -303,7 +308,7 @@ The way connections are made in this script is very simple. Below is the code fo
 Fill in the missing information, and add the needed secure certificates, then execute this script in the terminal. It will create a database called `test_database`, some tables populated with test data.
 
 ### Connect Back-End to Database
-Connecting from the backend to the database is similar, and is done in `backend\ontario_audio_tour\ontario_audio_tour\settings.py`. The following part of the code handles the connection (from line 92 to 105):
+Connecting from the backend to the database is similar, and is done in `backend\ontario_audio_tour\config\settings.py`. The following part of the code handles the connection (from line 92 to 105):
 
     DATABASES = {
         'default': {
@@ -367,6 +372,18 @@ Below is the needed parameters for connecting to the server we used for early de
 
 ## Storage Place
 Currently, the storage space also uses servers from Microsoft Azure and is not coupled with our source code. For later development, you can switch storage places to the one provided by the Government of Ontario, and use the URL to the files when creating an audio. You can refer to this process in [this section](#special-upload-audio-or-image-files).
+
+### Connecting to Current Storage Space
+Below is the needed parameters for connecting to the storage we used for early development and testing.
+
+    Account name: yilz
+    Connection string: SharedAccessSignature=sv=2023-01-03&ss=btqf&srt=sco&st=2023-12-09T22%3A51%3A15Z&se=2023-12-10T22%3A51%3A15Z&sp=rwdxftlacup&sig=aNj7nAjpciIcye%2FLHYIufFDWfikQV7%2BTDc2IaQEqofI%3D;BlobEndpoint=https://yilz.blob.core.windows.net;FileEndpoint=https://yilz.file.core.windows.net;QueueEndpoint=https://yilz.queue.core.windows.net;TableEndpoint=https://yilz.table.core.windows.net;
+    SAS token:sv=2023-01-03&ss=btqf&srt=sco&st=2023-12-09T22%3A51%3A15Z&se=2023-12-10T22%3A51%3A15Z&sp=rwdxftlacup&sig=aNj7nAjpciIcye%2FLHYIufFDWfikQV7%2BTDc2IaQEqofI%3D
+
+Alternatively, the following set of parameters can also be used:
+
+    Account Name: yilz
+    Key: pJgurrQMVAQv+046vz3ZuV6EjP6noKGmx/j1X4Ty989najXstGJ+WC7XaUJkQLU0paGnY/zafkw8+AStoPPNBQ==
 
 ## Deployment and CI/CD Details
  * Our web application is deployed using the AWS Lightsail service on an EC2 instance. The application runs on a virtual machine and is accessible at [http://3.99.190.60:3000/admin/login](http://3.99.190.60:3000/admin/login).
